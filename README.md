@@ -1,5 +1,7 @@
 # Fred: revenue intelligence
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/devdaveddev/fred)
+
 The analyst between your CRO and your CFO. Every number has a receipt.
 
 - **Today:** a ranked briefing from four analyst roles (marketing analyst, lead generation, founder's
@@ -79,3 +81,19 @@ to Slack and/or email. Set it up under **Settings → Notifications**. Email nee
 - **Direct connections:** QuickBooks, Xero, Salesforce, Gusto and Google Ads need an OAuth app per provider
   (see `.env.example`). Meta Ads, Zendesk and Intercom use keys the customer pastes in. HubSpot and Salesforce
   support write-back of scores.
+
+## Deploying on Render
+
+1. Click **Deploy to Render** above (sign in with GitHub). Render reads `render.yaml`, which defines three things:
+   - `fred-web`: public, with HTTPS.
+   - `fred-api`: private; it also runs the daily scheduler.
+   - `fred-db`: managed Postgres 16.
+2. When asked for `PUBLIC_URL`, enter the address people will use, e.g. `https://fred-web.onrender.com` (or your
+   custom domain). Leave the optional SMTP and OAuth fields empty for now.
+3. The first build takes 10–15 minutes, because it bakes the embedding model into the image. Migrations run
+   automatically before every deploy.
+4. If Render gave the web service a different address, update `PUBLIC_URL` on `fred-api` and redeploy. It's used
+   in email links and for SSO/OAuth redirects.
+5. To add a custom domain: fred-web → Settings → Custom Domains. Then update `PUBLIC_URL`.
+
+Set `ALLOW_SIGNUP=false` on `fred-api` if only invited people should get in.
