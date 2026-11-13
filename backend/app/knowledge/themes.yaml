@@ -1,0 +1,58 @@
+# Customer feedback themes for zero-shot tagging. The model compares each comment with these
+# plain-English descriptions; no labelled training data needed. Edit freely: add a theme by
+# writing 3-5 sentences that describe it in customers' words.
+version: "2026.11.0"
+min_similarity: 0.6
+themes:
+  - id: missing_integration
+    label: Missing integrations
+    action: "Prioritise the most-requested connectors on the roadmap; publish an integrations page"
+    prototypes:
+      - "It does not integrate with the other systems we use."
+      - "We needed a connector to our CRM or ERP and there wasn't one."
+      - "No sync with our data warehouse, so we had to export manually."
+      - "The integration we rely on is missing."
+  - id: price_budget
+    label: Price and budget
+    action: "Offer a lighter plan or annual prepay; check value messaging at renewal"
+    prototypes:
+      - "It is too expensive for us."
+      - "Our budget was cut and we had to reduce software spend."
+      - "Finance would not approve the renewal at this price."
+      - "We could not justify the cost."
+  - id: low_adoption
+    label: Low adoption
+    action: "Run onboarding reviews at day 30 and 60; trigger CSM outreach when seat usage drops"
+    prototypes:
+      - "Our team never really started using it."
+      - "Setup and onboarding were hard so people stopped."
+      - "Most of the team kept using spreadsheets instead."
+      - "We didn't have time to implement it."
+  - id: competitor
+    label: Lost to a competitor
+    action: "Build a competitive battlecard; review pricing against the named alternative"
+    prototypes:
+      - "We switched to a different vendor."
+      - "We moved to a competitor's product."
+      - "Another tool replaced it."
+  - id: support_quality
+    label: Support and reliability
+    action: "Set a support response SLA; triage recurring bugs weekly"
+    prototypes:
+      - "Customer support was slow to respond."
+      - "There were too many bugs and errors."
+      - "Problems were not fixed and the help desk was unhelpful."
+  - id: business_closed
+    label: Company closed or acquired
+    action: "No action: not addressable churn. Exclude from retention targets"
+    prototypes:
+      - "Our company shut down."
+      - "We were acquired by another company."
+      - "Our business changed direction and no longer needs it."
+  - id: praise
+    label: Praise
+    action: "Ask for a review or case study"
+    prototypes:
+      - "We love the product and it saves us time."
+      - "Great support and easy to use."
+      - "The reports and forecasts are excellent."

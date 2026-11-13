@@ -1,0 +1,52 @@
+# SaaS benchmark library. Versioned data, not model weights: edit, review, ship.
+# Values are approximate, widely used rules of thumb for B2B SaaS. They are NOT quotes from a
+# specific survey. Re-check yearly against current public surveys (KeyBanc/Sapphire private SaaS
+# survey, ICONIQ Growth, Bessemer State of the Cloud, SaaS Capital retention reports).
+version: "2026.11.0"
+as_of: "2026-11-01"
+review_every_days: 180
+stages:
+  - {id: early, label: "Under $1M ARR", arr_max: 1000000}
+  - {id: growth, label: "$1M to $20M ARR", arr_min: 1000000, arr_max: 20000000}
+  - {id: scale, label: "Over $20M ARR", arr_min: 20000000}
+metrics:
+  nrr_12m:
+    direction: up
+    basis: "Private B2B SaaS medians cluster near 100%; top quartile is roughly 110%+, enterprise-heavy higher."
+    bands: {early: {target: 1.00, concern: 0.90}, growth: {target: 1.05, concern: 0.95}, scale: {target: 1.10, concern: 1.00}}
+  grr_12m:
+    direction: up
+    basis: "Gross retention around 90% is the usual mid-market bar; below about 80% signals a product-fit or segment problem."
+    bands: {early: {target: 0.85, concern: 0.75}, growth: {target: 0.90, concern: 0.82}, scale: {target: 0.92, concern: 0.85}}
+  monthly_logo_churn:
+    direction: down
+    basis: "Rule of thumb: SMB 3-5% monthly, mid-market 1-2%, enterprise under 1%."
+    bands: {early: {target: 0.03, concern: 0.05}, growth: {target: 0.02, concern: 0.03}, scale: {target: 0.01, concern: 0.02}}
+  cac_payback_months:
+    direction: down
+    basis: "Under 12 months is strong; 12-24 is common for mid-market; over 24 is hard to fund."
+    bands: {early: {target: 12, concern: 24}, growth: {target: 15, concern: 24}, scale: {target: 18, concern: 30}}
+  ltv_cac:
+    direction: up
+    basis: "The 3x rule. Well above 5x usually means under-investing in growth."
+    bands: {early: {target: 3, concern: 1.5}, growth: {target: 3, concern: 2}, scale: {target: 3, concern: 2}}
+  magic_number:
+    direction: up
+    basis: "Above 0.75 is efficient enough to add S&M; above 1.0 is a signal to invest more."
+    bands: {early: {target: 0.75, concern: 0.5}, growth: {target: 0.75, concern: 0.5}, scale: {target: 0.7, concern: 0.5}}
+  burn_multiple:
+    direction: down
+    basis: "David Sacks' scale: under 1 amazing, 1-1.5 great, 1.5-2 good, 2-3 suspect, over 3 bad."
+    bands: {early: {target: 2.0, concern: 3.0}, growth: {target: 1.5, concern: 2.0}, scale: {target: 1.0, concern: 1.5}}
+  runway_months:
+    direction: up
+    basis: "Raise with 12+ months left; 18-24 months is the comfortable range."
+    bands: {early: {target: 18, concern: 12}, growth: {target: 18, concern: 12}, scale: {target: 24, concern: 12}}
+  rule_of_40:
+    direction: up
+    basis: "Revenue growth % + FCF margin % at or above 40 for scaled SaaS; early companies are judged on growth."
+    bands: {early: {target: 0.40, concern: 0.0}, growth: {target: 0.40, concern: 0.20}, scale: {target: 0.40, concern: 0.25}}
+routing:
+  # calibrated probability cut-offs for lead routing (tune per sales capacity)
+  fast_lane: 0.30
+  sdr: 0.10

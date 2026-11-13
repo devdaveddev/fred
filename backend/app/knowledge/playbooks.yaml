@@ -1,0 +1,87 @@
+# Diagnosis -> action playbooks. Conditions are evaluated by code against computed facts.
+# Each playbook names the management framework behind it so the advice is checkable, not vibes.
+version: "2026.11.0"
+as_of: "2026-11-01"
+playbooks:
+  - id: revenue_leak
+    role: growth
+    severity: high
+    when: [[grr_12m, "<", 0.85]]
+    title: "Revenue is leaking: gross retention is {grr_12m:.0%}"
+    why: "Every point of GRR lost has to be re-bought with CAC. Below about 85%, growth spend mostly refills a leaking bucket."
+    actions:
+      - "Work the at-risk account list this week, highest MRR at risk first"
+      - "Split churn by segment and acquisition channel to find where poor-fit customers come from"
+      - "Offer annual prepay with a modest discount to the healthiest monthly accounts"
+    frameworks: ["Cohort retention analysis", "Customer health scoring", "Leaky-bucket growth model"]
+  - id: expansion_gap
+    role: growth
+    severity: medium
+    when: [[nrr_12m, "<", 1.0], [grr_12m, ">=", 0.82]]
+    title: "Customers stay but do not grow: NRR {nrr_12m:.0%}"
+    why: "Retention is acceptable, so the gap is expansion. That is a packaging and pricing problem more than a success problem."
+    actions:
+      - "Introduce a usage-based add-on or seat expansion trigger on the top workflow"
+      - "Re-tier packaging into good-better-best around the features expanders actually use"
+      - "Run a willingness-to-pay survey before changing list prices"
+    frameworks: ["Good-better-best packaging", "Van Westendorp price sensitivity", "Value metric selection"]
+  - id: slow_payback
+    role: marketing_analyst
+    severity: medium
+    when: [[cac_payback_months, ">", 18]]
+    title: "CAC payback is {cac_payback_months:.0f} months"
+    why: "Long payback ties up cash in every new customer. Fix the channel mix before adding budget."
+    actions:
+      - "Apply the channel reallocation on the Marketing page"
+      - "Tighten lead routing to the ICP segments with significant lift"
+    frameworks: ["Unit economics by channel", "Marginal CAC"]
+  - id: underinvesting
+    role: founders_office
+    severity: medium
+    when: [[magic_number, ">", 1.0], [runway_months, ">", 18]]
+    title: "Growth engine is efficient (Magic Number {magic_number:.2f}) and cash allows more spend"
+    why: "Above 1.0 each S&M dollar returns more than a dollar of new ARR within a year. With 18+ months of runway, holding back is the risk."
+    actions:
+      - "Raise S&M about 20% next quarter, into the channels with the lowest marginal CAC"
+      - "Re-check Magic Number monthly; stop scaling if it drops under 0.75"
+    frameworks: ["Magic Number", "Staged investment with kill criteria"]
+  - id: burn_inefficient
+    role: founders_office
+    severity: high
+    when: [[burn_multiple, ">", 2.0]]
+    title: "Burn multiple is {burn_multiple:.1f}x"
+    why: "Burning more than $2 per $1 of net new ARR is hard to finance in the current market."
+    actions:
+      - "Freeze non-revenue hiring until burn multiple is under 2"
+      - "Cut the lowest-return channel spend first (see Marketing)"
+    frameworks: ["Burn multiple (Sacks)", "Default alive / default dead"]
+  - id: runway_short
+    role: founders_office
+    severity: critical
+    when: [[runway_months, "<", 12]]
+    title: "Only {runway_months:.0f} months of runway"
+    why: "Fundraising takes 4-6 months. Under 12 months, plan the raise or the cuts now."
+    actions:
+      - "Model a default-alive plan: the spend level where cash lasts until breakeven"
+      - "Start investor conversations this month"
+    frameworks: ["Default alive (Paul Graham)", "Runway scenario planning"]
+  - id: concentration
+    role: growth
+    severity: medium
+    when: [[top10_share, ">", 0.25]]
+    title: "Top 10 customers are {top10_share:.0%} of MRR"
+    why: "High concentration makes revenue fragile and lowers valuation multiples."
+    actions:
+      - "Put every top-10 account on an executive sponsor and quarterly business review"
+      - "Weight new-logo targets toward the next segment down"
+    frameworks: ["Customer concentration risk"]
+  - id: rule_of_40_low
+    role: founders_office
+    severity: low
+    when: [[rule_of_40, "<", 0.40], [arr, ">", 5000000]]
+    title: "Rule of 40 score is {rule_of_40:.0%}"
+    why: "Investors weigh growth plus profitability together at this scale."
+    actions:
+      - "Choose explicitly: grow faster on current burn, or cut burn and keep growth"
+    frameworks: ["Rule of 40"]
+# Predicted churn is reported by the churn model finding itself (team.py), not duplicated here.

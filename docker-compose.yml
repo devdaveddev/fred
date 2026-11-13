@@ -1,0 +1,125 @@
+name: fred
+
+x-api-env: &api-env
+  DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-fred}:${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}@db:5432/${POSTGRES_DB:-fred}
+  LOG_LEVEL: ${LOG_LEVEL:-info}
+  COOKIE_SECURE: ${COOKIE_SECURE:-false}
+  ALLOW_SIGNUP: ${ALLOW_SIGNUP:-true}
+  FRED_SECRET_KEY: ${FRED_SECRET_KEY:?set FRED_SECRET_KEY in .env (encrypts connector credentials)}
+  PUBLIC_URL: ${PUBLIC_URL:-http://localhost:8080}
+  SMTP_HOST: ${SMTP_HOST:-}
+  SMTP_PORT: ${SMTP_PORT:-587}
+  SMTP_USER: ${SMTP_USER:-}
+  SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+  SMTP_FROM: ${SMTP_FROM:-Fred <fred@localhost>}
+  SMTP_TLS: ${SMTP_TLS:-starttls}
+  # OAuth apps for direct connections (each source shows "Sign in with …" once its pair is set)
+  QUICKBOOKS_CLIENT_ID: ${QUICKBOOKS_CLIENT_ID:-}
+  QUICKBOOKS_CLIENT_SECRET: ${QUICKBOOKS_CLIENT_SECRET:-}
+  QUICKBOOKS_SANDBOX: ${QUICKBOOKS_SANDBOX:-false}
+  XERO_CLIENT_ID: ${XERO_CLIENT_ID:-}
+  XERO_CLIENT_SECRET: ${XERO_CLIENT_SECRET:-}
+  SALESFORCE_CLIENT_ID: ${SALESFORCE_CLIENT_ID:-}
+  SALESFORCE_CLIENT_SECRET: ${SALESFORCE_CLIENT_SECRET:-}
+  SALESFORCE_LOGIN_URL: ${SALESFORCE_LOGIN_URL:-https://login.salesforce.com}
+  GUSTO_CLIENT_ID: ${GUSTO_CLIENT_ID:-}
+  GUSTO_CLIENT_SECRET: ${GUSTO_CLIENT_SECRET:-}
+  GUSTO_DEMO: ${GUSTO_DEMO:-false}
+  GOOGLE_ADS_CLIENT_ID: ${GOOGLE_ADS_CLIENT_ID:-}
+  GOOGLE_ADS_CLIENT_SECRET: ${GOOGLE_ADS_CLIENT_SECRET:-}
+  GOOGLE_ADS_DEVELOPER_TOKEN: ${GOOGLE_ADS_DEVELOPER_TOKEN:-}
+
+services:
+  db:
+    image: timescale/timescaledb:2.17.2-pg16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-fred}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-fred}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-fred} -d ${POSTGRES_DB:-fred}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    networks: [backend]
+
+  # One-shot: schema migrations. Workspaces (and their optional demo data) are created at sign-up.
+  migrate:
+    build: ./backend
+    image: fred-api:${TAG:-latest}
+    command: ["alembic", "upgrade", "head"]
+    environment: *api-env
+    depends_on:
+      db: { condition: service_healthy }
+    networks: [backend]
+    restart: "no"
+
+  api:
+    image: fred-api:${TAG:-latest}
+    restart: unless-stopped
+    environment: *api-env
+    healthcheck:
+      test: ["CMD", "python", "-m", "app.healthcheck"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+    networks: [backend, frontend]
+
+  # Scheduler: daily source syncs and the Slack/email digest. Safe to scale: jobs are claimed in the DB.
+  worker:
+    image: fred-api:${TAG:-latest}
+    restart: unless-stopped
+    command: ["python", "-m", "app.worker"]
+    environment: *api-env
+    healthcheck:
+      test: ["CMD", "python", "-m", "app.worker", "--health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 90s
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+    networks: [backend]
+
+  web:
+    build: ./frontend
+    image: fred-web:${TAG:-latest}
+    restart: unless-stopped
+    environment:
+      API_INTERNAL_URL: http://api:8000
+    healthcheck:
+      test: ["CMD", "wget", "-qO/dev/null", "http://127.0.0.1:3000/scenarios"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    depends_on:
+      api: { condition: service_healthy }
+    networks: [frontend]
+
+  proxy:
+    image: caddy:2.8-alpine
+    restart: unless-stopped
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-:80}
+    ports:
+      - "${HTTP_PORT:-8080}:80"
+      - "${HTTPS_PORT:-8443}:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro,z  # z: SELinux relabel, no-op elsewhere
+      - caddy_data:/data
+    depends_on:
+      web: { condition: service_healthy }
+    networks: [frontend]
+
+volumes:
+  pgdata:
+  caddy_data:
+
+networks:
+  backend:
+  frontend:

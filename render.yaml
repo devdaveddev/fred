@@ -1,0 +1,96 @@
+# Render Blueprint: Dashboard → New → Blueprint → pick this repository.
+#
+#   fred-web  (public, HTTPS)  Next.js; proxies /api/* to fred-api at request time
+#   fred-api  (private)        FastAPI + models + the daily scheduler (EMBEDDED_WORKER), migrations before each deploy
+#   fred-db                    managed Postgres 16 (TimescaleDB not needed)
+#
+# Approximate cost: web starter $7 + api standard $25 + db basic-256mb $6 ≈ $38/month.
+# Change `region` before the first deploy if most users are elsewhere (oregon, ohio, virginia, frankfurt, singapore).
+
+envVarGroups:
+  - name: fred-shared
+    envVars:
+      - key: FRED_SECRET_KEY        # encrypts stored credentials; generated once, keep it stable
+        generateValue: true
+
+databases:
+  - name: fred-db
+    databaseName: fred
+    user: fred
+    plan: basic-256mb
+    region: oregon
+    postgresMajorVersion: "16"
+    ipAllowList: []                 # reachable only from services in this account
+
+services:
+  - type: pserv
+    name: fred-api
+    runtime: docker
+    region: oregon
+    plan: standard                  # 2 GB: the embedding model and model training need headroom
+    dockerContext: ./backend
+    dockerfilePath: ./backend/Dockerfile
+    preDeployCommand: alembic upgrade head
+    envVars:
+      - fromGroup: fred-shared
+      - key: DATABASE_URL
+        fromDatabase:
+          name: fred-db
+          property: connectionString
+      - key: PUBLIC_URL             # the address people use, e.g. https://fred-web.onrender.com or your domain
+        sync: false
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: ALLOW_SIGNUP
+        value: "true"
+      - key: EMBEDDED_WORKER
+        value: "true"
+      - key: LOG_LEVEL
+        value: info
+      # Optional: email (any SMTP provider). Leave empty to use Slack only.
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: SMTP_FROM
+        sync: false
+      # Optional: OAuth apps for "Sign in with …" connections. Redirect URI: <PUBLIC_URL>/api/sources/oauth/callback
+      - key: QUICKBOOKS_CLIENT_ID
+        sync: false
+      - key: QUICKBOOKS_CLIENT_SECRET
+        sync: false
+      - key: XERO_CLIENT_ID
+        sync: false
+      - key: XERO_CLIENT_SECRET
+        sync: false
+      - key: SALESFORCE_CLIENT_ID
+        sync: false
+      - key: SALESFORCE_CLIENT_SECRET
+        sync: false
+      - key: GUSTO_CLIENT_ID
+        sync: false
+      - key: GUSTO_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_ADS_CLIENT_ID
+        sync: false
+      - key: GOOGLE_ADS_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_ADS_DEVELOPER_TOKEN
+        sync: false
+
+  - type: web
+    name: fred-web
+    runtime: docker
+    region: oregon
+    plan: starter
+    dockerContext: ./frontend
+    dockerfilePath: ./frontend/Dockerfile
+    healthCheckPath: /login
+    envVars:
+      - key: API_INTERNAL_URL       # private network address of the API, e.g. fred-api:8000
+        fromService:
+          type: pserv
+          name: fred-api
+          property: hostport
