@@ -84,6 +84,15 @@ to Slack and/or email. Set it up under **Settings → Notifications**. Email nee
 
 ## Deploying on Render
 
+**Option A: one Web Service (simplest).** The root `Dockerfile` runs the website and API together.
+1. Create a Render Postgres (any plan), then a Web Service from this repo with runtime **Docker** and instance type
+   **Standard (2 GB)**. It uses ~750 MB, so 512 MB plans run out of memory.
+2. Environment: `DATABASE_URL` = the database's *Internal* URL, and `FRED_SECRET_KEY` = any long random string
+   (Render's "Generate" button works). The public address is picked up automatically from Render.
+3. Health check path: `/api/health`. Migrations run on every start.
+
+**Option B: Blueprint (separate services).**
+
 1. Click **Deploy to Render** above (sign in with GitHub). Render reads `render.yaml`, which defines three things:
    - `fred-web`: public, with HTTPS.
    - `fred-api`: private; it also runs the daily scheduler.
