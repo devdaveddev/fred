@@ -33,7 +33,8 @@ COPY --from=web --chown=fred:fred /web/.next/static /web/.next/static
 COPY --chown=fred:fred deploy/start.sh /start.sh
 ENV PATH="/app/.venv/bin:$PATH" PYTHONUNBUFFERED=1 MODEL_CACHE=/models HF_HUB_OFFLINE=1 \
     NODE_ENV=production NEXT_TELEMETRY_DISABLED=1 HOSTNAME=0.0.0.0 PORT=10000 \
-    API_INTERNAL_URL=http://127.0.0.1:8000 EMBEDDED_WORKER=true
+    API_INTERNAL_URL=http://127.0.0.1:8000 EMBEDDED_WORKER=true \
+    MALLOC_ARENA_MAX=2 ANALYSIS_CACHE=2 WARM_ON_START=false
 USER fred
 EXPOSE 10000
 CMD ["sh", "/start.sh"]

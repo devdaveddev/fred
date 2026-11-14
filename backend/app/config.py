@@ -50,6 +50,9 @@ class Settings(BaseSettings):
     # Run the scheduler inside the API process (one service instead of two, e.g. on Render). Safe with
     # several API instances: each daily job is claimed in the database exactly once.
     embedded_worker: bool = False
+    # Memory: analyses kept in memory (each holds trained models), and whether to pre-train at startup.
+    analysis_cache: int = 8
+    warm_on_start: bool = True
 
     @field_validator("database_url")
     @classmethod

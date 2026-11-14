@@ -16,7 +16,7 @@ import secrets
 import uuid
 from datetime import UTC, datetime, timedelta
 
-from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Request, Response
+from fastapi import APIRouter, Depends, HTTPException, Request, Response
 from pydantic import BaseModel, Field
 from sqlalchemy import text
 from sqlalchemy.engine import Connection
@@ -174,8 +174,7 @@ class LoginIn(BaseModel):
 
 
 @router.post("/signup")
-def signup(body: SignupIn, request: Request, response: Response, background: BackgroundTasks,
-           conn: Connection = Depends(get_conn)) -> dict:
+def signup(body: SignupIn, request: Request, response: Response, conn: Connection = Depends(get_conn)) -> dict:
     if not get_settings().allow_signup:
         raise HTTPException(403, "Sign-ups are closed on this instance.")
     email = body.email.strip().lower()
@@ -188,18 +187,17 @@ def signup(body: SignupIn, request: Request, response: Response, background: Bac
     slug = re.sub(r"[^a-z0-9]+", "-", body.company.lower()).strip("-")[:40] + "-" + tid[:6]
     conn.execute(text("""INSERT INTO tenant (id, slug, name, currency, gross_margin, annual_wacc, data_source)
                          VALUES (:id, :slug, :name, 'USD', 0.78, 0.14, :src)"""),
-                 {"id": tid, "slug": slug, "name": body.company.strip(), "src": "demo" if body.demo_data else "empty"})
+                 {"id": tid, "slug": slug, "name": body.company.strip(), "src": "preparing" if body.demo_data else "empty"})
     conn.execute(text("INSERT INTO app_user (id, email, name, password_hash) VALUES (:id, :e, :n, :p)"),
                  {"id": uid, "e": email, "n": body.name.strip(), "p": hash_password(body.password)})
     conn.execute(text("INSERT INTO membership (user_id, tenant_id, role) VALUES (:u, :t, 'owner')"),
                  {"u": uid, "t": tid})
-    if body.demo_data:
-        from .seed import seed_workspace
+    if body.demo_data:  # ~70k demo rows: built after the reply, so sign-up is instant even on a small server.
+        # A thread, not BackgroundTasks: FastAPI runs those before this request's transaction commits, so they
+        # couldn't see the new workspace (and would hold up the commit of the session).
+        import threading
 
-        seed_workspace(conn, tid)
-        from .team_api import warm_tenant
-
-        background.add_task(warm_tenant, tid)  # runs after the transaction commits
+        threading.Thread(target=prepare_demo, args=(tid,), name=f"demo-{tid[:8]}", daemon=True).start()
     start_session(conn, response, uid, tid, request.headers.get("user-agent"))
     audit.record(conn, "signup", tenant_id=tid, user_id=uid, actor=email)
     return {"ok": True, "onboarding": True}
@@ -259,6 +257,50 @@ def me(ctx: Ctx = Depends(current), conn: Connection = Depends(get_conn)) -> dic
             "workspaces": [dict(w) for w in spaces],
             "hired": sorted(h),
             "nav": [{"module": m.id, "title": m.title, "pages": m.pages} for m in modules.MODULES.values() if m.id in h]}
+
+
+def prepare_demo(tid: str) -> None:
+    """Load the demo company into a new workspace, then pre-train its models. Pages show a 'being set up'
+    notice (and refresh) until this finishes; a restart resumes it (see resume_pending_demos)."""
+    import logging
+    import time
+
+    from .seed import seed_workspace
+    from .team_api import warm_tenant
+
+    log = logging.getLogger("fred.auth")
+    # FastAPI runs background tasks before the sign-up request's transaction commits: wait until it has.
+    for _ in range(60):
+        with engine.begin() as c:
+            state = c.execute(text("SELECT data_source FROM tenant WHERE id = :t"), {"t": tid}).scalar()
+        if state is not None:
+            break
+        time.sleep(1)
+    if state != "preparing":
+        return
+    try:
+        with engine.begin() as c:
+            if c.execute(text("SELECT data_source FROM tenant WHERE id = :t FOR UPDATE"), {"t": tid}).scalar() != "preparing":
+                return  # already done (or the workspace switched to real data)
+            seed_workspace(c, tid)
+        log.info("demo company ready for %s", tid)
+    except Exception:
+        log.exception("demo setup failed for %s", tid)
+        with engine.begin() as c:
+            c.execute(text("UPDATE tenant SET data_source = 'empty' WHERE id = :t AND data_source = 'preparing'"), {"t": tid})
+        return
+    warm_tenant(tid)
+
+
+def resume_pending_demos() -> None:
+    """At startup: finish demo setups a restart interrupted."""
+    import threading
+
+    with engine.begin() as c:
+        pending = [r[0] for r in c.execute(text("""SELECT id::text FROM tenant t WHERE data_source = 'preparing'
+            AND NOT EXISTS (SELECT 1 FROM subscription_mrr m WHERE m.tenant_id = t.id)"""))]
+    for tid in pending:
+        threading.Thread(target=prepare_demo, args=(tid,), daemon=True).start()
 
 
 class SwitchIn(BaseModel):

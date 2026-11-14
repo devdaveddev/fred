@@ -29,6 +29,9 @@ def analysis(ctx: Ctx = Depends(current), conn: Connection = Depends(get_conn)) 
     has_data = conn.execute(text("SELECT 1 FROM subscription_mrr WHERE tenant_id = :t LIMIT 1"),
                             {"t": tenant["id"]}).first()
     if not has_data:
+        if tenant["data_source"] == "preparing":
+            raise HTTPException(409, "Your demo company is being set up. This takes about a minute; the page will "
+                                     "refresh on its own.")
         raise HTTPException(409, "No data yet. Connect billing and CRM, or load the demo company in Settings.")
     ws = load_workspace(conn, tenant)
     return team.get(conn, ws), {"ws": ws, "tenant": tenant, "ctx": ctx}

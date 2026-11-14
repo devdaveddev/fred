@@ -44,7 +44,14 @@ logging.basicConfig(level=settings.log_level.upper())
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
-    warm()
+    try:
+        from .auth import resume_pending_demos
+
+        resume_pending_demos()
+    except Exception:
+        logging.getLogger("fred").exception("could not resume demo setups")
+    if settings.warm_on_start:
+        warm()
     stop = None
     if settings.embedded_worker:
         import threading

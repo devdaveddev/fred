@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { unstable_rethrow } from "next/navigation";
 import { ApiError } from "@/lib/api";
+import { AutoRefresh } from "./AutoRefresh";
 
 export function PageError({ title, error }: { title: string; error: unknown }) {
   unstable_rethrow(error); // let auth redirects through
@@ -15,6 +16,13 @@ export function PageError({ title, error }: { title: string; error: unknown }) {
           <h3>Nobody is doing this job yet</h3>
           <p>{msg}</p>
           <Link href="/team" className="btn primary">Go to your team</Link>
+        </div>
+      ) : status === 409 && msg.startsWith("Your demo company is being set up") ? (
+        <div className="empty">
+          <AutoRefresh />
+          <div className="empty-icon spin">◌</div>
+          <h3>Setting up your demo company</h3>
+          <p>{msg}</p>
         </div>
       ) : status === 409 ? (
         <div className="empty">

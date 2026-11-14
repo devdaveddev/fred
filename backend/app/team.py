@@ -22,6 +22,7 @@ from . import knowledge as kb
 from .analysis import forecast as fc
 from .analysis import marketing as mk
 from .analysis import planner
+from .config import get_settings
 from .ml import churn as churn_ml
 from .ml import leads as lead_ml
 from .provenance import Receipt, save_receipts
@@ -435,7 +436,7 @@ def get(conn: Connection, ws: Workspace) -> Analysis:
         hit = _cache.get(ws.snapshot_id)
         if hit is None:
             hit = run(ws)
-            if len(_cache) >= 8:  # keep the most recent workspaces' models warm
+            if len(_cache) >= max(1, get_settings().analysis_cache):  # most recent workspaces stay warm
                 _cache.pop(next(iter(_cache)))
             _cache[ws.snapshot_id] = hit
             save_receipts(conn, ws.tenant["id"], hit.receipts)

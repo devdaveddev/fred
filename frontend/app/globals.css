@@ -567,3 +567,5 @@ details.card[open] summary { margin-bottom: 10px; }
 .staff { margin: 0 0 12px; padding-left: 16px; font-size: 13px; max-height: 160px; overflow: auto; }
 tr.is-open td { background: var(--surface-2); }
 .row input.grow { flex: 1; min-width: 180px; }
+.empty-icon.spin { display: inline-block; animation: fred-spin 1.6s linear infinite; }
+@keyframes fred-spin { to { transform: rotate(360deg); } }

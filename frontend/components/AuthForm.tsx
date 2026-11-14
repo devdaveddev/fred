@@ -36,9 +36,11 @@ export function AuthForm({ mode }: { mode: Mode }) {
       : { name: f.get("name"), email: f.get("email"), password: f.get("password"), company: f.get("company"),
           demo_data: f.get("demo") === "on" };
     try {
+      const ctl = new AbortController();
+      const timer = setTimeout(() => ctl.abort(), 45_000);
       const res = await fetch(`/api/auth/${mode}`, {
-        method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body),
-      });
+        method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body), signal: ctl.signal,
+      }).finally(() => clearTimeout(timer));
       if (!res.ok) {
         const j = await res.json().catch(() => ({}));
         const d = j.detail;
@@ -54,8 +56,10 @@ export function AuthForm({ mode }: { mode: Mode }) {
       }
       router.push(mode === "signup" ? "/team?welcome=1" : next && next.startsWith("/") ? next : "/");
       router.refresh();
-    } catch {
-      setErr("Can't reach the server. Check your connection.");
+    } catch (e) {
+      setErr(e instanceof DOMException && e.name === "AbortError"
+        ? "The server is taking too long to answer. Wait a minute, then try signing in. Your account may already exist."
+        : "Can't reach the server. Check your connection.");
     } finally {
       setBusy(false);
     }
