@@ -47,6 +47,9 @@ services:
         value: "true"
       - key: LOG_LEVEL
         value: info
+      # Optional: the crew writes its emails with Claude via CrewAI when this is set (templates otherwise).
+      - key: ANTHROPIC_API_KEY
+        sync: false
       # Optional: email (any SMTP provider). Leave empty to use Slack only.
       - key: SMTP_HOST
         sync: false

@@ -14,7 +14,8 @@ RUN useradd --create-home --uid 10001 fred
 WORKDIR /app
 COPY --from=build --chown=fred:fred /app /app
 COPY --from=build --chown=fred:fred /models /models
-ENV PATH="/app/.venv/bin:$PATH" PYTHONUNBUFFERED=1 MODEL_CACHE=/models HF_HUB_OFFLINE=1
+ENV PATH="/app/.venv/bin:$PATH" PYTHONUNBUFFERED=1 MODEL_CACHE=/models HF_HUB_OFFLINE=1 \
+    CREWAI_DISABLE_TELEMETRY=true CREWAI_TRACING_ENABLED=false OTEL_SDK_DISABLED=true
 USER fred
 EXPOSE 8000
 HEALTHCHECK --interval=10s --timeout=3s --retries=5 CMD ["python", "-m", "app.healthcheck"]

@@ -250,6 +250,7 @@ export function makeApi(call: Caller) {
     members: () => call<Members>("/members"),
     accuracy: () => call<Accuracy>("/accuracy"),
     budget: () => call<BudgetOverview>("/budget"),
+    crew: () => call<CrewOverview>("/crew"),
     sso: () => call<SsoInfo>("/sso"),
     sessions: () => call<{ sessions: SessionRow[] }>("/security/sessions"),
     auditLog: (group?: string) => call<{ events: AuditEvent[]; groups: string[]; next: number | null }>(`/security/audit${group ? `?group=${group}` : ""}`),
@@ -425,3 +426,13 @@ export interface BudgetRoundView {
 }
 export interface BudgetOverview { rounds: { id: string; fiscal_year: number; name: string; status: string }[]; current: BudgetRoundView | null;
   members: { id: string; name: string; email: string }[]; departments: string[]; has_books: boolean; can_admin: boolean; next_fiscal_year: number }
+
+export interface CrewActivity { id: string; role: string; kind: "new_task" | "due_soon" | "overdue" | "worse" | "weekly";
+  status: "draft" | "sent" | "failed" | "dismissed" | "done"; subject: string; body: string; writer: string; error: string | null;
+  created_at: string; decided_at: string | null; recipient: string | null; recipient_email: string | null }
+export interface CrewOverview { mode: "off" | "draft" | "auto"; weekly_day: number; last_run_at: string | null;
+  writer: { llm: boolean; model: string }; email_available: boolean; can_edit: boolean;
+  members: { id: string; name: string; email: string }[];
+  agents: { id: string; title: string; tagline: string; replaces: string; owner: string | null; owner_is_default: boolean;
+    week: number; drafts: number; last: string | null }[];
+  activity: CrewActivity[] }

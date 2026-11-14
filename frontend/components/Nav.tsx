@@ -40,6 +40,7 @@ export function Nav({ me }: { me: Me }) {
       {switchErr && <p className="nav-empty err">{switchErr}</p>}
       <div className="nav-section">
         {link("/", "Today")}
+        {link("/crew", "Crew")}
         {link("/actions", "Follow-ups")}
         {link("/documents", "Documents")}
         {link("/budget", "Budget")}

@@ -13,6 +13,9 @@ x-api-env: &api-env
   SMTP_PASSWORD: ${SMTP_PASSWORD:-}
   SMTP_FROM: ${SMTP_FROM:-Fred <fred@localhost>}
   SMTP_TLS: ${SMTP_TLS:-starttls}
+  # The crew: with a key, CrewAI agents write their emails with Claude; without one they use templates.
+  ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+  AGENT_LLM: ${AGENT_LLM:-anthropic/claude-sonnet-5-5}
   # OAuth apps for direct connections (each source shows "Sign in with …" once its pair is set)
   QUICKBOOKS_CLIENT_ID: ${QUICKBOOKS_CLIENT_ID:-}
   QUICKBOOKS_CLIENT_SECRET: ${QUICKBOOKS_CLIENT_SECRET:-}

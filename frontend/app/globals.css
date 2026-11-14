@@ -692,3 +692,29 @@ input[type="checkbox"] { accent-color: var(--accent); }
   .auth-side h2 { font-size: 40px; }
   .auth-points { display: none; }
 }
+
+/* crew */
+.crew-controls { padding: 18px 20px; display: flex; flex-direction: column; gap: 14px; }
+.seg-toggle { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; padding: 3px; width: fit-content; flex-wrap: wrap; }
+.seg-toggle button { border: 0; background: transparent; color: var(--muted); border-radius: 999px; padding: 7px 16px; font-size: 14px; }
+.seg-toggle button.on { background: var(--text); color: #050506; }
+.crew-status { display: flex; gap: 18px; flex-wrap: wrap; }
+.crew-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 12px; }
+.crew-agent { padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }
+.crew-agent p { margin: 0; color: var(--ink-2); }
+.crew-agent-head { display: flex; gap: 12px; align-items: center; }
+.crew-agent-head div { display: flex; flex-direction: column; }
+.crew-agent label { display: flex; flex-direction: column; gap: 4px; }
+.crew-agent select, .crew-controls select { border: 1px solid var(--border); border-radius: 10px; padding: 6px 8px; font: inherit; font-size: 13px; }
+.crew-stats { display: flex; gap: 16px; color: var(--ink-2); }
+.crew-list { list-style: none; margin: 0; padding: 0; }
+.crew-item + .crew-item { border-top: 1px solid var(--border); }
+.crew-row { width: 100%; display: flex; gap: 12px; align-items: center; background: none; border: 0; padding: 14px 16px; text-align: left; }
+.crew-row:hover { background: var(--surface-2); }
+.crew-main { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.crew-main b { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.crew-body { padding: 0 16px 16px 54px; display: flex; flex-direction: column; gap: 10px; }
+.crew-body pre { white-space: pre-wrap; font-family: var(--sans); font-size: 14px; color: var(--ink-2); margin: 0;
+  background: var(--surface-2); border-radius: 10px; padding: 12px 14px; }
+.crew-body input, .crew-body textarea { border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; font: inherit; font-size: 14px; }
+@media (max-width: 640px) { .crew-body { padding-left: 16px; } }

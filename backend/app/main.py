@@ -11,6 +11,7 @@ from sqlalchemy.engine import Connection
 
 from . import revcore as rc
 from .accuracy_api import router as accuracy_router
+from .agents_api import router as crew_router
 from .auth import current_tenant, require_module, team_router
 from .auth import router as auth_router
 from .budget_api import router as budget_router
@@ -101,6 +102,7 @@ app.include_router(security_router)
 app.include_router(sso_router)
 app.include_router(accuracy_router)
 app.include_router(budget_router)
+app.include_router(crew_router)
 
 
 @app.get("/health")

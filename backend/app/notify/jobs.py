@@ -218,7 +218,15 @@ def run_daily(tid: str) -> dict:
         for kind in kinds:
             run_sync(tid, kind, None)  # records its own success or failure in sync_run
             synced.append(kind)
-    return {"synced": synced, "digest": send_digest(tid, synced=synced)}
+    out = {"synced": synced, "digest": send_digest(tid, synced=synced)}
+    try:  # then the crew: follow-ups, reminders, weekly notes
+        from ..agents.runner import run as run_crew
+
+        out["crew"] = run_crew(tid)
+    except Exception as e:
+        log.exception("crew run failed for %s", tid)
+        out["crew"] = {"error": f"{type(e).__name__}: {e}"[:300]}
+    return out
 
 
 def tick(now: datetime | None = None) -> list[dict]:

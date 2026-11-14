@@ -350,3 +350,28 @@ Only records Fred imported from that CRM are touched.
 
 Budget vs actual keeps measuring against the plan for the year whose books are open, so a published plan for
 next year takes over in January.
+
+## The crew: role agents (Increment 12)
+
+Each hired role is an agent (`app/agents/`). Every morning, after the data sync and the digest, the scheduler runs
+the crew for each workspace:
+
+1. **Plan:** pure rules (`planner.py`), no LLM. The agents:
+   - turn critical/high findings nobody owns into follow-up tasks, at most 2 per role per day, most important
+     first;
+   - remind owners 1–2 days before a task is due, the day after it's due, then every 3 days;
+   - flag tasks Fred measures getting worse;
+   - send a weekly note to each role's owner.
+
+   A dedupe key per action makes each one happen exactly once.
+2. **Write** (`writer.py`): with `ANTHROPIC_API_KEY` set, a CrewAI crew writes each message, with one agent per role.
+   The model is `AGENT_LLM`, default `anthropic/claude-sonnet-5-5`. Agents get only the action's facts. A guard
+   rejects any message containing a number that isn't in those facts, and the plain template is used instead. With
+   no key, or if the crew fails, templates are used. CrewAI telemetry is disabled, and CrewAI is imported only when
+   it writes.
+3. **Act** (`runner.py`), depending on the mode (Crew page):
+   - **off:** nothing runs;
+   - **draft:** everything waits for approval, and can be edited first;
+   - **auto:** tasks are created and emails sent straight away.
+
+   Emails go only to workspace members, over the server's SMTP. Everything is logged in `agent_activity`.
