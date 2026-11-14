@@ -52,6 +52,8 @@ class Settings(BaseSettings):
     embedded_worker: bool = False
     # Memory: analyses kept in memory (each holds trained models), and whether to pre-train at startup.
     analysis_cache: int = 8
+    # Run model training and demo setup in a separate worker process (keeps pages responsive). Off in tests.
+    compute_process: bool = True
     warm_on_start: bool = True
 
     @field_validator("database_url")

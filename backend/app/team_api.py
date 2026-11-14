@@ -34,7 +34,13 @@ def analysis(ctx: Ctx = Depends(current), conn: Connection = Depends(get_conn)) 
                                      "refresh on its own.")
         raise HTTPException(409, "No data yet. Connect billing and CRM, or load the demo company in Settings.")
     ws = load_workspace(conn, tenant)
-    return team.get(conn, ws), {"ws": ws, "tenant": tenant, "ctx": ctx}
+    try:
+        return team.get(conn, ws, wait=False), {"ws": ws, "tenant": tenant, "ctx": ctx}
+    except RuntimeError as e:
+        raise HTTPException(503, str(e)) from e
+    except team.NotReady as e:
+        raise HTTPException(409, "Your team is analysing the latest data. The first run takes a minute or two; "
+                                 "this page will refresh on its own.") from e
 
 
 def need(a: team.Analysis, job: str, value) -> None:

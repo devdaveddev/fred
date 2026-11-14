@@ -569,3 +569,31 @@ tr.is-open td { background: var(--surface-2); }
 .row input.grow { flex: 1; min-width: 180px; }
 .empty-icon.spin { display: inline-block; animation: fred-spin 1.6s linear infinite; }
 @keyframes fred-spin { to { transform: rotate(360deg); } }
+
+/* instant feedback while a page loads */
+.page-loading { position: relative; padding-top: 6px; }
+.page-loading-bar { position: fixed; top: 0; left: 0; height: 2px; width: 40%; background: var(--accent); z-index: 50;
+  animation: page-load 1.2s ease-in-out infinite; }
+@keyframes page-load { 0% { transform: translateX(-100%); } 100% { transform: translateX(260%); } }
+.skeleton { background: linear-gradient(90deg, var(--surface-2), var(--border), var(--surface-2)); background-size: 200% 100%;
+  animation: skel 1.4s ease-in-out infinite; border-radius: 8px; }
+.skeleton.h1 { height: 28px; width: 260px; margin-bottom: 12px; }
+.skeleton.p { height: 14px; width: 420px; max-width: 80%; margin-bottom: 28px; }
+.skeleton-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.skeleton.card { height: 140px; }
+@keyframes skel { 0% { background-position: 100% 0; } 100% { background-position: -100% 0; } }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+@media (prefers-reduced-motion: reduce) { .skeleton, .page-loading-bar { animation: none; } }
+
+/* demo notice + data choices */
+.demo-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+  background: var(--accent-soft); color: var(--text); border-radius: 10px; padding: 9px 14px; margin-bottom: 18px; font-size: 13px; }
+.demo-bar a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.choice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-bottom: 24px; }
+.card.choice { padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; text-decoration: none; color: inherit;
+  transition: border-color .15s, transform .15s; }
+.card.choice:hover { border-color: var(--accent); transform: translateY(-1px); }
+.card.choice b { font-size: 16px; }
+.choice-go { color: var(--accent); font-size: 13px; font-weight: 600; margin-top: 4px; }
+.upload-hint { max-width: 760px; margin: -4px 0 12px; }
+#upload, #connect { scroll-margin-top: 16px; }

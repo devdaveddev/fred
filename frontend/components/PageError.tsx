@@ -17,11 +17,11 @@ export function PageError({ title, error }: { title: string; error: unknown }) {
           <p>{msg}</p>
           <Link href="/team" className="btn primary">Go to your team</Link>
         </div>
-      ) : status === 409 && msg.startsWith("Your demo company is being set up") ? (
+      ) : status === 409 && /refresh(es)? on its own/.test(msg) ? (
         <div className="empty">
           <AutoRefresh />
           <div className="empty-icon spin">◌</div>
-          <h3>Setting up your demo company</h3>
+          <h3>{msg.startsWith("Your demo company") ? "Setting up your demo company" : "Your team is working"}</h3>
           <p>{msg}</p>
         </div>
       ) : status === 409 ? (

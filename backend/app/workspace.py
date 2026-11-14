@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import hashlib
+import threading
 from dataclasses import dataclass
 
 import pandas as pd
@@ -48,7 +49,7 @@ def _hash(*frames: pd.DataFrame) -> str:
     return h.hexdigest()[:16]
 
 
-def load_workspace(conn: Connection, tenant: dict) -> Workspace:
+def _load(conn: Connection, tenant: dict) -> Workspace:
     t = {"t": tenant["id"]}
     accounts = pd.read_sql(text("""
         SELECT id::text AS account_id, name, segment, acquisition_channel, employees, industry, country, created_at,
@@ -87,6 +88,53 @@ def load_workspace(conn: Connection, tenant: dict) -> Workspace:
                             usage[["account_id", "active_users"]], feedback[["kind", "body"]],
                             spend.assign(day=spend["day"].astype(str))) \
         + hashlib.sha256(str(fin).encode()).hexdigest()[:8]
-    ensure_snapshot(conn, data)
+    # Own transaction: the snapshot row must exist even if this request's transaction rolls back (a page that
+    # answers "still analysing" does), because the cached workspace and later receipts refer to it.
+    from .db import engine
+
+    with engine.begin() as c:
+        ensure_snapshot(c, data)
     return Workspace(tenant=tenant, data=data, metrics=compute_metrics(data), accounts=accounts, leads=leads,
                      usage=usage, spend_daily=spend, feedback=feedback)
+
+
+# ---------------- cache: reload only when the data changed ----------------
+# A cheap fingerprint (counts and sums computed inside Postgres, a few ms) stands in for re-reading ~70k rows
+# and re-hashing them on every request. Any write that changes the data changes the fingerprint.
+_FINGERPRINT = text("""
+SELECT concat_ws('|',
+  (SELECT count(*) || ':' || coalesce(sum(mrr), 0) FROM subscription_mrr WHERE tenant_id = :t),
+  (SELECT count(*) || ':' || coalesce(sum(length(name) + length(coalesce(description, '')) + coalesce(employees, 0)
+          + length(coalesce(industry, '')) + length(coalesce(segment, '')) + length(coalesce(acquisition_channel, ''))), 0)
+     FROM account WHERE tenant_id = :t),
+  (SELECT count(*) || ':' || count(*) FILTER (WHERE status = 'converted') || ':' || count(*) FILTER (WHERE status = 'open')
+          || ':' || coalesce(max(created_at)::text, '') || ':' || coalesce(sum(length(coalesce(description, ''))), 0)
+     FROM lead WHERE tenant_id = :t),
+  (SELECT count(*) || ':' || coalesce(sum(active_users), 0) FROM usage_weekly WHERE tenant_id = :t),
+  (SELECT count(*) || ':' || coalesce(sum(amount), 0) FROM spend WHERE tenant_id = :t),
+  (SELECT count(*) || ':' || coalesce(sum(length(body)), 0) FROM feedback WHERE tenant_id = :t),
+  (SELECT count(*) || ':' || coalesce(sum(amount), 0) FROM gl_actual WHERE tenant_id = :t),
+  (SELECT count(*) || ':' || coalesce(sum(length(pl_group || kind || coalesce(department, ''))), 0)
+     FROM gl_account WHERE tenant_id = :t),
+  (SELECT count(*) || ':' || coalesce(sum(amount), 0) FROM plan_line WHERE tenant_id = :t),
+  (SELECT count(*) || ':' || coalesce(sum(amount), 0) FROM payroll WHERE tenant_id = :t),
+  (SELECT count(*) || ':' || coalesce(sum(cash), 0) FROM cash_balance WHERE tenant_id = :t),
+  (SELECT gross_margin || ':' || annual_wacc || ':' || data_source FROM tenant WHERE id = :t),
+  current_date)""")
+_ws_cache: dict[str, tuple[str, Workspace]] = {}
+_ws_lock = threading.Lock()
+
+
+def load_workspace(conn: Connection, tenant: dict) -> Workspace:
+    """The workspace's data, re-read from the database only when its fingerprint changed."""
+    key = conn.execute(_FINGERPRINT, {"t": tenant["id"]}).scalar() + "|" + str(sorted(tenant.items()))
+    with _ws_lock:
+        hit = _ws_cache.get(tenant["id"])
+    if hit and hit[0] == key:
+        return hit[1]
+    ws = _load(conn, tenant)
+    with _ws_lock:
+        if len(_ws_cache) >= 8 and tenant["id"] not in _ws_cache:
+            _ws_cache.pop(next(iter(_ws_cache)))
+        _ws_cache[tenant["id"]] = (key, ws)
+    return ws

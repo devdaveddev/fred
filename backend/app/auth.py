@@ -265,7 +265,7 @@ def prepare_demo(tid: str) -> None:
     import logging
     import time
 
-    from .seed import seed_workspace
+    from .compute import seed_demo
     from .team_api import warm_tenant
 
     log = logging.getLogger("fred.auth")
@@ -279,10 +279,7 @@ def prepare_demo(tid: str) -> None:
     if state != "preparing":
         return
     try:
-        with engine.begin() as c:
-            if c.execute(text("SELECT data_source FROM tenant WHERE id = :t FOR UPDATE"), {"t": tid}).scalar() != "preparing":
-                return  # already done (or the workspace switched to real data)
-            seed_workspace(c, tid)
+        seed_demo(tid)  # in the worker process (sets data_source = 'demo' when done)
         log.info("demo company ready for %s", tid)
     except Exception:
         log.exception("demo setup failed for %s", tid)

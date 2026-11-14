@@ -49,6 +49,10 @@ def _labels(texts: list[str], assign: np.ndarray, k: int) -> dict[int, str]:
     return out
 
 
+MAX_CLOSED = 2500
+MAX_OPEN = 3000
+
+
 def discover(accounts: pd.DataFrame, mrr: pd.DataFrame, leads: pd.DataFrame, as_of: pd.Timestamp, embed,
              k_range=range(6, 15)) -> dict:
     acc = accounts.dropna(subset=["description"]).reset_index(drop=True)
@@ -67,8 +71,12 @@ def discover(accounts: pd.DataFrame, mrr: pd.DataFrame, leads: pd.DataFrame, as_
     # economics per segment
     now = mrr[mrr["month"] == as_of].set_index("account_id")["mrr"]
     yr = mrr[mrr["month"] == as_of - pd.DateOffset(months=12)].set_index("account_id")["mrr"]
-    leads = leads[(leads["status"] == "open") | (leads["created_at"] >= as_of - pd.DateOffset(months=12))] \
-        .reset_index(drop=True)
+    leads = leads[(leads["status"] == "open") | (leads["created_at"] >= as_of - pd.DateOffset(months=12))]
+    # Conversion rates per segment don't need every closed lead: the most recent ones are plenty and keep
+    # the embedding cost flat as the CRM grows. Open leads are all kept (they're the lookalike candidates).
+    open_l = leads[leads["status"] == "open"].sort_values("created_at").tail(MAX_OPEN)
+    closed_l = leads[leads["status"] != "open"].sort_values("created_at").tail(MAX_CLOSED)
+    leads = pd.concat([closed_l, open_l]).reset_index(drop=True)
     lead_texts = [_clean(d, n) for d, n in zip(leads["description"].fillna(""), leads["company"])]
     LE = embed(lead_texts)
     lead_seg = np.argmax(LE @ km.cluster_centers_.T, axis=1)

@@ -231,6 +231,26 @@ export function DataSources({ initial }: { initial: Sources }) {
           {params.get("source_error") ?? `${src.catalog.find((c) => c.kind === params.get("connected"))?.name ?? "Source"} connected. The first sync is running.`}
         </div>
       )}
+      <div className="choice-grid">
+        <a href="#upload" className="card choice">
+          <b>Upload your own data</b>
+          <span className="muted small">CSV files from Excel, Google Sheets, QuickBooks, Xero, Gusto, Rippling, ad platforms or surveys. Each card below has a sample file to copy.</span>
+          <span className="choice-go">Start with billing: one row per customer per month ↓</span>
+        </a>
+        <a href="#connect" className="card choice">
+          <b>Connect a tool</b>
+          <span className="muted small">Stripe, HubSpot, Salesforce, QuickBooks, Xero, Gusto, ad platforms, Zendesk, Intercom. Synced every morning.</span>
+          <span className="choice-go">See connections ↓</span>
+        </a>
+      </div>
+
+      <section id="upload">
+        <div className="eyebrow">Upload your own data (CSV)</div>
+        <p className="muted small upload-hint">Billing is the one file everything needs. Add accounting, payroll and the budget for budget vs actual; CRM leads and ad spend for the lead and marketing roles; survey comments for voice of customer. Re-uploading a file replaces that file&apos;s data.</p>
+        <div className="src-grid">{Object.entries(src.templates).map(([k, t]) => <UploadCard key={k} kind={k} t={t} onDone={refresh} />)}</div>
+      </section>
+
+      <div id="connect" />
       {CATEGORY.map(([cat, label]) => {
         const items = src.catalog.filter((c) => c.category === cat);
         return items.length ? (
@@ -241,10 +261,6 @@ export function DataSources({ initial }: { initial: Sources }) {
         ) : null;
       })}
 
-      <section>
-        <div className="eyebrow">Upload files (QuickBooks, Xero, Gusto, Rippling, ad platforms, surveys…)</div>
-        <div className="src-grid">{Object.entries(src.templates).map(([k, t]) => <UploadCard key={k} kind={k} t={t} onDone={refresh} />)}</div>
-      </section>
 
       <Mapping onChange={refresh} />
 

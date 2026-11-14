@@ -10,7 +10,15 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     <ReceiptProvider>
       <div className="shell">
         <Nav me={me} />
-        <main className="main">{children}</main>
+        <main className="main">
+          {["demo", "preparing"].includes(me.workspace.data_source) && (
+            <div className="demo-bar">
+              <span>You&apos;re exploring a <b>demo company</b>. Every number here is made up.</span>
+              <a href="/settings/data#upload">Use your own data →</a>
+            </div>
+          )}
+          {children}
+        </main>
       </div>
     </ReceiptProvider>
   );

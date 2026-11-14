@@ -7,7 +7,9 @@ numbers and ends in concrete actions. The whole run makes zero LLM calls.
 """
 from __future__ import annotations
 
+import contextlib
 import json
+import logging
 import threading
 import time
 from dataclasses import asdict, dataclass, field
@@ -427,30 +429,103 @@ def run(ws: Workspace, goal: dict | None = None) -> Analysis:
 
 # ---------------- cache + persistence ----------------
 _cache: dict[str, Analysis] = {}
-_lock = threading.Lock()
+_lock = threading.Lock()  # guards the dicts only; never held while computing
+_running: dict[str, threading.Event] = {}
+_failed: dict[str, str] = {}
+_compute = threading.Semaphore(1)  # one analysis at a time: bounds memory on small servers
 
 
-def get(conn: Connection, ws: Workspace) -> Analysis:
-    """One analysis per snapshot: models retrain only when the data changes."""
-    with _lock:
-        hit = _cache.get(ws.snapshot_id)
-        if hit is None:
-            hit = run(ws)
-            if len(_cache) >= max(1, get_settings().analysis_cache):  # most recent workspaces stay warm
-                _cache.pop(next(iter(_cache)))
-            _cache[ws.snapshot_id] = hit
-            save_receipts(conn, ws.tenant["id"], hit.receipts)
-            for card in [m.card for m in (hit.lead_model, hit.churn_model) if m is not None]:
-                conn.execute(text("""
-                    INSERT INTO model_run (id, tenant_id, kind, snapshot_id, algorithm, params, metrics, features,
-                                           n_train, n_test)
-                    VALUES (:id, :t, :kind, :snap, :alg, CAST(:params AS JSONB), CAST(:metrics AS JSONB),
-                            CAST(:features AS JSONB), :ntr, :nte)
-                    ON CONFLICT (id) DO NOTHING"""),
-                    {"id": card.version, "t": ws.tenant["id"], "kind": card.kind, "snap": card.snapshot_id,
-                     "alg": card.algorithm, "params": json.dumps(card.params), "metrics": json.dumps(card.metrics),
-                     "features": json.dumps(card.features), "ntr": card.n_train, "nte": card.n_test})
+class NotReady(Exception):
+    """The analysis for this data is being computed; ask again shortly."""
+
+
+def _persist(conn: Connection, ws: Workspace, hit: Analysis) -> None:
+    from .metrics import ensure_snapshot
+
+    ensure_snapshot(conn, ws.data)
+    save_receipts(conn, ws.tenant["id"], hit.receipts)
+    for card in [m.card for m in (hit.lead_model, hit.churn_model) if m is not None]:
+        conn.execute(text("""
+            INSERT INTO model_run (id, tenant_id, kind, snapshot_id, algorithm, params, metrics, features,
+                                   n_train, n_test)
+            VALUES (:id, :t, :kind, :snap, :alg, CAST(:params AS JSONB), CAST(:metrics AS JSONB),
+                    CAST(:features AS JSONB), :ntr, :nte)
+            ON CONFLICT (id) DO NOTHING"""),
+            {"id": card.version, "t": ws.tenant["id"], "kind": card.kind, "snap": card.snapshot_id,
+             "alg": card.algorithm, "params": json.dumps(card.params), "metrics": json.dumps(card.metrics),
+             "features": json.dumps(card.features), "ntr": card.n_train, "nte": card.n_test})
+
+
+def _build(ws: Workspace) -> Analysis:
+    """Compute, cache and persist one snapshot's analysis. Always releases waiters, even on failure."""
+    snap = ws.snapshot_id
+    try:
+        with _compute:
+            with _lock:
+                hit = _cache.get(snap)
+            if hit is None:
+                from .compute import analyse
+
+                hit = analyse(ws)  # in the worker process: page requests stay responsive meanwhile
+                from .db import engine
+
+                with engine.begin() as conn:
+                    _persist(conn, ws, hit)
+                with _lock:
+                    if len(_cache) >= max(1, get_settings().analysis_cache):  # most recent workspaces stay warm
+                        _cache.pop(next(iter(_cache)))
+                    _cache[snap] = hit
+                    _failed.pop(snap, None)
         return hit
+    except Exception as e:
+        logging.getLogger("fred.team").exception("analysis failed for %s", ws.tenant.get("slug"))
+        with _lock:
+            _failed[snap] = f"{type(e).__name__}: {e}"[:300]
+        raise
+    finally:
+        with _lock:
+            ev = _running.pop(snap, None)
+        if ev:
+            ev.set()
+
+
+def get(conn: Connection, ws: Workspace, wait: bool = True) -> Analysis:
+    """One analysis per data snapshot: models retrain only when the data changes.
+
+    wait=False (web pages): if it isn't ready, start it in the background and raise NotReady at once, so a
+    click never hangs on model training. wait=True (scheduler, write-back, warm-up): compute or wait for it.
+    """
+    snap = ws.snapshot_id
+    with _lock:
+        hit = _cache.get(snap)
+        if hit is not None:
+            return hit
+        ev = _running.get(snap)
+        if ev is None and not wait and snap in _failed:
+            # don't retry a failing analysis on every page view; new data (a new snapshot) retries it
+            raise RuntimeError(f"The analysis couldn't run on this data: {_failed[snap]}")
+        starter = ev is None
+        if starter:
+            ev = _running[snap] = threading.Event()
+    if starter and wait:
+        return _build(ws)
+    if starter:
+        threading.Thread(target=lambda: _safe_build(ws), name=f"analysis-{snap[:8]}", daemon=True).start()
+        raise NotReady()
+    if not wait:
+        raise NotReady()
+    ev.wait()
+    with _lock:
+        hit = _cache.get(snap)
+        err = _failed.get(snap)
+    if hit is None:
+        raise RuntimeError(err or "analysis failed")
+    return hit
+
+
+def _safe_build(ws: Workspace) -> None:
+    with contextlib.suppress(Exception):  # logged and remembered in _build
+        _build(ws)
 
 
 def finding_dict(f: Finding) -> dict:
