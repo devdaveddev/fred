@@ -47,6 +47,11 @@ export function AuthForm({ mode }: { mode: Mode }) {
         return;
       }
       const next = params.get("next");
+      if (mode === "signup") {
+        // roles picked on the landing page: add them straight away
+        const hire = (params.get("hire") ?? "").split(",").filter((x) => /^[a-z_]+$/.test(x));
+        for (const id of hire) await fetch(`/api/team/${id}/hire`, { method: "POST" }).catch(() => undefined);
+      }
       router.push(mode === "signup" ? "/team?welcome=1" : next && next.startsWith("/") ? next : "/");
       router.refresh();
     } catch {

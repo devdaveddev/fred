@@ -123,53 +123,103 @@ const ROLES = [
   },
 ];
 
-function Rail() {
-  const ref = useRef<HTMLElement>(null);
-  const track = useRef<HTMLDivElement>(null);
-  const [x, setX] = useState(0);
-  const [h, setH] = useState<number | null>(null);
+function Rail({ picked, toggle }: { picked: string[]; toggle: (id: string) => void }) {
+  const box = useRef<HTMLDivElement>(null);
+  const drag = useRef<{ x: number; left: number; moved: boolean } | null>(null);
+  const [edge, setEdge] = useState({ start: true, end: false });
+
+  const update = () => {
+    const el = box.current;
+    if (el) setEdge({ start: el.scrollLeft < 8, end: el.scrollLeft + el.clientWidth > el.scrollWidth - 8 });
+  };
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 860px), (prefers-reduced-motion: reduce)");
-    let raf = 0;
-    const measure = () => {
-      if (mq.matches || !track.current) { setH(null); setX(0); return; }
-      const extra = track.current.scrollWidth - window.innerWidth;
-      setH(window.innerHeight + Math.max(0, extra));
-    };
-    const tick = () => {
-      raf = 0;
-      if (mq.matches || !ref.current || !track.current) return;
-      const r = ref.current.getBoundingClientRect();
-      const extra = track.current.scrollWidth - window.innerWidth;
-      const p = Math.min(1, Math.max(0, -r.top / Math.max(1, r.height - window.innerHeight)));
-      setX(-p * Math.max(0, extra));
-    };
-    const on = () => { if (!raf) raf = requestAnimationFrame(tick); };
-    measure(); tick();
-    window.addEventListener("scroll", on, { passive: true });
-    window.addEventListener("resize", () => { measure(); on(); });
-    return () => { window.removeEventListener("scroll", on); cancelAnimationFrame(raf); };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
   }, []);
+  const step = (dir: 1 | -1) => {
+    const el = box.current;
+    const card = el?.querySelector<HTMLElement>(".lp-card");
+    if (el && card) el.scrollBy({ left: dir * (card.offsetWidth + 32), behavior: "smooth" });
+  };
+
   return (
-    <section ref={ref} className="lp-rail" style={h ? { height: h } : undefined} id="team">
-      <div className="lp-rail-sticky">
-        <div ref={track} className="lp-track" style={{ transform: `translate3d(${x}px,0,0)` }}>
-          <div className="lp-rail-intro">
-            <div className="lp-label">02 / The team</div>
-            <h2 className="lp-h2">Five roles.<br /><span className="serif glow">One login.</span></h2>
-            <p className="lp-small">Hire the ones you need. Each starts working as soon as it has the data its job needs. Views below use example data.</p>
+    <section className="lp-sec lp-team" id="team">
+      <div className="lp-team-head">
+        <div>
+          <div className="lp-label">02 / The team</div>
+          <h2 className="lp-h2">Five roles.<br /><span className="serif glow">Pick yours.</span></h2>
+        </div>
+        <div className="lp-team-side">
+          <p className="lp-small">Click a role to add it. Each starts as soon as it has the data it needs. Views use example data.</p>
+          <div className="lp-arrows">
+            <button aria-label="Previous role" onClick={() => step(-1)} disabled={edge.start}>←</button>
+            <button aria-label="Next role" onClick={() => step(1)} disabled={edge.end}>→</button>
           </div>
-          {ROLES.map((r) => (
-            <article key={r.id} className="lp-card">
-              <div className="lp-card-top"><span>{r.n} / {r.title}</span><span className="muted">Instead of hiring: {r.instead}</span></div>
-              <div className="lp-card-view">{r.view}</div>
-              <h3>{r.title}: <span className="serif">{r.italic}</span></h3>
-              <ul>{r.does.map((d) => <li key={d}>{d}</li>)}</ul>
-            </article>
-          ))}
         </div>
       </div>
+      <div
+        ref={box}
+        className="lp-scroller"
+        onScroll={update}
+        onPointerDown={(e) => {
+          if (e.pointerType !== "mouse" || !box.current) return;
+          drag.current = { x: e.clientX, left: box.current.scrollLeft, moved: false };
+        }}
+        onPointerMove={(e) => {
+          const d = drag.current;
+          if (!d || !box.current) return;
+          const dx = e.clientX - d.x;
+          if (Math.abs(dx) > 5) { d.moved = true; box.current.classList.add("dragging"); }
+          if (d.moved) box.current.scrollLeft = d.left - dx;
+        }}
+        onPointerUp={() => { setTimeout(() => { drag.current = null; }, 0); box.current?.classList.remove("dragging"); }}
+        onPointerLeave={() => { drag.current = null; box.current?.classList.remove("dragging"); }}
+      >
+        {ROLES.map((r) => {
+          const on = picked.includes(r.id);
+          return (
+            <button
+              key={r.id} type="button" className={`lp-card ${on ? "on" : ""}`} aria-pressed={on}
+              onClick={() => { if (!drag.current?.moved) toggle(r.id); }}
+            >
+              <div className="lp-card-top"><span>{r.n} / {r.title}</span><span className="lp-add">{on ? "Added ✓" : "Add +"}</span></div>
+              <div className="lp-card-view">{r.view}</div>
+              <h3>{r.title}: <span className="serif">{r.italic}</span></h3>
+              <p className="lp-instead">Instead of hiring a {r.instead.toLowerCase()}</p>
+              <ul>{r.does.map((d) => <li key={d}>{d}</li>)}</ul>
+            </button>
+          );
+        })}
+      </div>
     </section>
+  );
+}
+
+function PickBar({ picked, signedIn, clear }: { picked: string[]; signedIn: boolean; clear: () => void }) {
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState<string | null>(null);
+  if (!picked.length) return null;
+  const names = ROLES.filter((r) => picked.includes(r.id)).map((r) => r.title);
+  const go = async () => {
+    if (!signedIn) { window.location.href = `/signup?hire=${picked.join(",")}`; return; }
+    setBusy(true); setErr(null);
+    for (const id of picked) {
+      const r = await fetch(`/api/team/${id}/hire`, { method: "POST" });
+      if (!r.ok) {
+        const j = await r.json().catch(() => ({}));
+        setErr(j.detail ?? "Couldn't add the roles."); setBusy(false); return;
+      }
+    }
+    window.location.href = "/team";
+  };
+  return (
+    <div className="lp-pickbar" role="status">
+      <span><b>{picked.length}</b> {picked.length === 1 ? "role" : "roles"} · <span className="muted">{names.join(", ")}</span></span>
+      {err && <span className="err">{err}</span>}
+      <button className="lp-linkbtn" onClick={clear}>Clear</button>
+      <button className="lp-btn" onClick={go} disabled={busy}>{busy ? "Adding…" : signedIn ? "Add to my team ↗" : "Start with these ↗"}</button>
+    </div>
   );
 }
 
@@ -183,6 +233,8 @@ const PROOF = [
 ];
 
 export function Landing({ signedIn }: { signedIn: boolean }) {
+  const [picked, setPicked] = useState<string[]>([]);
+  const toggle = (id: string) => setPicked((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]));
   const cta = signedIn ? { href: "/", label: "Open Fred" } : { href: "/signup", label: "Start with a demo company" };
   return (
     <div className="lp">
@@ -212,18 +264,13 @@ export function Landing({ signedIn }: { signedIn: boolean }) {
       <section className="lp-sec">
         <div className="lp-label">01 / The problem</div>
         <Reveal segs={[
-          { t: "Today you pay" }, { t: "twice.", s: "serif" }, { t: "Six tools to hold the numbers, and" },
-          { t: "three hires", s: "glow" }, { t: "to turn them into decisions. Fred sells the" },
-          { t: "finished work:", s: "serif" }, { t: "the variance explained, the memo written, the task owned," },
-          { t: "and whether the fix worked.", s: "line" },
+          { t: "You pay" }, { t: "twice:", s: "serif" }, { t: "for the tools, and for" },
+          { t: "the people who run them.", s: "glow" }, { t: "Fred does" }, { t: "the work.", s: "line" },
         ]} />
-        <div className="lp-cols">
-          <p>A Series A company typically spends $100–250K a year on planning, metrics, intent, attribution, churn and research tools, plus $450–600K on the people who run them.</p>
-          <p className="serif-sm">Fred replaces the <em>pulling, reconciling, scoring and writing</em>. A named person still owns every decision.</p>
-        </div>
+        <p className="lp-note">$100–250K a year in tools, plus $450–600K in salaries, at a typical Series A company. A named person still owns every decision.</p>
       </section>
 
-      <Rail />
+      <Rail picked={picked} toggle={toggle} />
 
       <section className="lp-sec" id="how">
         <div className="lp-label">03 / How it works</div>
@@ -277,6 +324,8 @@ export function Landing({ signedIn }: { signedIn: boolean }) {
           <p>Negotiating, persuading other teams, and judgment calls the data can&apos;t settle. Fred does the analysis and writes it up; your team decides. It doesn&apos;t sell contact lists or send outbound email: it connects to the tools that do.</p>
         </div>
       </section>
+
+      <PickBar picked={picked} signedIn={signedIn} clear={() => setPicked([])} />
 
       <footer className="lp-end">
         <h2 className="lp-giant small"><span className="g1">Hire the</span> <span className="serif fluid">team.</span></h2>
