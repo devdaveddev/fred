@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Me } from "@/lib/api";
 import { Avatar } from "./team";
 
@@ -10,6 +10,8 @@ export function Nav({ me }: { me: Me }) {
   const path = usePathname();
   const router = useRouter();
   const [switchErr, setSwitchErr] = useState<string | null>(null);
+  const [open, setOpen] = useState(false);
+  useEffect(() => setOpen(false), [path]); // close the phone menu after navigating
   const link = (href: string, label: string, sub = false) => (
     <Link key={href} href={href} className={`navlink ${sub ? "sub" : ""} ${path === href ? "active" : ""}`}>{label}</Link>
   );
@@ -19,8 +21,11 @@ export function Nav({ me }: { me: Me }) {
     router.refresh();
   };
   return (
-    <nav className="sidebar">
-      <div className="brand">fred<span>.</span></div>
+    <>
+    <button className="menu-btn" aria-label="Open menu" aria-expanded={open} onClick={() => setOpen(true)}>☰</button>
+    {open && <div className="nav-scrim" onClick={() => setOpen(false)} />}
+    <nav className={`sidebar ${open ? "open" : ""}`}>
+      <Link href="/" className="brand">fred<span>.</span></Link>
       {me.workspaces.length > 1 ? (
         <select className="workspace-switch" value={me.workspace.id} aria-label="Workspace"
           onChange={async (e) => {
@@ -56,5 +61,6 @@ export function Nav({ me }: { me: Me }) {
         </div>
       </div>
     </nav>
+    </>
   );
 }

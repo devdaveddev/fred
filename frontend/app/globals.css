@@ -597,3 +597,98 @@ tr.is-open td { background: var(--surface-2); }
 .choice-go { color: var(--accent); font-size: 13px; font-weight: 600; margin-top: 4px; }
 .upload-hint { max-width: 760px; margin: -4px 0 12px; }
 #upload, #connect { scroll-margin-top: 16px; }
+
+/* ======================================================================
+   v3: one look across landing, sign-in and app (dark, Inter Tight +
+   Instrument Serif, violet accents). Overrides the earlier layers.
+   ====================================================================== */
+:root, :root:not([data-theme]) {
+  --bg: #050506;
+  --surface: #0e0e12;
+  --surface-2: #16161c;
+  --border: #22222b;
+  --text: #f4f3ef;
+  --muted: #8d8c95;
+  --ink-2: #c9c8d0;
+  --accent: #a3a0ff;
+  --accent-strong: #6f6cf6;
+  --accent-soft: #1b1a33;
+  --good: #5cd69a;
+  --good-soft: #10261b;
+  --watch: #f0b75a;
+  --watch-soft: #2a2010;
+  --bad: #ff8f8a;
+  --bad-soft: #2d1414;
+  --base-series: #5d5c66;
+  --scen-series: #a3a0ff;
+  --radius: 14px;
+  --shadow: none;
+  --sans: "Inter Tight", Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  color-scheme: dark;
+}
+body { font-family: var(--sans); font-size: 15px; letter-spacing: -0.005em; background: var(--bg); }
+.serif { font-family: var(--serif); font-style: italic; font-weight: 400; }
+
+/* brand */
+.brand { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 26px; letter-spacing: -0.02em; }
+.brand span { color: var(--accent); }
+
+/* app shell */
+.sidebar { background: #08080b; border-right: 1px solid var(--border); }
+.navlink { border-radius: 10px; color: var(--muted); }
+.navlink:hover { background: var(--surface-2); color: var(--text); }
+.navlink.active { background: var(--accent-soft); color: var(--text); box-shadow: inset 2px 0 0 var(--accent); font-weight: 500; }
+.page-head h1 { font-size: clamp(28px, 3vw, 38px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.05; }
+.page-head p { color: var(--muted); }
+h1, h2, h3, h4 { font-weight: 500; letter-spacing: -0.02em; }
+.card { background: var(--surface); border-color: var(--border); }
+
+/* buttons: the landing page's white pill for the main action */
+.btn { border-radius: 999px; border-color: #2c2c36; background: transparent; font-weight: 500; padding: 8px 16px; }
+.btn:hover:not(:disabled) { background: var(--surface-2); }
+.btn.primary { background: var(--text); color: #050506; border-color: var(--text); }
+.btn.primary:hover:not(:disabled) { background: var(--accent); border-color: var(--accent); color: #050506; }
+.btn.small { padding: 4px 12px; }
+.pill.good, .pill.watch, .pill.bad, .pill.neutral-pill { border-radius: 999px; }
+
+/* inputs */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select, textarea {
+  background: var(--surface) !important; border-color: var(--border) !important; color: var(--text) !important; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent) !important; box-shadow: 0 0 0 3px var(--accent-soft); }
+input[type="checkbox"] { accent-color: var(--accent); }
+
+/* sign-in / sign-up: same language as the landing page */
+.auth-wrap { background: var(--bg); grid-template-columns: 1.15fr 1fr; }
+.auth-side { background:
+    radial-gradient(60% 50% at 15% 85%, #2c2687 0%, transparent 60%),
+    radial-gradient(50% 40% at 80% 10%, #3a1f5c 0%, transparent 60%), #050506;
+  border-right: 1px solid var(--border); position: relative; overflow: hidden; }
+.auth-side h2 { font-size: clamp(40px, 4.6vw, 72px); font-weight: 500; letter-spacing: -0.045em; line-height: 0.98; max-width: 620px; }
+.auth-side h2 .serif { display: block; font-weight: 400; background: linear-gradient(100deg, #6f6cf6, #b7c3ff 50%, #d6a8ff);
+  -webkit-background-clip: text; background-clip: text; color: transparent; }
+.auth-side p { color: var(--ink-2); font-size: 16px; }
+.auth-points li::before { content: "→"; color: var(--accent); font-weight: 400; }
+.brand.big { font-size: 34px; }
+.auth-form h1 { font-size: 32px; font-weight: 500; letter-spacing: -0.035em; }
+.auth-form label { font-weight: 500; color: var(--ink-2); }
+.auth-form .btn.wide { padding: 13px 18px; font-size: 15px; }
+
+/* phones: the sidebar becomes a slide-out menu */
+.menu-btn { display: none; }
+@media (max-width: 860px) {
+  .shell { grid-template-columns: 1fr; }
+  .sidebar { position: fixed; inset: 0 auto 0 0; width: min(290px, 84vw); z-index: 40; transform: translateX(-102%);
+    transition: transform .25s ease; overflow-y: auto; }
+  .sidebar.open { transform: none; box-shadow: 20px 0 60px #000a; }
+  .nav-scrim { position: fixed; inset: 0; background: #0008; z-index: 35; }
+  .menu-btn { display: inline-flex; position: fixed; top: 12px; left: 12px; z-index: 30; width: 42px; height: 42px; border-radius: 50%;
+    align-items: center; justify-content: center; background: #121218ee; border: 1px solid var(--border); color: var(--text);
+    backdrop-filter: blur(10px); font-size: 18px; }
+  .main { padding: 70px 16px 60px; }
+  .page-head h1 { font-size: 28px; }
+  .auth-wrap { grid-template-columns: 1fr; }
+  .auth-side { padding: 40px 24px 28px; border-right: 0; border-bottom: 1px solid var(--border); }
+  .auth-side h2 { font-size: 40px; }
+  .auth-points { display: none; }
+}

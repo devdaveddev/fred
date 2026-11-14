@@ -44,9 +44,40 @@ def _reset() -> None:
         _pool = None
 
 
-def _submit(fn, *args):
+def memory_limit_mb() -> int | None:
+    """The container's memory limit (cgroup v2 or v1), if there is one."""
+    for path in ("/sys/fs/cgroup/memory.max", "/sys/fs/cgroup/memory/memory.limit_in_bytes"):
+        try:
+            with open(path) as fh:
+                raw = fh.read().strip()
+        except OSError:
+            continue
+        if raw.isdigit() and int(raw) < 1 << 60:
+            return int(raw) // (1024 * 1024)
+    return None
+
+
+_inline_warned = False
+
+
+def _use_process() -> bool:
+    """A second process needs roughly 450 MB more. On small plans run inline: slower clicks beat crashing."""
+    global _inline_warned
     if not get_settings().compute_process:
-        return fn(*args)  # tests and scripts: run inline
+        return False
+    limit = memory_limit_mb()
+    if limit is not None and limit < 1100:
+        if not _inline_warned:
+            log.warning("only %d MB of memory: running analyses in-process. Use a 2 GB instance for responsive "
+                        "pages while the team works.", limit)
+            _inline_warned = True
+        return False
+    return True
+
+
+def _submit(fn, *args):
+    if not _use_process():
+        return fn(*args)  # tests, scripts, and small servers: run inline
     try:
         return _executor().submit(fn, *args).result()
     except BrokenProcessPool:

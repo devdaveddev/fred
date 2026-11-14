@@ -31,7 +31,12 @@ body:has(.lp) { background: #050506; }
 
 /* nav */
 .lp-nav { position: fixed; inset: 0 0 auto 0; z-index: 20; display: flex; justify-content: space-between; align-items: center;
-  padding: 22px clamp(16px, 4.5vw, 72px); mix-blend-mode: difference; }
+  padding: 18px clamp(16px, 4.5vw, 72px); border-bottom: 1px solid transparent;
+  transition: transform .3s ease, background .3s ease, border-color .3s ease, padding .3s ease; }
+/* once you scroll: an opaque, blurred bar, so page text never shows through it; hides while scrolling down */
+.lp-nav.solid { background: rgba(5, 5, 6, 0.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom-color: #1d1d23; padding-top: 12px; padding-bottom: 12px; }
+.lp-nav.hidden { transform: translateY(-100%); }
 .lp-logo { font-family: var(--serif); font-style: italic; font-size: 26px; letter-spacing: -0.02em; }
 .lp-logo span { color: var(--v2); }
 .lp-links { display: flex; gap: 22px; align-items: center; font-size: 13px; }
@@ -207,4 +212,20 @@ body:has(.lp) { background: #050506; }
 
 @media (prefers-reduced-motion: reduce) {
   .lp .glow, .lp .fluid, .lp-marquee div { animation: none; }
+}
+
+/* mock-ups never overlap their own text: flex column, footer pinned with margin-top:auto */
+.mock { display: flex; flex-direction: column; }
+.mock-foot { position: static; margin-top: auto; padding-top: 12px; }
+@media (max-width: 640px) {
+  .lp-card-view { aspect-ratio: auto; min-height: 250px; }
+  .mock { position: relative; inset: auto; padding: 18px; }
+  .bridge .br-row { grid-template-columns: 104px 1fr; gap: 10px; margin: 6px 0; }
+  .list .li { grid-template-columns: 1fr 80px 36px; }
+  .seg { min-height: 260px; }
+  .curve { min-height: 240px; }
+  .curve svg { position: relative; left: 0; top: 0; width: 100%; height: 140px; }
+  .lp-card h3 { font-size: 22px; }
+  .lp-team-side { max-width: none; }
+  .lp-arrows { display: none; }
 }

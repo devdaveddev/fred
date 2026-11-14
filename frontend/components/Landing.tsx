@@ -234,11 +234,23 @@ const PROOF = [
 
 export function Landing({ signedIn }: { signedIn: boolean }) {
   const [picked, setPicked] = useState<string[]>([]);
+  const [navHidden, setNavHidden] = useState(false);
+  const [navSolid, setNavSolid] = useState(false);
+  useEffect(() => {
+    let last = window.scrollY;
+    const on = () => {
+      const y = window.scrollY;
+      setNavSolid(y > 24);
+      if (Math.abs(y - last) > 6) { setNavHidden(y > last && y > 120); last = y; }
+    };
+    window.addEventListener("scroll", on, { passive: true });
+    return () => window.removeEventListener("scroll", on);
+  }, []);
   const toggle = (id: string) => setPicked((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]));
   const cta = signedIn ? { href: "/", label: "Open Fred" } : { href: "/signup", label: "Start with a demo company" };
   return (
     <div className="lp">
-      <nav className="lp-nav">
+      <nav className={`lp-nav ${navSolid ? "solid" : ""} ${navHidden ? "hidden" : ""}`}>
         <Link href="/welcome" className="lp-logo">fred<span>.</span></Link>
         <div className="lp-links">
           <a href="#team">Team</a><a href="#how">How it works</a><a href="#proof">Proof</a><a href="#trust">Security</a>
