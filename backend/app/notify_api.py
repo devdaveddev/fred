@@ -33,7 +33,7 @@ def overview(ctx: Ctx = Depends(current), conn: Connection = Depends(get_conn)) 
     now = datetime.now(UTC)
     nxt = jobs.next_run(now, cfg["digest_hour"], cfg["timezone"], jobs.today_done(conn, ctx.tenant_id, now, cfg["timezone"]))
     try:
-        d = jobs.compose(conn, ctx.tenant_id, now=now, touch=False)
+        d = jobs.compose(conn, ctx.tenant_id, now=now, touch=False, wait=False)
         preview = None if d is None else {
             "empty": d.empty, "summary": d.counts(), "findings": d.findings, "more_findings": d.more_findings,
             "task_updates": d.task_updates, "overdue": d.overdue, "sync_problems": d.sync_problems}
@@ -142,4 +142,9 @@ def test(body: TestIn, ctx: Ctx = Depends(current), conn: Connection = Depends(g
 @router.post("/send-now")
 def send_now(ctx: Ctx = Depends(admin)) -> dict:
     """Send the digest now even if there's nothing new (to see it). Marks what it carried as told."""
-    return jobs.send_digest(ctx.tenant_id, force=True)
+    from . import team
+
+    try:
+        return jobs.send_digest(ctx.tenant_id, force=True, wait=False)
+    except team.NotReady as e:
+        raise HTTPException(409, "Your team is still analysing the latest data. Try again in a minute or two.") from e

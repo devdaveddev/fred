@@ -211,7 +211,7 @@ def disconnect(kind: str, ctx: Ctx = Depends(admin), conn: Connection = Depends(
 
 
 # ------------------------------------------------------------------ CRM write-back
-def run_writeback(tid: str, kind: str, user_id: str | None) -> dict:
+def run_writeback(tid: str, kind: str, user_id: str | None, wait: bool = True) -> dict:
     """Push current lead scores and churn risk to the CRM. Logged like a sync, as 'writeback:<kind>'."""
     from . import team
 
@@ -221,7 +221,7 @@ def run_writeback(tid: str, kind: str, user_id: str | None) -> dict:
         with engine.begin() as conn:
             t = conn.execute(text("""SELECT id::text AS id, slug, name, currency, gross_margin, annual_wacc, data_source
                                      FROM tenant WHERE id = :t"""), {"t": tid}).mappings().first()
-            a = team.get(conn, load_workspace(conn, dict(t)))
+            a = team.get(conn, load_workspace(conn, dict(t)), wait=wait)
             lp, ap = writeback.payload(conn, tid, kind, a.scored_leads, a.at_risk)
             secret, _ = registry.load_credentials(conn, tid, kind)
         if kind == "hubspot":
@@ -233,6 +233,10 @@ def run_writeback(tid: str, kind: str, user_id: str | None) -> dict:
                                 [] if lp or ap else [("Nothing to write yet: no scored open leads or at-risk accounts "
                                                      "came from this CRM.")])
         return {"ok": True, "stats": stats}
+    except team.NotReady:
+        with engine.begin() as conn:  # not a failure: nothing was attempted yet
+            conn.execute(text("DELETE FROM sync_run WHERE id = :id"), {"id": run_id})
+        raise
     except Exception as e:
         msg = str(e) if isinstance(e, SourceError | RuntimeError) else f"{type(e).__name__}: {e}"
         with engine.begin() as conn:
@@ -244,7 +248,12 @@ def run_writeback(tid: str, kind: str, user_id: str | None) -> dict:
 def writeback_now(kind: str, ctx: Ctx = Depends(admin)) -> dict:
     if not registry.SOURCES.get(kind) or not registry.SOURCES[kind].writeback:
         raise HTTPException(404, "This source doesn't support write-back.")
-    return run_writeback(ctx.tenant_id, kind, ctx.user_id)
+    from . import team
+
+    try:
+        return run_writeback(ctx.tenant_id, kind, ctx.user_id, wait=False)
+    except team.NotReady as e:
+        raise HTTPException(409, "Your team is still analysing the latest data. Try again in a minute or two.") from e
 
 
 # ------------------------------------------------------------------ CSV imports

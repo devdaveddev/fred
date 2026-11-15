@@ -74,7 +74,7 @@ def _tenant(conn: Connection, tid: str) -> dict | None:
 
 
 def compose(conn: Connection, tid: str, now: datetime | None = None, synced: list[str] | None = None,
-            touch: bool = True) -> digest.Digest | None:
+            touch: bool = True, wait: bool = True) -> digest.Digest | None:
     """Build today's digest from the live analysis. touch=False for a preview that changes nothing."""
     from .. import team
     from ..team_api import collect_findings
@@ -89,7 +89,7 @@ def compose(conn: Connection, tid: str, now: datetime | None = None, synced: lis
     tasks: list[dict] = []
     if conn.execute(text("SELECT 1 FROM subscription_mrr WHERE tenant_id = :t LIMIT 1"), {"t": tid}).first():
         ws = load_workspace(conn, tenant)
-        a = team.get(conn, ws)
+        a = team.get(conn, ws, wait=wait)  # web requests pass wait=False: never hang a page on model training
         findings, _, _ = collect_findings(conn, a, {"tenant": tenant, "ws": ws})
         current = {f.id: f for f in findings} | {"_snapshot": a.snapshot_id}
         tasks = [dict(r) for r in conn.execute(text("""
@@ -173,9 +173,9 @@ def mark_told(conn: Connection, tid: str, d: digest.Digest) -> None:
                      {"s": t["progress"]["state"], "id": t["id"], "t": tid})
 
 
-def send_digest(tid: str, force: bool = False, synced: list[str] | None = None, **kw) -> dict:
+def send_digest(tid: str, force: bool = False, synced: list[str] | None = None, wait: bool = True, **kw) -> dict:
     with engine.begin() as conn:
-        d = compose(conn, tid, synced=synced)
+        d = compose(conn, tid, synced=synced, wait=wait)
         if d is None:
             return {"sent": [], "failed": [], "skipped": "workspace not found"}
         if d.empty and not force:
