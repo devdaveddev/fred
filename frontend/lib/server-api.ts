@@ -8,7 +8,9 @@ async function serverCall<T>(path: string, init?: RequestInit): Promise<T> {
   try {
     return await call<T>(path, { ...init, headers: { ...(init?.headers ?? {}), cookie: jar.toString() } });
   } catch (e) {
-    if (e instanceof ApiError && e.status === 401) redirect("/login");
+    // The session is gone (expired, signed out elsewhere, or the database changed): the middleware drops the
+    // stale cookie on the way to /login, otherwise /login would bounce back here forever.
+    if (e instanceof ApiError && e.status === 401) redirect("/login?session=expired");
     throw e;
   }
 }

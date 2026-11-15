@@ -16,6 +16,11 @@ export function middleware(req: NextRequest) {
     url.search = pathname === "/" ? "" : `?next=${encodeURIComponent(pathname)}`;
     return NextResponse.redirect(url);
   }
+  if (hasSession && PUBLIC.includes(pathname) && req.nextUrl.searchParams.get("session") === "expired") {
+    const res = NextResponse.next();
+    res.cookies.delete("fred_session"); // the API rejected it: forget it instead of looping back into the app
+    return res;
+  }
   if (hasSession && PUBLIC.includes(pathname)) {
     return NextResponse.redirect(new URL("/", req.url));
   }

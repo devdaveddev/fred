@@ -90,7 +90,7 @@ export function People({ initial }: { initial: Members }) {
                     <button className="linklike" disabled={busy}
                       onClick={() => act(async () => {
                         await send(`/members/${p.id}`, "DELETE");
-                        if (p.you) { router.push("/login"); }
+                        if (p.you) { router.push("/login?session=expired"); }
                       }, p.you ? undefined : `${p.name} was removed and signed out of this workspace.`)}>
                       {p.you ? "Leave" : "Remove"}
                     </button>
