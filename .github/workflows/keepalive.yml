@@ -1,0 +1,17 @@
+# Keeps the free Render instance awake: Render spins free services down after ~15 idle minutes and the
+# next visit takes about a minute. GitHub runs this every 10 minutes (scheduled runs can be a few minutes late).
+name: keep-alive
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch: {}
+permissions: {}
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Ping Fred
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" -m 120 https://fred-ejps.onrender.com/api/health || true)
+          echo "health: $code"
