@@ -1,0 +1,253 @@
+month,account,amount,section
+2025-05,4000 Subscription revenue,131510.00,Income
+2025-05,5000 Hosting (AWS),18411.40,Cost of Goods Sold
+2025-05,5100 Payment processing fees,3813.79,Cost of Goods Sold
+2025-05,6400 Advertising: Google Ads,9324.57,Expenses
+2025-05,6410 Advertising: LinkedIn,5995.44,Expenses
+2025-05,6500 Software subscriptions,7500.00,Expenses
+2025-05,6600 Rent & office,9000.00,Expenses
+2025-05,6700 Legal & accounting,1500.00,Expenses
+2025-05,6000 Salaries: Sales,43500.00,Expenses
+2025-05,6010 Salaries: Marketing,14500.00,Expenses
+2025-05,6020 Salaries: Customer Success,16200.00,Expenses
+2025-05,6030 Salaries: Engineering,66900.00,Expenses
+2025-05,6040 Salaries: Product,19000.00,Expenses
+2025-05,6050 Salaries: G&A,22200.00,Expenses
+2025-06,4000 Subscription revenue,142490.00,Income
+2025-06,5000 Hosting (AWS),19948.60,Cost of Goods Sold
+2025-06,5100 Payment processing fees,4132.21,Cost of Goods Sold
+2025-06,6400 Advertising: Google Ads,9170.80,Expenses
+2025-06,6410 Advertising: LinkedIn,6024.52,Expenses
+2025-06,6500 Software subscriptions,7500.00,Expenses
+2025-06,6600 Rent & office,9000.00,Expenses
+2025-06,6700 Legal & accounting,1500.00,Expenses
+2025-06,6000 Salaries: Sales,43500.00,Expenses
+2025-06,6010 Salaries: Marketing,14500.00,Expenses
+2025-06,6020 Salaries: Customer Success,16200.00,Expenses
+2025-06,6030 Salaries: Engineering,66900.00,Expenses
+2025-06,6040 Salaries: Product,19000.00,Expenses
+2025-06,6050 Salaries: G&A,22200.00,Expenses
+2025-07,4000 Subscription revenue,141480.00,Income
+2025-07,5000 Hosting (AWS),19807.20,Cost of Goods Sold
+2025-07,5100 Payment processing fees,4102.92,Cost of Goods Sold
+2025-07,6400 Advertising: Google Ads,9225.94,Expenses
+2025-07,6410 Advertising: LinkedIn,6282.35,Expenses
+2025-07,6500 Software subscriptions,7500.00,Expenses
+2025-07,6600 Rent & office,9000.00,Expenses
+2025-07,6700 Legal & accounting,1500.00,Expenses
+2025-07,6000 Salaries: Sales,43500.00,Expenses
+2025-07,6010 Salaries: Marketing,14500.00,Expenses
+2025-07,6020 Salaries: Customer Success,16200.00,Expenses
+2025-07,6030 Salaries: Engineering,66900.00,Expenses
+2025-07,6040 Salaries: Product,19000.00,Expenses
+2025-07,6050 Salaries: G&A,22200.00,Expenses
+2025-08,4000 Subscription revenue,147110.00,Income
+2025-08,5000 Hosting (AWS),20595.40,Cost of Goods Sold
+2025-08,5100 Payment processing fees,4266.19,Cost of Goods Sold
+2025-08,6400 Advertising: Google Ads,9468.90,Expenses
+2025-08,6410 Advertising: LinkedIn,6475.79,Expenses
+2025-08,6500 Software subscriptions,7500.00,Expenses
+2025-08,6600 Rent & office,9000.00,Expenses
+2025-08,6700 Legal & accounting,1500.00,Expenses
+2025-08,6000 Salaries: Sales,43500.00,Expenses
+2025-08,6010 Salaries: Marketing,14500.00,Expenses
+2025-08,6020 Salaries: Customer Success,16200.00,Expenses
+2025-08,6030 Salaries: Engineering,66900.00,Expenses
+2025-08,6040 Salaries: Product,19000.00,Expenses
+2025-08,6050 Salaries: G&A,22200.00,Expenses
+2025-09,4000 Subscription revenue,157900.00,Income
+2025-09,5000 Hosting (AWS),22106.00,Cost of Goods Sold
+2025-09,5100 Payment processing fees,4579.10,Cost of Goods Sold
+2025-09,6400 Advertising: Google Ads,9222.94,Expenses
+2025-09,6410 Advertising: LinkedIn,6141.16,Expenses
+2025-09,6500 Software subscriptions,7500.00,Expenses
+2025-09,6600 Rent & office,9000.00,Expenses
+2025-09,6700 Legal & accounting,1500.00,Expenses
+2025-09,6000 Salaries: Sales,43500.00,Expenses
+2025-09,6010 Salaries: Marketing,14500.00,Expenses
+2025-09,6020 Salaries: Customer Success,16200.00,Expenses
+2025-09,6030 Salaries: Engineering,66900.00,Expenses
+2025-09,6040 Salaries: Product,19000.00,Expenses
+2025-09,6050 Salaries: G&A,22200.00,Expenses
+2025-10,4000 Subscription revenue,159770.00,Income
+2025-10,5000 Hosting (AWS),22367.80,Cost of Goods Sold
+2025-10,5100 Payment processing fees,4633.33,Cost of Goods Sold
+2025-10,6400 Advertising: Google Ads,9953.88,Expenses
+2025-10,6410 Advertising: LinkedIn,6518.76,Expenses
+2025-10,6500 Software subscriptions,7500.00,Expenses
+2025-10,6600 Rent & office,9000.00,Expenses
+2025-10,6700 Legal & accounting,1500.00,Expenses
+2025-10,6000 Salaries: Sales,43500.00,Expenses
+2025-10,6010 Salaries: Marketing,14500.00,Expenses
+2025-10,6020 Salaries: Customer Success,16200.00,Expenses
+2025-10,6030 Salaries: Engineering,66900.00,Expenses
+2025-10,6040 Salaries: Product,19000.00,Expenses
+2025-10,6050 Salaries: G&A,22200.00,Expenses
+2025-11,4000 Subscription revenue,168540.00,Income
+2025-11,5000 Hosting (AWS),23595.60,Cost of Goods Sold
+2025-11,5100 Payment processing fees,4887.66,Cost of Goods Sold
+2025-11,6400 Advertising: Google Ads,9283.35,Expenses
+2025-11,6410 Advertising: LinkedIn,6108.58,Expenses
+2025-11,6500 Software subscriptions,7500.00,Expenses
+2025-11,6600 Rent & office,9000.00,Expenses
+2025-11,6700 Legal & accounting,1500.00,Expenses
+2025-11,6000 Salaries: Sales,43500.00,Expenses
+2025-11,6010 Salaries: Marketing,14500.00,Expenses
+2025-11,6020 Salaries: Customer Success,16200.00,Expenses
+2025-11,6030 Salaries: Engineering,66900.00,Expenses
+2025-11,6040 Salaries: Product,19000.00,Expenses
+2025-11,6050 Salaries: G&A,22200.00,Expenses
+2025-12,4000 Subscription revenue,177240.00,Income
+2025-12,5000 Hosting (AWS),24813.60,Cost of Goods Sold
+2025-12,5100 Payment processing fees,5139.96,Cost of Goods Sold
+2025-12,6400 Advertising: Google Ads,9801.22,Expenses
+2025-12,6410 Advertising: LinkedIn,6662.99,Expenses
+2025-12,6500 Software subscriptions,7500.00,Expenses
+2025-12,6600 Rent & office,9000.00,Expenses
+2025-12,6700 Legal & accounting,1500.00,Expenses
+2025-12,6000 Salaries: Sales,43500.00,Expenses
+2025-12,6010 Salaries: Marketing,14500.00,Expenses
+2025-12,6020 Salaries: Customer Success,16200.00,Expenses
+2025-12,6030 Salaries: Engineering,66900.00,Expenses
+2025-12,6040 Salaries: Product,19000.00,Expenses
+2025-12,6050 Salaries: G&A,22200.00,Expenses
+2026-01,4000 Subscription revenue,182330.00,Income
+2026-01,5000 Hosting (AWS),25526.20,Cost of Goods Sold
+2026-01,5100 Payment processing fees,5287.57,Cost of Goods Sold
+2026-01,6400 Advertising: Google Ads,9640.59,Expenses
+2026-01,6410 Advertising: LinkedIn,6306.14,Expenses
+2026-01,6500 Software subscriptions,7500.00,Expenses
+2026-01,6600 Rent & office,9000.00,Expenses
+2026-01,6700 Legal & accounting,1500.00,Expenses
+2026-01,6000 Salaries: Sales,43500.00,Expenses
+2026-01,6010 Salaries: Marketing,14500.00,Expenses
+2026-01,6020 Salaries: Customer Success,16200.00,Expenses
+2026-01,6030 Salaries: Engineering,66900.00,Expenses
+2026-01,6040 Salaries: Product,19000.00,Expenses
+2026-01,6050 Salaries: G&A,22200.00,Expenses
+2026-02,4000 Subscription revenue,187650.00,Income
+2026-02,5000 Hosting (AWS),26271.00,Cost of Goods Sold
+2026-02,5100 Payment processing fees,5441.85,Cost of Goods Sold
+2026-02,6400 Advertising: Google Ads,8873.57,Expenses
+2026-02,6410 Advertising: LinkedIn,6213.62,Expenses
+2026-02,6500 Software subscriptions,7500.00,Expenses
+2026-02,6600 Rent & office,9000.00,Expenses
+2026-02,6700 Legal & accounting,1500.00,Expenses
+2026-02,6000 Salaries: Sales,43500.00,Expenses
+2026-02,6010 Salaries: Marketing,14500.00,Expenses
+2026-02,6020 Salaries: Customer Success,16200.00,Expenses
+2026-02,6030 Salaries: Engineering,83900.00,Expenses
+2026-02,6040 Salaries: Product,19000.00,Expenses
+2026-02,6050 Salaries: G&A,22200.00,Expenses
+2026-03,4000 Subscription revenue,195740.00,Income
+2026-03,5000 Hosting (AWS),27403.60,Cost of Goods Sold
+2026-03,5100 Payment processing fees,5676.46,Cost of Goods Sold
+2026-03,6400 Advertising: Google Ads,10080.60,Expenses
+2026-03,6410 Advertising: LinkedIn,6204.66,Expenses
+2026-03,6500 Software subscriptions,7500.00,Expenses
+2026-03,6600 Rent & office,9000.00,Expenses
+2026-03,6700 Legal & accounting,1500.00,Expenses
+2026-03,6000 Salaries: Sales,43500.00,Expenses
+2026-03,6010 Salaries: Marketing,14500.00,Expenses
+2026-03,6020 Salaries: Customer Success,16200.00,Expenses
+2026-03,6030 Salaries: Engineering,83900.00,Expenses
+2026-03,6040 Salaries: Product,19000.00,Expenses
+2026-03,6050 Salaries: G&A,22200.00,Expenses
+2026-04,4000 Subscription revenue,198440.00,Income
+2026-04,5000 Hosting (AWS),27781.60,Cost of Goods Sold
+2026-04,5100 Payment processing fees,5754.76,Cost of Goods Sold
+2026-04,6400 Advertising: Google Ads,9748.09,Expenses
+2026-04,6410 Advertising: LinkedIn,6491.73,Expenses
+2026-04,6500 Software subscriptions,7500.00,Expenses
+2026-04,6600 Rent & office,9000.00,Expenses
+2026-04,6700 Legal & accounting,1500.00,Expenses
+2026-04,6000 Salaries: Sales,43500.00,Expenses
+2026-04,6010 Salaries: Marketing,14500.00,Expenses
+2026-04,6020 Salaries: Customer Success,19600.00,Expenses
+2026-04,6030 Salaries: Engineering,83900.00,Expenses
+2026-04,6040 Salaries: Product,19000.00,Expenses
+2026-04,6050 Salaries: G&A,22200.00,Expenses
+2026-05,4000 Subscription revenue,198900.00,Income
+2026-05,5000 Hosting (AWS),27846.00,Cost of Goods Sold
+2026-05,5100 Payment processing fees,5768.10,Cost of Goods Sold
+2026-05,6400 Advertising: Google Ads,10301.64,Expenses
+2026-05,6410 Advertising: LinkedIn,6781.56,Expenses
+2026-05,6500 Software subscriptions,7500.00,Expenses
+2026-05,6600 Rent & office,9000.00,Expenses
+2026-05,6700 Legal & accounting,24000.00,Expenses
+2026-05,6000 Salaries: Sales,43500.00,Expenses
+2026-05,6010 Salaries: Marketing,14500.00,Expenses
+2026-05,6020 Salaries: Customer Success,19600.00,Expenses
+2026-05,6030 Salaries: Engineering,83900.00,Expenses
+2026-05,6040 Salaries: Product,19000.00,Expenses
+2026-05,6050 Salaries: G&A,22200.00,Expenses
+2026-06,4000 Subscription revenue,209680.00,Income
+2026-06,5000 Hosting (AWS),29355.20,Cost of Goods Sold
+2026-06,5100 Payment processing fees,6080.72,Cost of Goods Sold
+2026-06,6400 Advertising: Google Ads,10093.75,Expenses
+2026-06,6410 Advertising: LinkedIn,6673.49,Expenses
+2026-06,6500 Software subscriptions,7500.00,Expenses
+2026-06,6600 Rent & office,9000.00,Expenses
+2026-06,6700 Legal & accounting,1500.00,Expenses
+2026-06,6000 Salaries: Sales,55500.00,Expenses
+2026-06,6010 Salaries: Marketing,14500.00,Expenses
+2026-06,6020 Salaries: Customer Success,19600.00,Expenses
+2026-06,6030 Salaries: Engineering,83900.00,Expenses
+2026-06,6040 Salaries: Product,19000.00,Expenses
+2026-06,6050 Salaries: G&A,22200.00,Expenses
+2026-07,4000 Subscription revenue,225470.00,Income
+2026-07,5000 Hosting (AWS),40584.60,Cost of Goods Sold
+2026-07,5100 Payment processing fees,6538.63,Cost of Goods Sold
+2026-07,6400 Advertising: Google Ads,9899.21,Expenses
+2026-07,6410 Advertising: LinkedIn,7033.86,Expenses
+2026-07,6500 Software subscriptions,7500.00,Expenses
+2026-07,6600 Rent & office,9000.00,Expenses
+2026-07,6700 Legal & accounting,1500.00,Expenses
+2026-07,6000 Salaries: Sales,55500.00,Expenses
+2026-07,6010 Salaries: Marketing,14500.00,Expenses
+2026-07,6020 Salaries: Customer Success,19600.00,Expenses
+2026-07,6030 Salaries: Engineering,83900.00,Expenses
+2026-07,6040 Salaries: Product,19000.00,Expenses
+2026-07,6050 Salaries: G&A,22200.00,Expenses
+2026-08,4000 Subscription revenue,229570.00,Income
+2026-08,5000 Hosting (AWS),41322.60,Cost of Goods Sold
+2026-08,5100 Payment processing fees,6657.53,Cost of Goods Sold
+2026-08,6400 Advertising: Google Ads,10475.78,Expenses
+2026-08,6410 Advertising: LinkedIn,7084.36,Expenses
+2026-08,6500 Software subscriptions,12000.00,Expenses
+2026-08,6600 Rent & office,9000.00,Expenses
+2026-08,6700 Legal & accounting,1500.00,Expenses
+2026-08,6000 Salaries: Sales,55500.00,Expenses
+2026-08,6010 Salaries: Marketing,14500.00,Expenses
+2026-08,6020 Salaries: Customer Success,19600.00,Expenses
+2026-08,6030 Salaries: Engineering,69400.00,Expenses
+2026-08,6040 Salaries: Product,19000.00,Expenses
+2026-08,6050 Salaries: G&A,22200.00,Expenses
+2026-09,4000 Subscription revenue,234710.00,Income
+2026-09,5000 Hosting (AWS),42247.80,Cost of Goods Sold
+2026-09,5100 Payment processing fees,6806.59,Cost of Goods Sold
+2026-09,6400 Advertising: Google Ads,9666.89,Expenses
+2026-09,6410 Advertising: LinkedIn,6572.18,Expenses
+2026-09,6500 Software subscriptions,12000.00,Expenses
+2026-09,6600 Rent & office,9000.00,Expenses
+2026-09,6700 Legal & accounting,1500.00,Expenses
+2026-09,6000 Salaries: Sales,55500.00,Expenses
+2026-09,6010 Salaries: Marketing,14500.00,Expenses
+2026-09,6020 Salaries: Customer Success,19600.00,Expenses
+2026-09,6030 Salaries: Engineering,69400.00,Expenses
+2026-09,6040 Salaries: Product,19000.00,Expenses
+2026-09,6050 Salaries: G&A,22200.00,Expenses
+2026-10,4000 Subscription revenue,241390.00,Income
+2026-10,5000 Hosting (AWS),43450.20,Cost of Goods Sold
+2026-10,5100 Payment processing fees,7000.31,Cost of Goods Sold
+2026-10,6400 Advertising: Google Ads,10562.47,Expenses
+2026-10,6410 Advertising: LinkedIn,9994.15,Expenses
+2026-10,6500 Software subscriptions,12000.00,Expenses
+2026-10,6600 Rent & office,9000.00,Expenses
+2026-10,6700 Legal & accounting,1500.00,Expenses
+2026-10,6000 Salaries: Sales,55500.00,Expenses
+2026-10,6010 Salaries: Marketing,14500.00,Expenses
+2026-10,6020 Salaries: Customer Success,19600.00,Expenses
+2026-10,6030 Salaries: Engineering,69400.00,Expenses
+2026-10,6040 Salaries: Product,19000.00,Expenses
+2026-10,6050 Salaries: G&A,22200.00,Expenses

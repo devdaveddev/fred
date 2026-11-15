@@ -296,6 +296,9 @@ async def import_csv(kind: str, file: UploadFile = File(...), ctx: Ctx = Depends
             stats = pipeline.write_spend(conn, tid, parsed)
         elif kind == "feedback":
             stats = pipeline.write_feedback(conn, tid, parsed)
+        elif kind == "leads":
+            profiles, leads = pipeline.crm_from_csv(tid, parsed)
+            stats = pipeline.write_crm(conn, tid, profiles, leads)
         else:
             stats = pipeline.write_usage(conn, tid, parsed)
     except ValueError as e:

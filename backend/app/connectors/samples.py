@@ -30,6 +30,10 @@ def _money(v: float) -> str:
     return f"({s})" if v < 0 else s
 
 
+TEMPLATES_LEADS = ["created_at", "company", "domain", "contact_name", "title", "source", "industry", "employees",
+                   "country", "status", "converted_at", "pricing_views", "demo_requested", "description"]
+
+
 def export(g: Generated | None = None) -> dict[str, str]:
     g = g or generate()
     acc_by_id = {a["id"]: a for a in g.accounts}
@@ -87,6 +91,16 @@ def export(g: Generated | None = None) -> dict[str, str]:
                             for r in g.feedback])
     out["usage"] = _csv(["customer_id", "week", "seats", "active_users", "events"],
                         [[r["a"], r["w"].isoformat(), r["s"], r["au"], r["e"]] for r in g.usage])
+    lead_rows = []
+    for x in sorted(g.leads, key=lambda x: x["created_at"])[-900:]:
+        dom = acc_by_id.get(x.get("account_id"), {}).get("domain") or x.get("domain") or ""
+        lead_rows.append([x["created_at"].strftime("%Y-%m-%d"), x["company"], dom, x.get("contact_name") or "",
+                          {"exec": "VP Finance", "director": "Director of Ops", "manager": "Ops Manager"}.get(
+                              x["seniority"], "Analyst"), x["source_channel"], x.get("industry") or "", x.get("employees") or "",
+                          x.get("country") or "", {"converted": "won"}.get(x["status"], x["status"]),
+                          x["converted_at"].strftime("%Y-%m-%d") if x.get("converted_at") else "", x.get("pricing_views", 0),
+                          "yes" if x.get("demo_requested") else "no", x.get("description") or ""])
+    out["leads"] = _csv(TEMPLATES_LEADS, lead_rows)
     return out
 
 

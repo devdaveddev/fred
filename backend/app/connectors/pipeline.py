@@ -97,6 +97,31 @@ def billing_from_csv(tid: str, rows: list[dict]) -> tuple[list[dict], list[dict]
 
 
 # ------------------------------------------------------------------ CRM
+def crm_from_csv(tid: str, rows: list[dict]) -> tuple[dict[str, dict], list[dict]]:
+    """A CRM leads export -> the same (profiles, leads) shape HubSpot and Salesforce produce."""
+    ns = uuid.UUID(tid)
+    profiles: dict[str, dict] = {}
+    leads = []
+    for i, r in enumerate(rows):
+        when = datetime(r["created_at"].year, r["created_at"].month, r["created_at"].day, tzinfo=UTC)
+        won = r["converted_at"]
+        leads.append({"id": str(uuid.uuid5(ns, f"csv-lead:{i}:{r['company']}:{r['created_at']}")), "created_at": when,
+                      "source_channel": r["source_channel"], "company": r["company"], "contact_name": r["contact_name"],
+                      "industry": r["industry"], "employees": r["employees"], "country": r["country"],
+                      "seniority": r["seniority"], "pricing_views": r["pricing_views"], "docs_views": 0,
+                      "email_engagement": 0, "demo_requested": r["demo_requested"], "webinar": False,
+                      "status": r["status"], "converted_at": datetime(won.year, won.month, won.day, tzinfo=UTC) if won else None,
+                      "description": r["description"], "domain": r["domain"], "crm": "csv", "external_id": None})
+        if r["domain"] and (r["description"] or r["industry"]):
+            p = profiles.setdefault(r["domain"], {"domain": r["domain"], "name": r["company"]})
+            for k in ("industry", "description", "country"):
+                p[k] = p.get(k) or r[k]
+            p["employees"] = p.get("employees") or r["employees"] or None
+            if r["status"] == "converted":
+                p["acquisition_channel"] = r["source_channel"]
+    return profiles, leads
+
+
 def write_crm(conn: Connection, tid: str, profiles: dict[str, dict], leads: list[dict]) -> dict:
     enriched = 0
     for dom, p in profiles.items():

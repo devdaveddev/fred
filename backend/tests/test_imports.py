@@ -85,3 +85,32 @@ def test_mapping_recovers_every_demo_account(files):
         assert (g["pl_group"], g["kind"]) == want[:2], (a["name"], g)
         if want[1] == "payroll":
             assert g["department"] == want[2], (a["name"], g)
+
+
+def test_crm_leads_csv_becomes_leads_and_company_profiles():
+    from app.connectors import csv_import, pipeline
+
+    text = ("created_at,company,domain,contact_name,title,source,industry,employees,country,status,converted_at,"
+            "pricing_views,demo_requested,description\n"
+            "2026-03-02,Nimbus Pay,www.nimbuspay.com,Ana Li,VP Finance,Partner Referral,Banking,240,US,won,2026-04-01,6,yes,"
+            "Card issuing API for neobanks\n"
+            "2026-09-10,Quill Labs,quilllabs.com,Bo Ng,Support Agent,Google Ads,Software,40,IN,open,,1,no,Email API\n"
+            "2026-01-05,Orbit AI,,,Analyst,LinkedIn,,,,lost,,,,\n")
+    rows = csv_import.leads(text)
+    assert [r["status"] for r in rows] == ["converted", "open", "lost"]
+    assert rows[0]["domain"] == "nimbuspay.com" and rows[0]["source_channel"] == "referral" and rows[0]["seniority"] == "exec"
+    assert rows[0]["demo_requested"] and rows[0]["pricing_views"] == 6 and rows[0]["industry"] == "fintech"
+    profiles, leads = pipeline.crm_from_csv("6f1c2b4e-1111-4222-8333-944455556666", rows)
+    assert set(profiles) == {"nimbuspay.com", "quilllabs.com"}
+    assert profiles["nimbuspay.com"]["acquisition_channel"] == "referral"
+    assert profiles["nimbuspay.com"]["description"] == "Card issuing API for neobanks"
+    assert len({x["id"] for x in leads}) == 3 and leads[0]["converted_at"].month == 4
+
+
+def test_crm_leads_csv_rejects_unknown_status():
+    import pytest
+
+    from app.connectors import csv_import
+
+    with pytest.raises(csv_import.ImportProblem, match="open, won or lost"):
+        csv_import.leads("created_at,company,status\n2026-01-01,X,maybe\n")

@@ -37,6 +37,11 @@ TEMPLATES = {
                  "help": "Exit surveys, NPS comments or support tickets. kind = exit_survey, nps or support_ticket."},
     "usage": {"label": "Product usage", "columns": ["customer_id", "week", "seats", "active_users", "events"],
               "help": "Weekly active users per customer, from PostHog, Segment, Amplitude or your database."},
+    "leads": {"label": "CRM leads", "columns": ["created_at", "company", "domain", "contact_name", "title", "source",
+                                                "industry", "employees", "country", "status", "converted_at",
+                                                "pricing_views", "demo_requested", "description"],
+              "help": "Every lead from any CRM export. status = open, won or lost. A description of what the company "
+                      "does (one line) lets the market researcher find your segments."},
 }
 
 MONTHS = {m: i + 1 for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"])}
@@ -237,5 +242,34 @@ def usage(text: str) -> list[dict]:
             for r in _dict_rows(text, ["customer_id", "week", "seats", "active_users"])]
 
 
+def _bool(v: str) -> bool:
+    return str(v or "").strip().lower() in ("1", "true", "yes", "y")
+
+
+def leads(text: str) -> list[dict]:
+    from .hubspot import industry, seniority
+    from .salesforce import channel
+
+    out = []
+    for r in _dict_rows(text, ["created_at", "company", "status"]):
+        status = r["status"].strip().lower()
+        status = {"won": "converted", "customer": "converted", "closed won": "converted", "closed lost": "lost",
+                  "disqualified": "lost"}.get(status, status)
+        if status not in ("open", "converted", "lost"):
+            raise ImportProblem(f"Row {r['_row']}: status '{r['status']}' must be open, won or lost.")
+        emp = parse_amount(r.get("employees", ""))
+        views = parse_amount(r.get("pricing_views", ""))
+        out.append({"created_at": _need(r, "created_at", parse_date, "created date"), "company": r["company"].strip(),
+                    "domain": (r.get("domain") or "").strip().lower().removeprefix("www.") or None,
+                    "contact_name": (r.get("contact_name") or "").strip() or None,
+                    "seniority": seniority(r.get("title")), "source_channel": channel(r.get("source")),
+                    "industry": industry(r.get("industry")), "employees": int(emp) if emp else 0,
+                    "country": (r.get("country") or "").strip() or None, "status": status,
+                    "converted_at": parse_date(r.get("converted_at", "")) if status == "converted" else None,
+                    "pricing_views": int(min(views or 0, 10)), "demo_requested": _bool(r.get("demo_requested")),
+                    "description": (r.get("description") or "").strip() or None})
+    return out
+
+
 PARSERS = {"billing": billing, "gl": gl, "cash": cash, "payroll": payroll, "budget": budget,
-           "hiring_plan": hiring_plan, "spend": spend, "feedback": feedback, "usage": usage}
+           "hiring_plan": hiring_plan, "spend": spend, "feedback": feedback, "usage": usage, "leads": leads}

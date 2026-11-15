@@ -87,7 +87,10 @@ def embed(texts: list[str]) -> np.ndarray:
             missing.pop(k, None)
     if missing:
         todo = sorted(missing.items())
-        vecs = np.array(list(_get().embed([t for _, t in todo], batch_size=128)), dtype=np.float32)
+        import os
+
+        batch = int(os.environ.get("EMBED_BATCH", "128"))  # small batches = small working memory (free hosting)
+        vecs = np.array(list(_get().embed([t for _, t in todo], batch_size=batch)), dtype=np.float32)
         vecs /= np.linalg.norm(vecs, axis=1, keepdims=True)
         if len(_cache) + len(todo) > _CACHE_MAX:
             _cache.clear()
@@ -95,6 +98,16 @@ def embed(texts: list[str]) -> np.ndarray:
             _cache[k] = v
         _db_put([(k, v) for (k, _), v in zip(todo, vecs)])
     return np.stack([_cache[k] for k in keys]) if keys else np.zeros((0, MODEL_CARD["dimensions"]), np.float32)
+
+
+def unload() -> None:
+    """Free the model (about 150 MB). Small servers call this after each analysis; it reloads on next use."""
+    global _model
+    with _lock:
+        _model = None
+    import gc
+
+    gc.collect()
 
 
 def available() -> bool:

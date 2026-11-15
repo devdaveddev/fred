@@ -1,0 +1,91 @@
+date,customer_id,kind,score,text
+2025-05-10,LD-0027,exit_survey,,We shut down the product line that used it.
+2025-05-10,LD-0051,exit_survey,,Found a cheaper tool that does enough.
+2025-06-06,LD-0020,exit_survey,,Onboarding was rough and nobody followed up.
+2025-07-02,LD-0015,exit_survey,,Price went up and the value didn't.
+2025-07-04,LD-0077,exit_survey,,Found a cheaper tool that does enough.
+2025-09-08,LD-0018,exit_survey,,Onboarding was rough and nobody followed up.
+2025-10-02,LD-0009,exit_survey,,Too expensive for a team our size.
+2025-10-02,LD-0052,exit_survey,,Too expensive for a team our size.
+2025-10-03,LD-0043,exit_survey,,Found a cheaper tool that does enough.
+2025-10-08,LD-0062,exit_survey,,Found a cheaper tool that does enough.
+2025-12-03,LD-0064,exit_survey,,Onboarding was rough and nobody followed up.
+2025-12-10,LD-0053,exit_survey,,Price went up and the value didn't.
+2026-01-06,LD-0067,exit_survey,,Support took days to answer our questions.
+2026-04-05,LD-0142,exit_survey,,We shut down the product line that used it.
+2026-04-07,LD-0031,exit_survey,,Support took days to answer our questions.
+2026-05-02,LD-0024,exit_survey,,We shut down the product line that used it.
+2026-05-02,LD-0131,exit_survey,,Too expensive for a team our size.
+2026-05-06,LD-0115,exit_survey,,Found a cheaper tool that does enough.
+2026-05-07,LD-0100,exit_survey,,Onboarding was rough and nobody followed up.
+2026-05-09,LD-0081,exit_survey,,Too expensive for a team our size.
+2026-06-03,LD-0021,nps,7,"Good tool, reporting could be deeper."
+2026-06-03,LD-0073,exit_survey,,Price went up and the value didn't.
+2026-06-03,LD-0160,exit_survey,,Onboarding was rough and nobody followed up.
+2026-06-04,LD-0050,exit_survey,,Couldn't connect it to Jira; engineering ignored escalations.
+2026-06-05,LD-0136,exit_survey,,We need it to sync with Jira and it doesn't. Moving to a tool that integrates.
+2026-06-07,LD-0149,exit_survey,,We need it to sync with Jira and it doesn't. Moving to a tool that integrates.
+2026-06-07,LD-0164,exit_survey,,Couldn't connect it to Jira; engineering ignored escalations.
+2026-06-07,LD-0202,nps,10,Setup took an afternoon. Love the reporting.
+2026-06-09,LD-0120,exit_survey,,Couldn't connect it to Jira; engineering ignored escalations.
+2026-06-10,LD-0037,nps,10,Setup took an afternoon. Love the reporting.
+2026-06-13,LD-0212,nps,10,Setup took an afternoon. Love the reporting.
+2026-06-14,LD-0211,nps,9,Setup took an afternoon. Love the reporting.
+2026-06-15,LD-0208,nps,9,Best ticket routing we've used.
+2026-06-17,LD-0126,nps,5,Without a Jira integration it's a dead end for us.
+2026-06-18,LD-0090,nps,6,Without a Jira integration it's a dead end for us.
+2026-06-22,LD-0150,nps,9,Setup took an afternoon. Love the reporting.
+2026-06-22,LD-0169,nps,4,Reports are too basic for management.
+2026-06-28,LD-0199,nps,6,Reports are too basic for management.
+2026-07-03,LD-0220,nps,6,Reports are too basic for management.
+2026-07-03,LD-0221,nps,10,Automations save our team hours every week.
+2026-07-05,LD-0003,nps,10,Automations save our team hours every week.
+2026-07-07,LD-0109,nps,8,"Works fine, a bit pricey for what we use."
+2026-07-09,LD-0076,exit_survey,,Found a cheaper tool that does enough.
+2026-07-09,LD-0163,nps,3,Without a Jira integration it's a dead end for us.
+2026-07-13,LD-0133,nps,7,"Works fine, a bit pricey for what we use."
+2026-07-14,LD-0055,nps,10,Setup took an afternoon. Love the reporting.
+2026-07-16,LD-0203,nps,10,Setup took an afternoon. Love the reporting.
+2026-07-17,LD-0144,nps,2,Without a Jira integration it's a dead end for us.
+2026-07-18,LD-0098,nps,10,Automations save our team hours every week.
+2026-07-20,LD-0210,nps,10,Automations save our team hours every week.
+2026-07-21,LD-0192,nps,9,Automations save our team hours every week.
+2026-07-21,LD-0196,nps,7,"Works fine, a bit pricey for what we use."
+2026-07-25,LD-0110,nps,10,Automations save our team hours every week.
+2026-07-25,LD-0174,nps,7,"Good tool, reporting could be deeper."
+2026-08-02,LD-0058,exit_survey,,Found a cheaper tool that does enough.
+2026-08-02,LD-0119,exit_survey,,Missing integrations with our CRM was the dealbreaker.
+2026-08-04,LD-0190,exit_survey,,"No Salesforce integration, so our agents double-enter every ticket."
+2026-08-05,LD-0008,exit_survey,,Couldn't connect it to Jira; engineering ignored escalations.
+2026-08-06,LD-0166,nps,7,"Good tool, reporting could be deeper."
+2026-08-08,LD-0071,exit_survey,,Support took days to answer our questions.
+2026-08-10,LD-0093,exit_survey,,We need it to sync with Jira and it doesn't. Moving to a tool that integrates.
+2026-08-10,LD-0112,exit_survey,,"No Salesforce integration, so our agents double-enter every ticket."
+2026-08-11,LD-0030,nps,8,"Good tool, reporting could be deeper."
+2026-08-15,LD-0130,nps,2,Reports are too basic for management.
+2026-08-18,LD-0117,nps,7,"Works fine, a bit pricey for what we use."
+2026-08-21,LD-0111,nps,7,"Works fine, a bit pricey for what we use."
+2026-08-22,LD-0048,nps,8,"Works fine, a bit pricey for what we use."
+2026-08-23,LD-0213,nps,10,Automations save our team hours every week.
+2026-08-28,LD-0013,nps,5,Without a Jira integration it's a dead end for us.
+2026-08-28,LD-0084,nps,5,Without a Jira integration it's a dead end for us.
+2026-09-01,LD-0181,nps,10,Automations save our team hours every week.
+2026-09-03,LD-0028,nps,3,Without a Jira integration it's a dead end for us.
+2026-09-04,LD-0034,exit_survey,,Onboarding was rough and nobody followed up.
+2026-09-05,LD-0033,exit_survey,,Missing integrations with our CRM was the dealbreaker.
+2026-09-06,LD-0012,exit_survey,,Couldn't connect it to Jira; engineering ignored escalations.
+2026-09-06,LD-0079,exit_survey,,"No Salesforce integration, so our agents double-enter every ticket."
+2026-09-07,LD-0122,exit_survey,,Couldn't connect it to Jira; engineering ignored escalations.
+2026-09-08,LD-0069,exit_survey,,Couldn't connect it to Jira; engineering ignored escalations.
+2026-09-10,LD-0156,exit_survey,,Couldn't connect it to Jira; engineering ignored escalations.
+2026-09-17,LD-0065,nps,10,Setup took an afternoon. Love the reporting.
+2026-09-24,LD-0068,nps,10,Automations save our team hours every week.
+2026-09-24,LD-0101,nps,10,Automations save our team hours every week.
+2026-09-28,LD-0061,nps,5,Reports are too basic for management.
+2026-10-02,LD-0080,exit_survey,,Price went up and the value didn't.
+2026-10-04,LD-0125,exit_survey,,We shut down the product line that used it.
+2026-10-06,LD-0225,nps,10,Setup took an afternoon. Love the reporting.
+2026-10-10,LD-0038,exit_survey,,We need it to sync with Jira and it doesn't. Moving to a tool that integrates.
+2026-10-11,LD-0155,nps,9,Setup took an afternoon. Love the reporting.
+2026-10-12,LD-0148,nps,9,Setup took an afternoon. Love the reporting.
+2026-10-19,LD-0089,nps,10,Setup took an afternoon. Love the reporting.

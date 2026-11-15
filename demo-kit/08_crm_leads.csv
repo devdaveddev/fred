@@ -1,0 +1,556 @@
+created_at,company,domain,contact_name,title,source,industry,employees,country,status,converted_at,pricing_views,demo_requested,description
+2025-05-01,Cedar Labs,cedarlabs.com,Ishaan Smith,Head of Support,linkedin,fintech,37,US,lost,,1,no,Payments and lending platform for small businesses
+2025-05-01,Delta Commerce,deltacommerce.com,Kabir Smith,VP Operations,organic,saas,64,US,lost,,0,no,HR software for hourly workers
+2025-05-02,Orbit Works,orbitworks.com,Bo Chen,Support Manager,paid_search,ecommerce,41,US,lost,,0,yes,Subscription box for specialty coffee
+2025-05-03,Harbor Commerce,harborcommerce.com,Emma Rao,Support Manager,paid_search,healthcare,316,US,lost,,4,yes,Telehealth platform for physiotherapy
+2025-05-05,Meridian Health,meridianhealth.com,Hana Brown,Support Manager,organic,saas,95,DE,won,2025-05-23,0,no,Analytics dashboard for product teams
+2025-05-05,Ember Learning,emberlearning.com,Zara Shah,Director of Operations,content,healthcare,69,UK,won,2025-05-30,3,no,Telehealth platform for physiotherapy
+2025-05-06,Zephyr Commerce,zephyrcommerce.com,Zara Chen,Support Agent,content,ecommerce,26,US,won,2025-06-14,0,no,Subscription box for specialty coffee
+2025-05-07,Orbit AI,orbitai.com,Liam Smith,Analyst,paid_search,fintech,73,US,lost,,1,yes,Card issuing API for neobanks
+2025-05-07,Harbor Studio,harborstudio.com,Hana Garcia,Support Manager,content,ecommerce,99,SG,lost,,1,no,Direct-to-consumer skincare brand
+2025-05-08,Meridian Learning,meridianlearning.com,Bo Chen,Analyst,linkedin,saas,41,UK,lost,,0,no,Developer API for sending transactional email
+2025-05-09,Pine Works,pineworks.com,Farah Lopez,Director of Operations,paid_search,education,85,US,lost,,1,no,Tutoring marketplace for high-school students
+2025-05-14,Vela Commerce,velacommerce.com,Rohan Shah,Director of Operations,paid_search,education,124,US,lost,,2,yes,Tutoring marketplace for high-school students
+2025-05-15,Delta Works,deltaworks.com,Ishaan Shah,Analyst,paid_search,saas,21,US,lost,,0,no,HR software for hourly workers
+2025-05-15,Nimbus Works,nimbusworks.com,Dev Brown,CX Manager,paid_search,saas,73,US,lost,,1,yes,HR software for hourly workers
+2025-05-15,Cobalt Cloud,cobaltcloud.com,Ana Smith,CX Manager,content,ecommerce,29,IN,lost,,2,yes,Subscription box for specialty coffee
+2025-05-16,Tidal Pay,tidalpay.com,Liam Smith,CX Manager,paid_search,ecommerce,316,US,won,2025-06-11,4,yes,Marketplace for refurbished electronics
+2025-05-19,Northwind Learning,northwindlearning.com,Maya Nair,Support Agent,organic,saas,62,US,won,2025-06-26,2,yes,Developer API for sending transactional email
+2025-05-21,Lumen Commerce,lumencommerce.com,Priya Nair,COO,paid_search,ecommerce,56,IN,lost,,0,no,Online store selling sustainable homeware
+2025-05-22,Fable Pay,fablepay.com,Noah Kim,Support Agent,paid_search,fintech,88,US,lost,,3,no,Card issuing API for neobanks
+2025-05-22,Vela Pay,velapay.com,Emma Patel,Support Agent,content,education,33,DE,lost,,2,yes,Tutoring marketplace for high-school students
+2025-05-23,Ridge Labs,ridgelabs.com,Dev Chen,Director of Support,paid_search,education,184,US,lost,,0,no,Learning management system for corporate training
+2025-05-24,Cedar Commerce,cedarcommerce.com,Liam Ng,Director of Operations,paid_search,ecommerce,39,US,lost,,0,no,Direct-to-consumer skincare brand
+2025-05-24,Pioneer Works,pioneerworks.com,Emma Smith,Support Manager,referral,fintech,20,IN,lost,,2,no,Expense management software for finance teams
+2025-05-26,Umbra Studio,umbrastudio.com,Noah Kim,CX Manager,organic,healthcare,113,US,lost,,0,no,Telehealth platform for physiotherapy
+2025-05-28,Umbra Cloud,umbracloud.com,Farah Shah,COO,organic,saas,104,DE,lost,,1,yes,Developer API for sending transactional email
+2025-05-29,Umbra Systems,umbrasystems.com,Ethan Iyer,Analyst,linkedin,education,14,US,lost,,3,no,Online coding bootcamp
+2025-05-29,Quanta Health,quantahealth.com,Hana Shah,Analyst,organic,fintech,57,US,lost,,0,yes,Expense management software for finance teams
+2025-05-31,Northwind Labs,northwindlabs.com,Ethan Smith,Support Manager,paid_search,healthcare,302,US,lost,,1,no,Clinic scheduling and patient reminders
+2025-05-31,Lumen Systems,lumensystems.com,Ana Khan,Director of Support,content,fintech,69,IN,lost,,3,yes,Payments and lending platform for small businesses
+2025-06-01,Vertex Learning,vertexlearning.com,Noah Iyer,COO,paid_search,saas,120,US,lost,,0,no,Analytics dashboard for product teams
+2025-06-03,Juniper Cloud,junipercloud.com,Farah Kim,Support Agent,linkedin,saas,76,US,lost,,1,yes,Developer API for sending transactional email
+2025-06-04,Quill Studio,quillstudio.com,Dev Smith,Support Manager,referral,education,26,US,lost,,0,no,Tutoring marketplace for high-school students
+2025-06-05,Quill AI,quillai.com,Ana Khan,Analyst,paid_search,fintech,33,UK,lost,,0,no,Expense management software for finance teams
+2025-06-06,Quill Health,quillhealth.com,Zara Iyer,Support Manager,organic,fintech,62,SG,lost,,4,yes,Payments and lending platform for small businesses
+2025-06-06,Zephyr Studio,zephyrstudio.com,Hana Khan,Analyst,organic,ecommerce,13,DE,lost,,1,no,Online store selling sustainable homeware
+2025-06-07,Delta Learning,deltalearning.com,Rohan Shah,Founder,paid_search,saas,10,UK,lost,,3,no,Analytics dashboard for product teams
+2025-06-07,Juniper Ridge Cloud,juniperridgecloud.com,Ethan Rao,CX Manager,content,saas,20,IN,lost,,2,yes,HR software for hourly workers
+2025-06-07,Vela Works,velaworks.com,Zara Kim,Support Manager,content,healthcare,63,UK,lost,,0,yes,Pharmacy inventory software
+2025-06-08,Atlas Systems,atlassystems.com,Hana Shah,Founder,paid_search,fintech,192,IN,lost,,0,no,Expense management software for finance teams
+2025-06-09,Onyx Labs,onyxlabs.com,Liam Nair,CX Manager,paid_search,saas,136,IN,lost,,1,no,HR software for hourly workers
+2025-06-10,Atlas Cloud,atlascloud.com,Ana Khan,Analyst,organic,ecommerce,56,DE,lost,,1,no,Marketplace for refurbished electronics
+2025-06-11,Delta Studio,deltastudio.com,Dev Patel,Director of Operations,organic,saas,32,US,lost,,2,no,Analytics dashboard for product teams
+2025-06-12,Northwind Studio,northwindstudio.com,Rohan Patel,CX Manager,paid_search,saas,48,UK,lost,,1,yes,HR software for hourly workers
+2025-06-14,Tidal AI,tidalai.com,Chloe Kim,CX Manager,paid_search,fintech,83,SG,lost,,0,no,Card issuing API for neobanks
+2025-06-16,Vertex AI,vertexai.com,Gabe Brown,CX Manager,organic,healthcare,106,IN,lost,,2,no,Pharmacy inventory software
+2025-06-17,Zephyr Cloud,zephyrcloud.com,Aarav Nair,CX Manager,paid_search,saas,52,UK,lost,,0,no,Analytics dashboard for product teams
+2025-06-18,Nimbus Commerce,nimbuscommerce.com,Emma Rao,COO,linkedin,saas,150,US,lost,,1,no,Project management tool for remote teams
+2025-06-19,Cobalt Systems,cobaltsystems.com,Maya Lopez,Support Manager,linkedin,education,21,US,lost,,1,no,Online coding bootcamp
+2025-06-19,Ridge Systems,ridgesystems.com,Maya Smith,Support Manager,content,ecommerce,291,US,lost,,2,yes,Direct-to-consumer skincare brand
+2025-06-20,Pioneer Cloud,pioneercloud.com,Ethan Brown,Head of Support,linkedin,saas,65,IN,won,2025-07-04,1,no,Developer API for sending transactional email
+2025-06-21,Kestrel Commerce,kestrelcommerce.com,Maya Smith,Head of Support,organic,fintech,71,SG,won,2025-07-30,4,yes,Card issuing API for neobanks
+2025-06-22,Onyx Works,onyxworks.com,Farah Lopez,Founder,paid_search,education,337,IN,lost,,1,no,Learning management system for corporate training
+2025-06-23,Fable Studio,fablestudio.com,Priya Shah,CX Manager,content,healthcare,45,US,lost,,0,yes,Pharmacy inventory software
+2025-06-25,Umbra Works,umbraworks.com,Maya Khan,CX Manager,organic,saas,67,US,won,2025-07-15,0,no,Analytics dashboard for product teams
+2025-06-27,Quanta Works,quantaworks.com,Kabir Shah,CX Manager,paid_search,fintech,84,IN,lost,,1,no,Payments and lending platform for small businesses
+2025-06-28,Nimbus Cloud,nimbuscloud.com,Ishaan Rao,Support Manager,paid_search,ecommerce,214,IN,lost,,0,no,Online store selling sustainable homeware
+2025-06-28,Atlas AI,atlasai.com,Maya Khan,CX Manager,linkedin,fintech,67,US,lost,,0,no,Invoice factoring marketplace
+2025-07-01,Lumen Works,lumenworks.com,Ethan Kim,Head of Support,organic,healthcare,192,US,lost,,2,yes,Telehealth platform for physiotherapy
+2025-07-02,Pine Cloud,pinecloud.com,Ana Iyer,CX Manager,paid_search,fintech,53,IN,lost,,1,no,Payments and lending platform for small businesses
+2025-07-04,Northwind Works,northwindworks.com,Gabe Khan,Analyst,referral,saas,52,IN,lost,,0,no,Project management tool for remote teams
+2025-07-04,Sable Systems,sablesystems.com,Noah Shah,CX Manager,referral,saas,44,US,won,2025-07-23,1,no,Developer API for sending transactional email
+2025-07-06,Quanta Systems,quantasystems.com,Farah Ng,Support Manager,content,fintech,14,US,lost,,1,yes,Expense management software for finance teams
+2025-07-07,Fable Labs,fablelabs.com,Gabe Lopez,Director of Operations,organic,fintech,65,IN,lost,,3,no,Expense management software for finance teams
+2025-07-08,Pine AI,pineai.com,Zara Kim,CX Manager,linkedin,saas,497,DE,lost,,0,yes,Analytics dashboard for product teams
+2025-07-09,Ember Commerce,embercommerce.com,Priya Nair,COO,paid_search,healthcare,78,US,lost,,3,no,Telehealth platform for physiotherapy
+2025-07-09,Quill Works,quillworks.com,Liam Iyer,CX Manager,organic,fintech,63,US,won,2025-07-20,1,no,Payments and lending platform for small businesses
+2025-07-15,Lumen AI,lumenai.com,Zara Chen,Head of Support,paid_search,saas,27,DE,won,2025-08-21,0,no,Analytics dashboard for product teams
+2025-07-15,Fable Learning,fablelearning.com,Chloe Nair,Founder,linkedin,education,69,US,lost,,0,no,Online coding bootcamp
+2025-07-15,Northwind Systems,northwindsystems.com,Gabe Chen,Support Agent,organic,saas,10,SG,lost,,1,no,HR software for hourly workers
+2025-07-16,Quanta Umbra Studio,quantaumbrastudio.com,Gabe Iyer,Support Manager,paid_search,healthcare,97,IN,lost,,1,no,Pharmacy inventory software
+2025-07-16,Signal Works,signalworks.com,Zara Ng,Support Manager,referral,fintech,45,US,lost,,0,yes,Card issuing API for neobanks
+2025-07-19,Vela Cloud,velacloud.com,Ethan Shah,Support Manager,linkedin,saas,72,IN,lost,,1,no,Developer API for sending transactional email
+2025-07-19,Zephyr Health,zephyrhealth.com,Zara Iyer,Analyst,linkedin,ecommerce,27,IN,lost,,2,yes,Marketplace for refurbished electronics
+2025-07-20,Onyx Commerce,onyxcommerce.com,Bo Rao,Support Manager,content,fintech,63,SG,won,2025-08-16,1,yes,Invoice factoring marketplace
+2025-07-20,Ember Pay,emberpay.com,Kabir Khan,Support Manager,content,saas,47,IN,lost,,2,no,Project management tool for remote teams
+2025-07-22,Sable Labs,sablelabs.com,Priya Chen,Support Agent,organic,saas,105,IN,won,2025-08-07,3,yes,Developer API for sending transactional email
+2025-07-23,Harbor Pay,harborpay.com,Bo Lopez,Analyst,organic,ecommerce,87,IN,lost,,2,yes,Subscription box for specialty coffee
+2025-07-24,Willow AI,willowai.com,Chloe Ng,Head of Support,paid_search,saas,38,UK,lost,,1,no,Analytics dashboard for product teams
+2025-07-24,Delta Systems,deltasystems.com,Priya Smith,Support Manager,content,fintech,155,US,lost,,0,no,Invoice factoring marketplace
+2025-07-25,Quanta Cloud,quantacloud.com,Priya Chen,CX Manager,paid_search,fintech,35,US,lost,,2,no,Expense management software for finance teams
+2025-07-26,Atlas Pay,atlaspay.com,Bo Garcia,Support Manager,linkedin,fintech,44,SG,lost,,2,no,Payments and lending platform for small businesses
+2025-07-27,Zephyr Works,zephyrworks.com,Hana Smith,VP Operations,paid_search,saas,77,US,won,2025-08-17,1,no,Project management tool for remote teams
+2025-07-28,Pine Commerce,pinecommerce.com,Liam Rao,Support Manager,paid_search,saas,26,IN,lost,,0,no,Analytics dashboard for product teams
+2025-07-28,Ledger Labs,ledgerlabs.com,Elena Khan,Analyst,linkedin,ecommerce,48,IN,lost,,1,no,Marketplace for refurbished electronics
+2025-07-30,Ember Cloud,embercloud.com,Kabir Ng,Support Agent,linkedin,healthcare,367,DE,lost,,3,no,Telehealth platform for physiotherapy
+2025-07-31,Kestrel Works,kestrelworks.com,Emma Brown,Support Manager,paid_search,saas,168,US,lost,,4,no,Analytics dashboard for product teams
+2025-08-02,Lumen Health,lumenhealth.com,Ishaan Shah,Support Manager,paid_search,ecommerce,138,SG,lost,,3,yes,Marketplace for refurbished electronics
+2025-08-04,Zephyr AI,zephyrai.com,Bo Chen,Director of Support,paid_search,saas,20,IN,lost,,1,no,Developer API for sending transactional email
+2025-08-04,Umbra Pay,umbrapay.com,Aarav Ng,Founder,organic,healthcare,60,US,won,2025-08-23,2,yes,Telehealth platform for physiotherapy
+2025-08-05,Fable Works,fableworks.com,Rohan Lopez,Support Agent,organic,saas,9,US,lost,,1,no,HR software for hourly workers
+2025-08-06,Ledger Systems,ledgersystems.com,Emma Garcia,CX Manager,content,ecommerce,98,UK,lost,,0,no,Marketplace for refurbished electronics
+2025-08-07,Tidal Northwind Commerce,tidalnorthwindcommerce.com,Farah Smith,Director of Support,content,saas,18,US,lost,,0,no,HR software for hourly workers
+2025-08-08,Quill Northwind Commerce,quillnorthwindcommerce.com,Elena Shah,Analyst,paid_search,healthcare,25,US,lost,,1,yes,Pharmacy inventory software
+2025-08-08,Nimbus Systems,nimbussystems.com,Priya Rao,Director of Operations,linkedin,healthcare,234,US,lost,,1,no,Clinic scheduling and patient reminders
+2025-08-08,Ember Labs,emberlabs.com,Bo Brown,CX Manager,linkedin,ecommerce,19,IN,lost,,2,no,Marketplace for refurbished electronics
+2025-08-09,Orbit Studio,orbitstudio.com,Sofia Kim,Director of Operations,linkedin,saas,50,US,lost,,1,no,HR software for hourly workers
+2025-08-11,Signal Health,signalhealth.com,Sofia Ng,CX Manager,organic,saas,80,DE,lost,,0,no,Analytics dashboard for product teams
+2025-08-14,Delta Pay,deltapay.com,Chloe Rao,Support Agent,paid_search,ecommerce,178,SG,lost,,3,yes,Marketplace for refurbished electronics
+2025-08-15,Sable Health,sablehealth.com,Emma Chen,Founder,content,ecommerce,119,US,lost,,1,yes,Marketplace for refurbished electronics
+2025-08-18,Tidal Works,tidalworks.com,Bo Lopez,Director of Operations,organic,fintech,15,US,lost,,0,no,Card issuing API for neobanks
+2025-08-18,Vertex Ledger Systems,vertexledgersystems.com,Noah Iyer,Support Agent,content,saas,56,US,lost,,3,no,HR software for hourly workers
+2025-08-20,Cedar Health,cedarhealth.com,Rohan Kim,Support Agent,paid_search,saas,123,US,lost,,3,no,HR software for hourly workers
+2025-08-20,Orbit Systems,orbitsystems.com,Kabir Khan,Director of Support,linkedin,healthcare,40,SG,lost,,1,no,Telehealth platform for physiotherapy
+2025-08-20,Vertex Works,vertexworks.com,Kabir Smith,Support Agent,referral,ecommerce,142,IN,lost,,2,no,Online store selling sustainable homeware
+2025-08-22,Sable AI,sableai.com,Kabir Chen,Director of Operations,linkedin,saas,90,US,lost,,1,no,Analytics dashboard for product teams
+2025-08-22,Quill Cloud,quillcloud.com,Sofia Brown,VP Operations,organic,saas,122,UK,won,2025-09-14,2,no,Analytics dashboard for product teams
+2025-08-22,Nimbus Nimbus Learning,nimbusnimbuslearning.com,Aarav Patel,CX Manager,organic,saas,53,IN,lost,,0,no,Analytics dashboard for product teams
+2025-08-23,Delta Vertex Commerce,deltavertexcommerce.com,Dev Shah,Analyst,linkedin,healthcare,70,IN,won,2025-09-02,4,no,Telehealth platform for physiotherapy
+2025-08-24,Meridian Atlas AI,meridianatlasai.com,Gabe Khan,Director of Operations,paid_search,ecommerce,114,DE,lost,,1,no,Subscription box for specialty coffee
+2025-08-24,Ridge Works,ridgeworks.com,Liam Khan,CX Manager,paid_search,healthcare,29,IN,lost,,0,no,Clinic scheduling and patient reminders
+2025-08-25,Quanta AI,quantaai.com,Zara Khan,Support Agent,organic,education,28,US,lost,,1,no,Learning management system for corporate training
+2025-08-26,Sable Works,sableworks.com,Elena Rao,Director of Support,paid_search,fintech,23,DE,lost,,0,no,Invoice factoring marketplace
+2025-08-29,Birch Systems,birchsystems.com,Elena Smith,Director of Support,paid_search,healthcare,26,UK,lost,,0,no,Telehealth platform for physiotherapy
+2025-09-01,Fable Cloud,fablecloud.com,Ethan Patel,Analyst,linkedin,fintech,57,IN,lost,,0,no,Expense management software for finance teams
+2025-09-03,Kestrel Studio,kestrelstudio.com,Dev Shah,Director of Operations,linkedin,healthcare,50,DE,lost,,2,no,Telehealth platform for physiotherapy
+2025-09-04,Signal Labs,signallabs.com,Chloe Nair,CX Manager,organic,saas,782,US,lost,,0,no,Project management tool for remote teams
+2025-09-05,Fable Commerce,fablecommerce.com,Hana Iyer,Analyst,linkedin,saas,39,IN,lost,,2,yes,Project management tool for remote teams
+2025-09-06,Tidal Health,tidalhealth.com,Farah Lopez,CX Manager,linkedin,ecommerce,149,UK,lost,,2,yes,Online store selling sustainable homeware
+2025-09-07,Juniper Labs,juniperlabs.com,Dev Lopez,Support Manager,paid_search,healthcare,76,US,lost,,1,no,Pharmacy inventory software
+2025-09-08,Willow Labs,willowlabs.com,Maya Iyer,CX Manager,organic,saas,64,US,won,2025-10-06,3,no,HR software for hourly workers
+2025-09-08,Ledger Willow Studio,ledgerwillowstudio.com,Priya Khan,Founder,content,saas,68,US,lost,,3,no,Project management tool for remote teams
+2025-09-09,Orbit Labs,orbitlabs.com,Kabir Rao,Founder,paid_search,healthcare,22,IN,lost,,0,no,Clinic scheduling and patient reminders
+2025-09-09,Signal Systems,signalsystems.com,Dev Lopez,Founder,organic,ecommerce,34,US,won,2025-10-02,1,yes,Direct-to-consumer skincare brand
+2025-09-11,Sable Studio,sablestudio.com,Maya Shah,Head of Support,content,ecommerce,34,DE,lost,,0,no,Direct-to-consumer skincare brand
+2025-09-11,Ember Works,emberworks.com,Chloe Garcia,Director of Operations,content,ecommerce,266,SG,lost,,4,yes,Subscription box for specialty coffee
+2025-09-12,Willow Studio,willowstudio.com,Farah Iyer,Support Manager,paid_search,fintech,44,UK,lost,,0,no,Card issuing API for neobanks
+2025-09-13,Ledger Health,ledgerhealth.com,Kabir Chen,Analyst,linkedin,fintech,61,IN,lost,,0,no,Invoice factoring marketplace
+2025-09-14,Pine Studio,pinestudio.com,Farah Iyer,Director of Support,paid_search,fintech,109,US,lost,,3,no,Invoice factoring marketplace
+2025-09-14,Zephyr Pioneer Commerce,zephyrpioneercommerce.com,Emma Ng,Support Agent,paid_search,healthcare,41,UK,lost,,0,yes,Pharmacy inventory software
+2025-09-14,Cobalt Ember Studio,cobaltemberstudio.com,Gabe Ng,Director of Support,linkedin,education,179,IN,lost,,0,no,Learning management system for corporate training
+2025-09-15,Kestrel Health,kestrelhealth.com,Noah Nair,Director of Operations,linkedin,fintech,57,SG,won,2025-10-01,0,no,Card issuing API for neobanks
+2025-09-16,Vela Learning,velalearning.com,Ana Khan,Support Agent,linkedin,saas,84,IN,lost,,1,no,Project management tool for remote teams
+2025-09-17,Ledger Pay,ledgerpay.com,Chloe Patel,Analyst,referral,fintech,25,IN,won,2025-10-18,0,no,Invoice factoring marketplace
+2025-09-18,Tidal Tidal Pay,tidaltidalpay.com,Priya Ng,Support Agent,organic,healthcare,86,IN,lost,,0,no,Telehealth platform for physiotherapy
+2025-09-18,Nimbus Kestrel Works,nimbuskestrelworks.com,Ishaan Kim,CX Manager,organic,ecommerce,87,US,lost,,0,no,Direct-to-consumer skincare brand
+2025-09-19,Umbra Labs,umbralabs.com,Aarav Brown,Support Agent,referral,saas,20,UK,won,2025-10-10,1,no,Project management tool for remote teams
+2025-09-20,Onyx Systems,onyxsystems.com,Chloe Khan,Support Agent,linkedin,healthcare,17,SG,lost,,2,yes,Clinic scheduling and patient reminders
+2025-09-21,Vela Health,velahealth.com,Ana Chen,Analyst,content,healthcare,53,IN,lost,,0,no,Clinic scheduling and patient reminders
+2025-09-22,Cobalt Studio,cobaltstudio.com,Bo Shah,Support Agent,paid_search,healthcare,39,US,lost,,0,no,Telehealth platform for physiotherapy
+2025-09-22,Nimbus Pay,nimbuspay.com,Ana Rao,Support Manager,content,fintech,61,US,lost,,1,no,Invoice factoring marketplace
+2025-09-23,Juniper Health,juniperhealth.com,Ethan Chen,Support Manager,content,fintech,59,IN,lost,,0,no,Card issuing API for neobanks
+2025-09-24,Ledger Ember Labs,ledgeremberlabs.com,Dev Chen,Support Manager,paid_search,education,10,US,lost,,0,no,Learning management system for corporate training
+2025-09-25,Zephyr Pay,zephyrpay.com,Bo Chen,VP Operations,content,saas,101,US,lost,,0,no,Developer API for sending transactional email
+2025-09-26,Pioneer Commerce,pioneercommerce.com,Chloe Kim,Founder,paid_search,saas,83,US,won,2025-10-28,2,no,Project management tool for remote teams
+2025-09-28,Cobalt AI,cobaltai.com,Sofia Lopez,Director of Operations,referral,healthcare,77,US,won,2025-11-02,1,yes,Telehealth platform for physiotherapy
+2025-09-30,Northwind Harbor Labs,northwindharborlabs.com,Elena Khan,CX Manager,referral,ecommerce,83,US,lost,,0,no,Direct-to-consumer skincare brand
+2025-10-01,Harbor Learning,harborlearning.com,Bo Iyer,Support Agent,organic,ecommerce,81,IN,lost,,0,yes,Online store selling sustainable homeware
+2025-10-01,Harbor Lumen Labs,harborlumenlabs.com,Kabir Shah,CX Manager,content,fintech,94,IN,lost,,0,no,Expense management software for finance teams
+2025-10-03,Ember Zephyr Learning,emberzephyrlearning.com,Aarav Brown,Support Manager,paid_search,ecommerce,17,US,lost,,1,yes,Online store selling sustainable homeware
+2025-10-03,Juniper Studio,juniperstudio.com,Farah Iyer,Support Agent,organic,fintech,129,SG,won,2025-11-07,0,yes,Invoice factoring marketplace
+2025-10-03,Juniper Commerce,junipercommerce.com,Sofia Rao,Support Agent,content,saas,10,SG,lost,,1,yes,Analytics dashboard for product teams
+2025-10-04,Fable Birch Labs,fablebirchlabs.com,Farah Lopez,Analyst,organic,ecommerce,15,SG,lost,,0,yes,Online store selling sustainable homeware
+2025-10-06,Delta Health,deltahealth.com,Rohan Shah,Support Manager,paid_search,saas,52,IN,lost,,0,no,Developer API for sending transactional email
+2025-10-06,Orbit Commerce,orbitcommerce.com,Zara Patel,CX Manager,linkedin,saas,26,US,lost,,1,no,Analytics dashboard for product teams
+2025-10-07,Willow Lumen Works,willowlumenworks.com,Elena Patel,Support Manager,linkedin,fintech,40,US,lost,,1,no,Card issuing API for neobanks
+2025-10-08,Lumen Sable Labs,lumensablelabs.com,Priya Iyer,Analyst,paid_search,fintech,35,US,lost,,3,no,Expense management software for finance teams
+2025-10-08,Orbit Pay,orbitpay.com,Farah Ng,Director of Support,linkedin,saas,22,US,lost,,0,no,HR software for hourly workers
+2025-10-11,Umbra AI,umbraai.com,Kabir Garcia,CX Manager,paid_search,ecommerce,126,US,lost,,2,yes,Online store selling sustainable homeware
+2025-10-11,Quanta Sable Labs,quantasablelabs.com,Ishaan Lopez,Director of Operations,organic,education,1123,UK,won,2025-11-13,0,yes,Learning management system for corporate training
+2025-10-13,Nimbus Labs,nimbuslabs.com,Ishaan Ng,Support Manager,linkedin,fintech,129,US,lost,,0,yes,Payments and lending platform for small businesses
+2025-10-14,Northwind Harbor Pay,northwindharborpay.com,Priya Iyer,Analyst,paid_search,fintech,23,US,lost,,2,no,Payments and lending platform for small businesses
+2025-10-14,Ridge Cloud,ridgecloud.com,Priya Iyer,Director of Operations,paid_search,ecommerce,350,US,lost,,1,no,Online store selling sustainable homeware
+2025-10-17,Ridge Willow Health,ridgewillowhealth.com,Aarav Rao,Founder,content,saas,662,IN,lost,,2,no,HR software for hourly workers
+2025-10-19,Quill Zephyr Commerce,quillzephyrcommerce.com,Maya Smith,Support Agent,organic,ecommerce,43,US,lost,,0,no,Direct-to-consumer skincare brand
+2025-10-20,Sable Pay,sablepay.com,Ethan Ng,Head of Support,paid_search,healthcare,99,SG,lost,,1,yes,Pharmacy inventory software
+2025-10-21,Signal Quill Systems,signalquillsystems.com,Liam Kim,Support Agent,paid_search,saas,111,SG,lost,,0,no,HR software for hourly workers
+2025-10-22,Vertex Pay,vertexpay.com,Ana Patel,Founder,paid_search,education,124,DE,won,2025-11-15,0,no,Learning management system for corporate training
+2025-10-23,Signal Learning,signallearning.com,Kabir Lopez,CX Manager,organic,healthcare,213,IN,won,2025-11-03,0,yes,Telehealth platform for physiotherapy
+2025-10-24,Ember Systems,embersystems.com,Noah Chen,Support Manager,paid_search,healthcare,59,UK,lost,,1,yes,Pharmacy inventory software
+2025-10-24,Pine Juniper Works,pinejuniperworks.com,Gabe Shah,CX Manager,linkedin,fintech,219,DE,lost,,0,no,Invoice factoring marketplace
+2025-10-26,Signal Delta Cloud,signaldeltacloud.com,Bo Khan,Support Manager,paid_search,saas,66,US,lost,,1,yes,Developer API for sending transactional email
+2025-10-29,Tidal Quill Studio,tidalquillstudio.com,Priya Smith,COO,organic,education,55,IN,lost,,1,no,Online coding bootcamp
+2025-10-30,Signal Harbor Works,signalharborworks.com,Ana Kim,COO,paid_search,ecommerce,31,UK,lost,,2,yes,Subscription box for specialty coffee
+2025-10-31,Ledger Works,ledgerworks.com,Rohan Patel,Director of Operations,paid_search,fintech,26,US,won,2025-11-28,1,no,Expense management software for finance teams
+2025-11-02,Ridge Orbit Labs,ridgeorbitlabs.com,Maya Shah,Support Agent,paid_search,saas,25,IN,lost,,0,no,Analytics dashboard for product teams
+2025-11-02,Zephyr Learning,zephyrlearning.com,Zara Patel,Founder,organic,education,25,US,lost,,1,yes,Learning management system for corporate training
+2025-11-02,Signal Willow Cloud,signalwillowcloud.com,Rohan Nair,Support Manager,organic,education,158,US,won,2025-11-27,2,no,Online coding bootcamp
+2025-11-04,Onyx Ember Labs,onyxemberlabs.com,Sofia Smith,Support Manager,paid_search,ecommerce,20,DE,won,2025-11-26,3,yes,Direct-to-consumer skincare brand
+2025-11-05,Nimbus Harbor Cloud,nimbusharborcloud.com,Zara Khan,Support Agent,organic,ecommerce,77,US,won,2025-11-15,2,no,Online store selling sustainable homeware
+2025-11-06,Cedar Atlas Health,cedaratlashealth.com,Dev Shah,Support Agent,linkedin,healthcare,89,US,lost,,2,no,Clinic scheduling and patient reminders
+2025-11-07,Ridge Pioneer Health,ridgepioneerhealth.com,Dev Iyer,Support Manager,linkedin,ecommerce,23,IN,lost,,3,no,Online store selling sustainable homeware
+2025-11-07,Fable Ledger Cloud,fableledgercloud.com,Maya Chen,Analyst,organic,fintech,19,US,lost,,0,no,Invoice factoring marketplace
+2025-11-07,Pine Cobalt Cloud,pinecobaltcloud.com,Kabir Brown,Director of Operations,organic,fintech,66,DE,won,2025-12-03,0,no,Invoice factoring marketplace
+2025-11-07,Delta Cobalt Labs,deltacobaltlabs.com,Noah Rao,Support Agent,content,saas,46,IN,lost,,2,no,Project management tool for remote teams
+2025-11-10,Kestrel Kestrel Pay,kestrelkestrelpay.com,Bo Rao,Support Agent,linkedin,fintech,17,IN,lost,,0,yes,Payments and lending platform for small businesses
+2025-11-10,Delta Umbra AI,deltaumbraai.com,Elena Kim,Support Manager,organic,education,87,UK,lost,,2,yes,Tutoring marketplace for high-school students
+2025-11-12,Zephyr Zephyr Works,zephyrzephyrworks.com,Gabe Shah,VP Operations,content,saas,161,US,lost,,0,no,Project management tool for remote teams
+2025-11-14,Fable Ridge AI,fableridgeai.com,Ana Brown,Support Agent,paid_search,saas,118,IN,lost,,0,no,HR software for hourly workers
+2025-11-14,Delta Ridge Labs,deltaridgelabs.com,Liam Rao,Support Manager,paid_search,fintech,200,US,won,2025-12-09,2,yes,Payments and lending platform for small businesses
+2025-11-14,Cedar Learning,cedarlearning.com,Farah Chen,Support Agent,linkedin,fintech,45,US,lost,,0,no,Invoice factoring marketplace
+2025-11-14,Juniper Ridge Works,juniperridgeworks.com,Noah Brown,CX Manager,content,healthcare,57,US,lost,,3,yes,Telehealth platform for physiotherapy
+2025-11-16,Cedar Studio,cedarstudio.com,Dev Shah,Founder,organic,education,49,US,lost,,0,no,Online coding bootcamp
+2025-11-17,Signal Harbor Learning,signalharborlearning.com,Ishaan Patel,Support Agent,linkedin,healthcare,21,US,lost,,1,no,Clinic scheduling and patient reminders
+2025-11-17,Birch Cloud,birchcloud.com,Chloe Chen,Director of Support,organic,saas,50,SG,lost,,0,no,Analytics dashboard for product teams
+2025-11-18,Quill Juniper Learning,quilljuniperlearning.com,Bo Iyer,Support Agent,content,healthcare,167,SG,lost,,2,no,Telehealth platform for physiotherapy
+2025-11-19,Birch Studio,birchstudio.com,Noah Rao,Support Manager,paid_search,fintech,135,US,lost,,1,no,Payments and lending platform for small businesses
+2025-11-23,Onyx Delta AI,onyxdeltaai.com,Kabir Smith,CX Manager,linkedin,ecommerce,42,US,lost,,0,no,Direct-to-consumer skincare brand
+2025-11-24,Birch Commerce,birchcommerce.com,Priya Lopez,Support Agent,organic,saas,51,US,lost,,1,no,Developer API for sending transactional email
+2025-11-25,Pine Pay,pinepay.com,Aarav Rao,Director of Support,content,ecommerce,57,UK,won,2025-12-13,3,yes,Online store selling sustainable homeware
+2025-11-27,Pioneer Systems,pioneersystems.com,Emma Rao,Director of Operations,organic,saas,142,US,lost,,0,no,Project management tool for remote teams
+2025-11-28,Kestrel Cedar Works,kestrelcedarworks.com,Zara Smith,Analyst,linkedin,fintech,44,US,won,2025-12-08,1,no,Payments and lending platform for small businesses
+2025-11-28,Sable Learning,sablelearning.com,Sofia Kim,Support Manager,organic,ecommerce,122,US,won,2025-12-26,0,yes,Direct-to-consumer skincare brand
+2025-11-28,Cobalt Learning,cobaltlearning.com,Ishaan Rao,Director of Operations,organic,saas,45,IN,lost,,2,no,Developer API for sending transactional email
+2025-11-28,Cedar Northwind Studio,cedarnorthwindstudio.com,Liam Patel,CX Manager,content,healthcare,84,UK,lost,,1,no,Pharmacy inventory software
+2025-11-29,Ember Meridian Commerce,embermeridiancommerce.com,Priya Rao,VP Operations,paid_search,healthcare,27,US,won,2025-12-15,0,no,Pharmacy inventory software
+2025-11-30,Quanta Ridge Commerce,quantaridgecommerce.com,Liam Smith,Director of Support,referral,saas,31,DE,won,2025-12-19,0,yes,Analytics dashboard for product teams
+2025-12-01,Atlas Pioneer Learning,atlaspioneerlearning.com,Ana Lopez,Founder,content,ecommerce,16,US,lost,,1,no,Online store selling sustainable homeware
+2025-12-03,Kestrel Quanta Cloud,kestrelquantacloud.com,Maya Brown,Director of Support,linkedin,fintech,57,DE,won,2025-12-13,2,yes,Payments and lending platform for small businesses
+2025-12-04,Lumen Harbor Labs,lumenharborlabs.com,Sofia Nair,COO,organic,ecommerce,20,UK,won,2025-12-28,2,yes,Online store selling sustainable homeware
+2025-12-04,Vertex Quill Systems,vertexquillsystems.com,Ishaan Garcia,Analyst,content,education,126,US,lost,,0,no,Learning management system for corporate training
+2025-12-09,Vela Atlas Health,velaatlashealth.com,Aarav Chen,Support Manager,paid_search,saas,38,IN,lost,,0,no,Developer API for sending transactional email
+2025-12-11,Birch Pay,birchpay.com,Liam Smith,Director of Support,paid_search,saas,90,UK,lost,,0,no,Developer API for sending transactional email
+2025-12-13,Lumen Cloud,lumencloud.com,Chloe Lopez,Support Manager,organic,ecommerce,66,US,won,2026-01-15,2,yes,Online store selling sustainable homeware
+2025-12-13,Cedar Zephyr Works,cedarzephyrworks.com,Rohan Brown,Analyst,content,ecommerce,20,US,lost,,0,no,Online store selling sustainable homeware
+2025-12-14,Sable Ridge Systems,sableridgesystems.com,Dev Nair,Support Agent,linkedin,ecommerce,41,UK,lost,,1,no,Direct-to-consumer skincare brand
+2025-12-15,Ridge Cedar Pay,ridgecedarpay.com,Ana Garcia,Support Manager,linkedin,saas,33,UK,lost,,1,no,Analytics dashboard for product teams
+2025-12-16,Quill Vela Learning,quillvelalearning.com,Emma Brown,Head of Support,organic,ecommerce,16,IN,won,2026-01-14,0,no,Marketplace for refurbished electronics
+2025-12-17,Umbra Nimbus Commerce,umbranimbuscommerce.com,Maya Iyer,Analyst,content,ecommerce,428,US,lost,,1,no,Subscription box for specialty coffee
+2025-12-20,Vela AI,velaai.com,Dev Brown,Director of Support,linkedin,fintech,78,IN,lost,,0,no,Invoice factoring marketplace
+2025-12-20,Birch Vela AI,birchvelaai.com,Ethan Smith,Director of Support,referral,saas,50,US,won,2026-01-29,4,yes,Project management tool for remote teams
+2025-12-21,Northwind Meridian Pay,northwindmeridianpay.com,Emma Ng,Support Manager,linkedin,ecommerce,35,US,won,2026-01-18,3,yes,Direct-to-consumer skincare brand
+2025-12-21,Onyx Cobalt Commerce,onyxcobaltcommerce.com,Zara Chen,Director of Support,content,saas,56,US,lost,,3,no,Analytics dashboard for product teams
+2025-12-24,Ember Pioneer AI,emberpioneerai.com,Ethan Brown,Founder,paid_search,ecommerce,33,IN,lost,,0,no,Subscription box for specialty coffee
+2025-12-24,Ridge Studio,ridgestudio.com,Maya Kim,Support Agent,paid_search,education,81,US,lost,,3,no,Tutoring marketplace for high-school students
+2025-12-25,Meridian Works,meridianworks.com,Rohan Smith,Director of Support,paid_search,ecommerce,157,US,lost,,2,no,Online store selling sustainable homeware
+2025-12-25,Zephyr Labs,zephyrlabs.com,Elena Smith,Support Manager,paid_search,ecommerce,33,US,lost,,0,no,Marketplace for refurbished electronics
+2025-12-26,Atlas Ember Learning,atlasemberlearning.com,Sofia Garcia,Director of Operations,paid_search,ecommerce,69,US,lost,,0,no,Marketplace for refurbished electronics
+2025-12-27,Quill Birch Pay,quillbirchpay.com,Zara Nair,Support Agent,linkedin,fintech,31,SG,lost,,0,yes,Expense management software for finance teams
+2025-12-27,Vela Sable Systems,velasablesystems.com,Noah Garcia,Support Agent,content,saas,66,US,lost,,0,no,Analytics dashboard for product teams
+2025-12-28,Nimbus Northwind Works,nimbusnorthwindworks.com,Ana Khan,CX Manager,paid_search,saas,146,US,won,2026-02-04,3,yes,Project management tool for remote teams
+2025-12-29,Atlas Tidal Pay,atlastidalpay.com,Ana Iyer,Director of Support,paid_search,saas,35,UK,lost,,3,no,HR software for hourly workers
+2025-12-30,Pioneer Meridian Pay,pioneermeridianpay.com,Elena Smith,Director of Operations,paid_search,fintech,11,UK,lost,,0,no,Invoice factoring marketplace
+2025-12-31,Tidal Harbor Studio,tidalharborstudio.com,Noah Nair,CX Manager,organic,saas,132,SG,won,2026-02-07,3,yes,Analytics dashboard for product teams
+2026-01-01,Birch Juniper Pay,birchjuniperpay.com,Sofia Patel,Director of Operations,paid_search,saas,45,UK,lost,,0,no,Project management tool for remote teams
+2026-01-03,Quanta Ridge Pay,quantaridgepay.com,Gabe Kim,Support Manager,organic,saas,92,IN,lost,,1,yes,Analytics dashboard for product teams
+2026-01-04,Pine Pioneer AI,pinepioneerai.com,Ana Ng,CX Manager,organic,saas,102,IN,lost,,1,no,Project management tool for remote teams
+2026-01-07,Nimbus Studio,nimbusstudio.com,Chloe Rao,Support Agent,paid_search,saas,25,IN,lost,,1,no,Analytics dashboard for product teams
+2026-01-09,Umbra Willow Health,umbrawillowhealth.com,Ethan Khan,Founder,paid_search,healthcare,23,US,lost,,2,no,Clinic scheduling and patient reminders
+2026-01-09,Birch Harbor Labs,birchharborlabs.com,Priya Smith,Support Manager,organic,ecommerce,21,UK,lost,,4,yes,Subscription box for specialty coffee
+2026-01-10,Quill Systems,quillsystems.com,Zara Garcia,Director of Operations,referral,fintech,32,US,lost,,0,no,Card issuing API for neobanks
+2026-01-11,Northwind Pine Studio,northwindpinestudio.com,Hana Smith,CX Manager,paid_search,fintech,282,US,lost,,3,no,Invoice factoring marketplace
+2026-01-11,Umbra Pioneer AI,umbrapioneerai.com,Farah Khan,Support Agent,organic,fintech,40,UK,lost,,0,no,Expense management software for finance teams
+2026-01-12,Vela Onyx AI,velaonyxai.com,Elena Smith,Support Agent,linkedin,ecommerce,85,US,lost,,0,no,Direct-to-consumer skincare brand
+2026-01-12,Vertex Ridge Works,vertexridgeworks.com,Bo Khan,Director of Operations,organic,fintech,100,IN,lost,,0,no,Invoice factoring marketplace
+2026-01-12,Cobalt Pioneer Cloud,cobaltpioneercloud.com,Gabe Iyer,VP Operations,content,healthcare,119,DE,lost,,1,no,Clinic scheduling and patient reminders
+2026-01-17,Meridian Kestrel Commerce,meridiankestrelcommerce.com,Emma Smith,Analyst,organic,saas,19,US,lost,,1,no,Developer API for sending transactional email
+2026-01-18,Ember Ridge Studio,emberridgestudio.com,Priya Ng,Support Manager,content,education,136,DE,lost,,0,no,Online coding bootcamp
+2026-01-19,Orbit Pioneer Studio,orbitpioneerstudio.com,Zara Nair,Analyst,paid_search,saas,92,UK,lost,,0,no,Developer API for sending transactional email
+2026-01-19,Cobalt Tidal Learning,cobalttidallearning.com,Priya Ng,Director of Support,referral,ecommerce,180,UK,won,2026-02-23,4,no,Online store selling sustainable homeware
+2026-01-20,Ember Pioneer Labs,emberpioneerlabs.com,Hana Shah,Support Manager,paid_search,fintech,40,IN,won,2026-02-20,0,no,Invoice factoring marketplace
+2026-01-21,Quill Sable Commerce,quillsablecommerce.com,Priya Brown,VP Operations,paid_search,fintech,13,US,lost,,1,no,Invoice factoring marketplace
+2026-01-21,Willow Atlas Health,willowatlashealth.com,Gabe Iyer,Director of Operations,content,fintech,60,US,lost,,2,yes,Expense management software for finance teams
+2026-01-22,Juniper Northwind Cloud,junipernorthwindcloud.com,Emma Nair,Support Manager,referral,fintech,36,IN,lost,,0,no,Invoice factoring marketplace
+2026-01-23,Orbit Nimbus Learning,orbitnimbuslearning.com,Noah Iyer,Analyst,linkedin,saas,24,US,lost,,2,no,HR software for hourly workers
+2026-01-24,Juniper Lumen Works,juniperlumenworks.com,Emma Lopez,Support Manager,linkedin,ecommerce,571,IN,lost,,3,yes,Marketplace for refurbished electronics
+2026-01-25,Umbra Vertex Systems,umbravertexsystems.com,Dev Garcia,Support Manager,paid_search,healthcare,81,UK,lost,,3,yes,Telehealth platform for physiotherapy
+2026-01-26,Kestrel AI,kestrelai.com,Hana Chen,CX Manager,linkedin,saas,26,US,lost,,2,no,Analytics dashboard for product teams
+2026-01-26,Ember Ridge Labs,emberridgelabs.com,Emma Brown,Support Manager,organic,saas,88,US,won,2026-02-08,2,yes,Project management tool for remote teams
+2026-01-26,Pioneer Birch Pay,pioneerbirchpay.com,Chloe Patel,Support Agent,organic,healthcare,127,IN,lost,,0,no,Clinic scheduling and patient reminders
+2026-01-26,Pioneer Pay,pioneerpay.com,Ethan Brown,Support Manager,content,healthcare,21,US,won,2026-03-05,2,no,Pharmacy inventory software
+2026-01-28,Quill Delta Cloud,quilldeltacloud.com,Elena Shah,Director of Operations,paid_search,education,123,SG,lost,,0,no,Tutoring marketplace for high-school students
+2026-01-28,Cobalt Commerce,cobaltcommerce.com,Gabe Patel,VP Operations,referral,fintech,25,US,won,2026-02-18,0,yes,Invoice factoring marketplace
+2026-01-29,Vela Umbra Health,velaumbrahealth.com,Liam Rao,CX Manager,linkedin,education,15,UK,won,2026-02-08,3,yes,Tutoring marketplace for high-school students
+2026-01-29,Juniper Meridian Commerce,junipermeridiancommerce.com,Rohan Khan,Analyst,content,education,132,US,lost,,1,no,Learning management system for corporate training
+2026-01-31,Juniper Vela Learning,junipervelalearning.com,Ishaan Khan,Director of Operations,content,ecommerce,12,UK,lost,,1,yes,Online store selling sustainable homeware
+2026-02-01,Orbit Learning,orbitlearning.com,Ana Shah,COO,referral,ecommerce,40,US,lost,,0,no,Subscription box for specialty coffee
+2026-02-04,Ember Cedar Studio,embercedarstudio.com,Ishaan Lopez,CX Manager,organic,saas,29,US,lost,,2,no,Project management tool for remote teams
+2026-02-05,Quill Harbor Works,quillharborworks.com,Farah Smith,Analyst,paid_search,saas,19,IN,lost,,1,no,Analytics dashboard for product teams
+2026-02-05,Zephyr Pine Works,zephyrpineworks.com,Dev Chen,Support Manager,linkedin,saas,22,IN,lost,,2,no,Project management tool for remote teams
+2026-02-06,Zephyr Onyx Learning,zephyronyxlearning.com,Ishaan Brown,COO,paid_search,healthcare,59,IN,won,2026-02-18,1,no,Telehealth platform for physiotherapy
+2026-02-06,Ridge Tidal Studio,ridgetidalstudio.com,Dev Smith,Director of Support,linkedin,education,68,US,lost,,0,no,Learning management system for corporate training
+2026-02-08,Lumen Sable Commerce,lumensablecommerce.com,Dev Rao,Analyst,referral,fintech,42,US,won,2026-02-20,0,no,Payments and lending platform for small businesses
+2026-02-09,Ember Willow Works,emberwillowworks.com,Ana Garcia,Director of Support,paid_search,ecommerce,30,US,lost,,1,no,Subscription box for specialty coffee
+2026-02-11,Ledger Lumen Cloud,ledgerlumencloud.com,Ishaan Iyer,Analyst,organic,saas,146,US,lost,,3,no,Developer API for sending transactional email
+2026-02-12,Ridge Quanta Studio,ridgequantastudio.com,Kabir Nair,Analyst,paid_search,fintech,10,US,won,2026-02-25,0,no,Payments and lending platform for small businesses
+2026-02-13,Meridian Sable AI,meridiansableai.com,Hana Brown,Founder,organic,education,140,US,lost,,5,yes,Learning management system for corporate training
+2026-02-14,Delta Meridian Cloud,deltameridiancloud.com,Ana Chen,Analyst,paid_search,fintech,46,US,lost,,0,no,Payments and lending platform for small businesses
+2026-02-15,Quanta Labs,quantalabs.com,Elena Smith,Support Agent,paid_search,fintech,52,IN,lost,,1,no,Expense management software for finance teams
+2026-02-15,Vertex Vertex Works,vertexvertexworks.com,Hana Rao,CX Manager,linkedin,saas,50,US,lost,,3,no,Developer API for sending transactional email
+2026-02-15,Tidal Meridian Systems,tidalmeridiansystems.com,Dev Iyer,Analyst,referral,fintech,81,US,lost,,2,yes,Expense management software for finance teams
+2026-02-17,Orbit Cobalt Works,orbitcobaltworks.com,Dev Rao,Support Agent,paid_search,saas,23,US,lost,,0,yes,Developer API for sending transactional email
+2026-02-18,Ledger Meridian Studio,ledgermeridianstudio.com,Zara Khan,Support Agent,referral,education,59,US,lost,,3,no,Tutoring marketplace for high-school students
+2026-02-21,Willow Nimbus Systems,willownimbussystems.com,Hana Smith,CX Manager,referral,saas,171,US,lost,,2,no,HR software for hourly workers
+2026-02-22,Fable Meridian Studio,fablemeridianstudio.com,Emma Brown,Director of Support,linkedin,ecommerce,53,IN,lost,,3,no,Online store selling sustainable homeware
+2026-02-22,Quanta Pay,quantapay.com,Farah Nair,Director of Operations,organic,fintech,307,UK,lost,,1,no,Payments and lending platform for small businesses
+2026-02-23,Delta Lumen Works,deltalumenworks.com,Rohan Kim,Director of Operations,paid_search,saas,31,IN,won,2026-03-09,1,no,Project management tool for remote teams
+2026-02-26,Quill Vertex Commerce,quillvertexcommerce.com,Farah Nair,CX Manager,paid_search,education,216,US,lost,,3,no,Learning management system for corporate training
+2026-02-27,Willow Systems,willowsystems.com,Priya Patel,Support Agent,paid_search,healthcare,68,US,lost,,0,no,Telehealth platform for physiotherapy
+2026-02-28,Harbor Harbor Studio,harborharborstudio.com,Aarav Chen,Head of Support,paid_search,ecommerce,90,UK,lost,,0,no,Direct-to-consumer skincare brand
+2026-02-28,Pine Birch AI,pinebirchai.com,Rohan Patel,CX Manager,paid_search,fintech,222,IN,won,2026-04-06,2,yes,Expense management software for finance teams
+2026-02-28,Tidal Kestrel Health,tidalkestrelhealth.com,Sofia Kim,Support Manager,linkedin,ecommerce,142,UK,lost,,1,no,Online store selling sustainable homeware
+2026-03-01,Lumen Willow Labs,lumenwillowlabs.com,Elena Kim,Founder,organic,education,31,US,lost,,0,no,Learning management system for corporate training
+2026-03-01,Willow Works,willowworks.com,Ana Garcia,Support Agent,organic,healthcare,66,US,lost,,0,yes,Pharmacy inventory software
+2026-03-02,Sable Kestrel Studio,sablekestrelstudio.com,Priya Rao,CX Manager,organic,ecommerce,388,US,won,2026-04-05,2,yes,Marketplace for refurbished electronics
+2026-03-02,Orbit Quanta Cloud,orbitquantacloud.com,Gabe Rao,Support Manager,referral,fintech,72,US,won,2026-04-03,0,yes,Card issuing API for neobanks
+2026-03-03,Harbor Labs,harborlabs.com,Gabe Shah,Analyst,linkedin,education,31,US,lost,,1,no,Tutoring marketplace for high-school students
+2026-03-04,Delta Fable Studio,deltafablestudio.com,Chloe Patel,Head of Support,paid_search,education,216,IN,lost,,1,no,Tutoring marketplace for high-school students
+2026-03-04,Kestrel Fable Studio,kestrelfablestudio.com,Maya Nair,Support Agent,organic,education,64,US,lost,,3,yes,Online coding bootcamp
+2026-03-05,Meridian Zephyr AI,meridianzephyrai.com,Maya Ng,Support Agent,content,healthcare,25,UK,lost,,2,no,Pharmacy inventory software
+2026-03-08,Ledger Quanta Cloud,ledgerquantacloud.com,Priya Rao,CX Manager,paid_search,fintech,110,IN,lost,,0,no,Payments and lending platform for small businesses
+2026-03-09,Willow Cloud,willowcloud.com,Chloe Shah,Analyst,linkedin,education,45,UK,lost,,1,yes,Tutoring marketplace for high-school students
+2026-03-09,Cedar Cobalt AI,cedarcobaltai.com,Ishaan Lopez,Support Manager,organic,saas,37,IN,lost,,0,yes,Developer API for sending transactional email
+2026-03-11,Willow Onyx Commerce,willowonyxcommerce.com,Ana Kim,CX Manager,paid_search,fintech,307,IN,won,2026-03-26,2,no,Payments and lending platform for small businesses
+2026-03-11,Tidal Pine Learning,tidalpinelearning.com,Hana Ng,CX Manager,organic,saas,43,US,won,2026-03-30,2,no,HR software for hourly workers
+2026-03-12,Willow Zephyr Systems,willowzephyrsystems.com,Dev Rao,Founder,paid_search,saas,37,US,won,2026-03-26,0,no,Project management tool for remote teams
+2026-03-13,Cobalt Vela Labs,cobaltvelalabs.com,Ishaan Iyer,Support Manager,paid_search,ecommerce,118,US,lost,,0,yes,Direct-to-consumer skincare brand
+2026-03-13,Zephyr Harbor Learning,zephyrharborlearning.com,Hana Brown,CX Manager,organic,healthcare,351,UK,lost,,0,no,Pharmacy inventory software
+2026-03-14,Willow Lumen Learning,willowlumenlearning.com,Bo Brown,Support Manager,linkedin,saas,274,US,lost,,0,no,Project management tool for remote teams
+2026-03-15,Willow Juniper AI,willowjuniperai.com,Bo Khan,Director of Operations,linkedin,fintech,16,IN,lost,,0,no,Expense management software for finance teams
+2026-03-15,Ember Studio,emberstudio.com,Priya Iyer,Support Manager,organic,saas,125,US,lost,,0,no,HR software for hourly workers
+2026-03-15,Ember Birch Labs,emberbirchlabs.com,Liam Rao,Support Manager,content,saas,76,US,lost,,0,no,Project management tool for remote teams
+2026-03-16,Quanta Commerce,quantacommerce.com,Ana Ng,Analyst,organic,saas,118,US,lost,,4,no,Project management tool for remote teams
+2026-03-17,Vertex Meridian Commerce,vertexmeridiancommerce.com,Ana Kim,Support Agent,content,healthcare,37,IN,lost,,3,yes,Telehealth platform for physiotherapy
+2026-03-18,Tidal Onyx Health,tidalonyxhealth.com,Liam Shah,Support Manager,organic,saas,391,DE,won,2026-04-03,2,no,Developer API for sending transactional email
+2026-03-20,Ember Tidal Health,embertidalhealth.com,Ana Khan,Analyst,paid_search,saas,20,SG,lost,,3,no,Project management tool for remote teams
+2026-03-21,Onyx Cobalt Health,onyxcobalthealth.com,Hana Smith,Support Agent,paid_search,fintech,82,IN,lost,,2,yes,Invoice factoring marketplace
+2026-03-21,Vela Sable Commerce,velasablecommerce.com,Hana Nair,Director of Operations,linkedin,education,48,IN,lost,,0,no,Tutoring marketplace for high-school students
+2026-03-21,Ember Tidal Commerce,embertidalcommerce.com,Aarav Khan,Support Agent,content,ecommerce,11,DE,lost,,1,no,Marketplace for refurbished electronics
+2026-03-23,Ember Onyx Studio,emberonyxstudio.com,Priya Garcia,Support Manager,paid_search,saas,69,US,lost,,2,no,Analytics dashboard for product teams
+2026-03-23,Birch Quill Pay,birchquillpay.com,Dev Brown,CX Manager,linkedin,saas,31,UK,lost,,0,no,HR software for hourly workers
+2026-03-23,Northwind Vela AI,northwindvelaai.com,Ishaan Ng,Director of Operations,organic,saas,52,US,lost,,0,no,HR software for hourly workers
+2026-03-24,Onyx Lumen Commerce,onyxlumencommerce.com,Sofia Iyer,Support Manager,organic,saas,11,IN,lost,,2,no,HR software for hourly workers
+2026-03-25,Ember Northwind Labs,embernorthwindlabs.com,Bo Nair,Director of Support,organic,saas,89,US,lost,,1,no,Analytics dashboard for product teams
+2026-03-28,Umbra Meridian Pay,umbrameridianpay.com,Zara Kim,Founder,organic,fintech,86,UK,lost,,4,no,Card issuing API for neobanks
+2026-04-03,Tidal Labs,tidallabs.com,Kabir Garcia,Analyst,paid_search,fintech,60,UK,lost,,1,no,Payments and lending platform for small businesses
+2026-04-04,Lumen Kestrel Systems,lumenkestrelsystems.com,Farah Shah,Support Agent,organic,saas,34,UK,lost,,0,no,Project management tool for remote teams
+2026-04-04,Ridge Cobalt Learning,ridgecobaltlearning.com,Aarav Brown,Director of Support,organic,healthcare,99,SG,won,2026-05-09,4,yes,Pharmacy inventory software
+2026-04-04,Willow Fable Health,willowfablehealth.com,Aarav Iyer,Support Agent,content,fintech,200,US,lost,,2,yes,Card issuing API for neobanks
+2026-04-06,Quill Tidal Systems,quilltidalsystems.com,Kabir Rao,Head of Support,paid_search,fintech,156,UK,lost,,4,no,Card issuing API for neobanks
+2026-04-06,Zephyr Fable Learning,zephyrfablelearning.com,Priya Chen,CX Manager,paid_search,saas,57,US,lost,,0,yes,Project management tool for remote teams
+2026-04-06,Cobalt Pine Learning,cobaltpinelearning.com,Priya Lopez,Director of Support,organic,saas,22,IN,won,2026-05-08,1,yes,HR software for hourly workers
+2026-04-06,Ledger Juniper Studio,ledgerjuniperstudio.com,Elena Garcia,Director of Support,referral,education,109,US,lost,,1,no,Tutoring marketplace for high-school students
+2026-04-07,Ember Atlas Pay,emberatlaspay.com,Zara Shah,COO,paid_search,ecommerce,84,UK,lost,,4,yes,Marketplace for refurbished electronics
+2026-04-11,Quill Meridian AI,quillmeridianai.com,Chloe Shah,Support Manager,paid_search,saas,66,US,lost,,2,yes,Project management tool for remote teams
+2026-04-11,Ridge Tidal Learning,ridgetidallearning.com,Chloe Lopez,Director of Operations,paid_search,fintech,228,IN,won,2026-05-02,0,no,Expense management software for finance teams
+2026-04-12,Ledger Meridian Labs,ledgermeridianlabs.com,Farah Smith,Support Agent,linkedin,ecommerce,48,SG,lost,,2,no,Direct-to-consumer skincare brand
+2026-04-14,Lumen Ember Labs,lumenemberlabs.com,Kabir Iyer,Director of Support,organic,fintech,132,UK,lost,,1,no,Invoice factoring marketplace
+2026-04-17,Pioneer Willow AI,pioneerwillowai.com,Ethan Rao,CX Manager,paid_search,ecommerce,77,IN,lost,,1,no,Marketplace for refurbished electronics
+2026-04-18,Ember AI,emberai.com,Gabe Chen,Director of Operations,paid_search,healthcare,23,IN,won,2026-05-25,2,yes,Telehealth platform for physiotherapy
+2026-04-18,Cobalt Kestrel Health,cobaltkestrelhealth.com,Hana Kim,CX Manager,referral,education,11,IN,won,2026-05-26,0,no,Online coding bootcamp
+2026-04-19,Onyx Signal Works,onyxsignalworks.com,Emma Garcia,CX Manager,linkedin,healthcare,33,US,lost,,0,no,Pharmacy inventory software
+2026-04-20,Orbit Vertex Works,orbitvertexworks.com,Chloe Iyer,CX Manager,paid_search,ecommerce,129,UK,lost,,1,no,Online store selling sustainable homeware
+2026-04-20,Birch Labs,birchlabs.com,Emma Lopez,Support Agent,content,saas,109,UK,won,2026-05-28,3,yes,Developer API for sending transactional email
+2026-04-21,Juniper Harbor Cloud,juniperharborcloud.com,Sofia Khan,CX Manager,paid_search,ecommerce,31,UK,lost,,0,no,Direct-to-consumer skincare brand
+2026-04-24,Nimbus Harbor Works,nimbusharborworks.com,Aarav Shah,Director of Support,paid_search,education,98,US,won,2026-05-04,4,yes,Online coding bootcamp
+2026-04-24,Willow Quanta Commerce,willowquantacommerce.com,Bo Ng,Director of Support,organic,healthcare,30,DE,lost,,0,no,Pharmacy inventory software
+2026-04-24,Delta Umbra Labs,deltaumbralabs.com,Bo Khan,CX Manager,referral,education,52,US,lost,,1,no,Learning management system for corporate training
+2026-04-25,Willow Pioneer Works,willowpioneerworks.com,Bo Nair,Director of Support,paid_search,saas,41,IN,won,2026-05-24,0,no,Analytics dashboard for product teams
+2026-04-26,Pioneer Cedar Labs,pioneercedarlabs.com,Noah Kim,CX Manager,paid_search,fintech,38,SG,lost,,2,no,Payments and lending platform for small businesses
+2026-04-28,Signal Cedar Commerce,signalcedarcommerce.com,Elena Patel,COO,linkedin,ecommerce,41,IN,lost,,0,no,Direct-to-consumer skincare brand
+2026-04-28,Ember Harbor Learning,emberharborlearning.com,Maya Lopez,CX Manager,content,education,9,UK,lost,,1,no,Online coding bootcamp
+2026-04-29,Umbra Cobalt Works,umbracobaltworks.com,Gabe Nair,CX Manager,paid_search,ecommerce,44,US,won,2026-05-28,2,yes,Subscription box for specialty coffee
+2026-05-02,Orbit Quanta Commerce,orbitquantacommerce.com,Aarav Khan,Support Manager,paid_search,saas,20,US,lost,,0,no,Analytics dashboard for product teams
+2026-05-02,Harbor Meridian Systems,harbormeridiansystems.com,Maya Shah,Support Manager,linkedin,ecommerce,83,US,won,2026-06-04,3,yes,Marketplace for refurbished electronics
+2026-05-03,Willow Vela Labs,willowvelalabs.com,Gabe Kim,Support Manager,paid_search,ecommerce,40,US,lost,,2,no,Direct-to-consumer skincare brand
+2026-05-05,Ember Signal Health,embersignalhealth.com,Zara Iyer,Director of Support,referral,healthcare,54,IN,won,2026-06-14,0,no,Pharmacy inventory software
+2026-05-05,Atlas Nimbus Health,atlasnimbushealth.com,Liam Rao,CX Manager,content,healthcare,39,IN,lost,,3,no,Clinic scheduling and patient reminders
+2026-05-07,Orbit Sable Studio,orbitsablestudio.com,Liam Smith,VP Operations,organic,saas,88,UK,lost,,0,no,HR software for hourly workers
+2026-05-07,Harbor Umbra Pay,harborumbrapay.com,Farah Nair,Support Agent,organic,saas,234,UK,lost,,1,no,Developer API for sending transactional email
+2026-05-08,Signal Sable Works,signalsableworks.com,Elena Lopez,Director of Support,organic,fintech,353,UK,won,2026-06-10,3,yes,Payments and lending platform for small businesses
+2026-05-09,Delta Quill Pay,deltaquillpay.com,Noah Ng,Director of Support,linkedin,fintech,140,SG,won,2026-06-16,2,yes,Payments and lending platform for small businesses
+2026-05-09,Kestrel Kestrel Health,kestrelkestrelhealth.com,Gabe Kim,Support Agent,organic,ecommerce,204,US,lost,,3,yes,Online store selling sustainable homeware
+2026-05-11,Sable Pioneer Systems,sablepioneersystems.com,Noah Kim,Director of Support,paid_search,fintech,66,SG,lost,,2,yes,Payments and lending platform for small businesses
+2026-05-12,Northwind Kestrel Labs,northwindkestrellabs.com,Sofia Smith,Director of Operations,paid_search,saas,124,IN,won,2026-06-16,1,yes,HR software for hourly workers
+2026-05-13,Ridge Vertex Systems,ridgevertexsystems.com,Gabe Rao,CX Manager,paid_search,saas,34,US,won,2026-06-19,2,no,Developer API for sending transactional email
+2026-05-13,Atlas Zephyr Health,atlaszephyrhealth.com,Priya Iyer,Analyst,paid_search,ecommerce,131,UK,lost,,1,yes,Subscription box for specialty coffee
+2026-05-13,Harbor Pine Systems,harborpinesystems.com,Zara Rao,Analyst,organic,fintech,8,IN,won,2026-06-07,1,no,Invoice factoring marketplace
+2026-05-14,Fable Fable Systems,fablefablesystems.com,Elena Khan,Support Agent,linkedin,fintech,55,UK,lost,,0,no,Payments and lending platform for small businesses
+2026-05-16,Fable Quanta AI,fablequantaai.com,Maya Nair,Support Agent,referral,ecommerce,42,SG,lost,,1,no,Direct-to-consumer skincare brand
+2026-05-16,Cedar Northwind Learning,cedarnorthwindlearning.com,Farah Iyer,CX Manager,content,saas,56,UK,lost,,0,no,Developer API for sending transactional email
+2026-05-17,Birch Delta Studio,birchdeltastudio.com,Ethan Smith,Support Manager,linkedin,fintech,140,DE,lost,,3,yes,Invoice factoring marketplace
+2026-05-17,Onyx Zephyr Cloud,onyxzephyrcloud.com,Ishaan Brown,Founder,content,saas,89,US,lost,,2,no,HR software for hourly workers
+2026-05-18,Quill Pine Studio,quillpinestudio.com,Chloe Nair,CX Manager,paid_search,education,45,IN,lost,,0,no,Online coding bootcamp
+2026-05-18,Delta Ridge Learning,deltaridgelearning.com,Farah Brown,Analyst,linkedin,fintech,42,IN,won,2026-06-10,2,no,Card issuing API for neobanks
+2026-05-20,Meridian Kestrel Cloud,meridiankestrelcloud.com,Farah Khan,CX Manager,paid_search,saas,59,US,lost,,0,no,Analytics dashboard for product teams
+2026-05-20,Lumen Ridge Health,lumenridgehealth.com,Chloe Kim,Support Manager,organic,fintech,252,US,won,2026-06-05,0,no,Invoice factoring marketplace
+2026-05-20,Ridge Kestrel Systems,ridgekestrelsystems.com,Bo Khan,CX Manager,referral,saas,164,US,lost,,1,no,HR software for hourly workers
+2026-05-21,Vela Northwind Works,velanorthwindworks.com,Priya Garcia,Support Agent,organic,healthcare,269,US,lost,,1,no,Pharmacy inventory software
+2026-05-22,Pine Vela Commerce,pinevelacommerce.com,Ana Smith,Analyst,linkedin,ecommerce,20,IN,lost,,3,no,Subscription box for specialty coffee
+2026-05-22,Pine Signal Systems,pinesignalsystems.com,Ana Garcia,Support Manager,linkedin,ecommerce,64,US,lost,,1,no,Direct-to-consumer skincare brand
+2026-05-22,Vela Umbra Learning,velaumbralearning.com,Maya Nair,Director of Operations,organic,fintech,69,UK,won,2026-06-26,2,yes,Payments and lending platform for small businesses
+2026-05-23,Vertex Onyx Health,vertexonyxhealth.com,Aarav Patel,Support Manager,paid_search,fintech,24,SG,won,2026-06-02,2,no,Card issuing API for neobanks
+2026-05-23,Ledger Delta Health,ledgerdeltahealth.com,Gabe Nair,COO,organic,healthcare,109,US,lost,,0,no,Telehealth platform for physiotherapy
+2026-05-24,Ember Birch Cloud,emberbirchcloud.com,Priya Brown,Support Manager,linkedin,saas,37,IN,lost,,0,no,Analytics dashboard for product teams
+2026-05-26,Ridge Signal Systems,ridgesignalsystems.com,Hana Smith,VP Operations,paid_search,education,58,US,lost,,2,no,Tutoring marketplace for high-school students
+2026-05-26,Umbra Pioneer Works,umbrapioneerworks.com,Kabir Iyer,CX Manager,organic,fintech,24,US,lost,,0,no,Invoice factoring marketplace
+2026-05-30,Umbra Juniper AI,umbrajuniperai.com,Bo Nair,Analyst,linkedin,healthcare,95,US,lost,,2,yes,Pharmacy inventory software
+2026-06-01,Meridian Vertex Learning,meridianvertexlearning.com,Gabe Lopez,Director of Support,paid_search,saas,98,US,won,2026-07-09,0,no,Project management tool for remote teams
+2026-06-01,Sable Quanta Systems,sablequantasystems.com,Sofia Garcia,Support Agent,paid_search,ecommerce,64,US,lost,,1,yes,Direct-to-consumer skincare brand
+2026-06-03,Juniper Delta Health,juniperdeltahealth.com,Hana Lopez,Director of Support,paid_search,saas,63,SG,lost,,1,no,Project management tool for remote teams
+2026-06-03,Cedar Sable Cloud,cedarsablecloud.com,Liam Brown,Support Manager,paid_search,education,54,US,lost,,4,yes,Tutoring marketplace for high-school students
+2026-06-03,Vertex Ember Commerce,vertexembercommerce.com,Kabir Brown,Support Agent,referral,ecommerce,43,US,lost,,1,no,Subscription box for specialty coffee
+2026-06-03,Nimbus Pioneer Labs,nimbuspioneerlabs.com,Kabir Khan,Founder,content,healthcare,33,IN,won,2026-06-21,0,yes,Pharmacy inventory software
+2026-06-05,Vela Northwind Cloud,velanorthwindcloud.com,Farah Smith,CX Manager,content,education,169,UK,won,2026-07-13,2,yes,Tutoring marketplace for high-school students
+2026-06-06,Cedar Cloud,cedarcloud.com,Chloe Brown,Support Agent,paid_search,ecommerce,60,UK,lost,,0,yes,Online store selling sustainable homeware
+2026-06-06,Tidal Ember Learning,tidalemberlearning.com,Rohan Patel,COO,organic,ecommerce,188,UK,won,2026-07-15,2,yes,Direct-to-consumer skincare brand
+2026-06-06,Atlas Ridge Learning,atlasridgelearning.com,Zara Kim,Support Manager,content,education,64,IN,lost,,2,yes,Online coding bootcamp
+2026-06-09,Juniper Willow Health,juniperwillowhealth.com,Chloe Nair,Director of Operations,paid_search,fintech,54,US,won,2026-06-28,1,yes,Invoice factoring marketplace
+2026-06-09,Onyx Northwind AI,onyxnorthwindai.com,Farah Kim,CX Manager,paid_search,fintech,149,IN,won,2026-07-06,2,yes,Payments and lending platform for small businesses
+2026-06-13,Fable Cedar Commerce,fablecedarcommerce.com,Chloe Shah,Analyst,paid_search,ecommerce,141,DE,lost,,2,no,Marketplace for refurbished electronics
+2026-06-14,Meridian Meridian Studio,meridianmeridianstudio.com,Rohan Smith,Support Manager,paid_search,saas,70,US,won,2026-07-19,3,yes,Developer API for sending transactional email
+2026-06-14,Ledger Nimbus Works,ledgernimbusworks.com,Gabe Chen,COO,linkedin,education,43,US,won,2026-07-10,0,no,Learning management system for corporate training
+2026-06-15,Northwind Quill Health,northwindquillhealth.com,Rohan Ng,Support Agent,referral,healthcare,25,US,lost,,1,yes,Pharmacy inventory software
+2026-06-16,Birch Umbra Learning,birchumbralearning.com,Maya Kim,CX Manager,paid_search,education,179,DE,lost,,0,no,Tutoring marketplace for high-school students
+2026-06-16,Tidal Signal Commerce,tidalsignalcommerce.com,Elena Ng,Head of Support,organic,saas,122,DE,lost,,1,no,Analytics dashboard for product teams
+2026-06-17,Vertex Cedar Commerce,vertexcedarcommerce.com,Chloe Iyer,Support Manager,paid_search,saas,40,IN,lost,,1,no,Project management tool for remote teams
+2026-06-17,Zephyr Harbor Labs,zephyrharborlabs.com,Liam Khan,Head of Support,referral,fintech,127,US,lost,,2,no,Payments and lending platform for small businesses
+2026-06-17,Willow Atlas AI,willowatlasai.com,Maya Brown,Founder,content,fintech,98,SG,won,2026-07-05,0,no,Card issuing API for neobanks
+2026-06-19,Kestrel Delta Learning,kestreldeltalearning.com,Liam Brown,Director of Operations,paid_search,ecommerce,68,IN,won,2026-07-02,1,no,Marketplace for refurbished electronics
+2026-06-19,Quill Quanta AI,quillquantaai.com,Liam Khan,Director of Operations,linkedin,saas,59,US,lost,,2,no,HR software for hourly workers
+2026-06-19,Ember Harbor Works,emberharborworks.com,Liam Patel,VP Operations,content,fintech,72,UK,lost,,2,no,Invoice factoring marketplace
+2026-06-20,Nimbus Tidal Health,nimbustidalhealth.com,Rohan Lopez,Director of Operations,paid_search,ecommerce,73,US,won,2026-07-18,0,yes,Direct-to-consumer skincare brand
+2026-06-21,Cedar Quill Health,cedarquillhealth.com,Bo Iyer,Director of Support,paid_search,saas,14,UK,won,2026-07-31,1,yes,Developer API for sending transactional email
+2026-06-21,Onyx Lumen Systems,onyxlumensystems.com,Bo Patel,Director of Support,paid_search,saas,129,SG,lost,,0,no,Developer API for sending transactional email
+2026-06-21,Signal Orbit Learning,signalorbitlearning.com,Aarav Brown,Support Agent,organic,healthcare,29,IN,lost,,0,no,Clinic scheduling and patient reminders
+2026-06-21,Nimbus Pioneer Systems,nimbuspioneersystems.com,Farah Kim,Analyst,organic,saas,57,US,won,2026-07-20,1,no,Project management tool for remote teams
+2026-06-22,Lumen Meridian Health,lumenmeridianhealth.com,Priya Shah,Director of Support,referral,saas,22,US,lost,,2,no,Developer API for sending transactional email
+2026-06-24,Zephyr Sable Systems,zephyrsablesystems.com,Gabe Shah,COO,paid_search,fintech,767,US,won,2026-07-23,1,no,Payments and lending platform for small businesses
+2026-06-24,Pioneer Umbra Systems,pioneerumbrasystems.com,Dev Lopez,Founder,linkedin,saas,51,SG,lost,,0,no,HR software for hourly workers
+2026-06-24,Lumen Ledger Commerce,lumenledgercommerce.com,Farah Patel,Head of Support,content,saas,94,IN,lost,,0,no,Developer API for sending transactional email
+2026-06-26,Cobalt Vela Learning,cobaltvelalearning.com,Farah Patel,Support Manager,linkedin,fintech,27,IN,lost,,0,no,Expense management software for finance teams
+2026-06-26,Atlas Nimbus Learning,atlasnimbuslearning.com,Kabir Garcia,COO,referral,ecommerce,235,IN,won,2026-07-22,2,yes,Direct-to-consumer skincare brand
+2026-06-26,Orbit Umbra Learning,orbitumbralearning.com,Kabir Brown,Founder,content,saas,59,UK,won,2026-07-07,2,yes,Analytics dashboard for product teams
+2026-06-27,Willow Sable AI,willowsableai.com,Maya Ng,Director of Support,linkedin,education,124,SG,lost,,1,no,Tutoring marketplace for high-school students
+2026-06-27,Atlas Ember AI,atlasemberai.com,Priya Shah,CX Manager,organic,fintech,286,IN,lost,,0,no,Invoice factoring marketplace
+2026-06-27,Vertex Delta Works,vertexdeltaworks.com,Sofia Chen,CX Manager,referral,ecommerce,155,IN,won,2026-08-04,0,no,Direct-to-consumer skincare brand
+2026-06-27,Harbor Harbor Pay,harborharborpay.com,Gabe Shah,CX Manager,content,ecommerce,119,IN,lost,,2,no,Subscription box for specialty coffee
+2026-06-28,Birch Lumen Cloud,birchlumencloud.com,Ana Kim,Support Manager,paid_search,saas,57,US,lost,,0,no,Project management tool for remote teams
+2026-06-28,Vela Juniper AI,velajuniperai.com,Kabir Rao,Support Agent,content,education,78,US,lost,,2,no,Online coding bootcamp
+2026-07-01,Cobalt Atlas AI,cobaltatlasai.com,Zara Chen,Analyst,organic,saas,60,IN,lost,,0,no,Developer API for sending transactional email
+2026-07-03,Ember Pine Systems,emberpinesystems.com,Chloe Shah,Analyst,content,ecommerce,59,IN,lost,,1,no,Marketplace for refurbished electronics
+2026-07-06,Birch Ledger Labs,birchledgerlabs.com,Farah Shah,Support Agent,paid_search,education,31,UK,lost,,1,no,Online coding bootcamp
+2026-07-07,Atlas Vela Studio,atlasvelastudio.com,Noah Chen,Support Agent,linkedin,ecommerce,63,DE,lost,,0,no,Online store selling sustainable homeware
+2026-07-08,Quill Birch Health,quillbirchhealth.com,Zara Patel,Support Manager,organic,healthcare,25,US,lost,,1,no,Clinic scheduling and patient reminders
+2026-07-09,Kestrel Fable Health,kestrelfablehealth.com,Noah Shah,Support Manager,organic,healthcare,24,IN,lost,,1,no,Pharmacy inventory software
+2026-07-10,Meridian Ledger Works,meridianledgerworks.com,Dev Smith,Director of Support,referral,healthcare,89,US,won,2026-07-24,1,yes,Telehealth platform for physiotherapy
+2026-07-11,Ember Orbit Cloud,emberorbitcloud.com,Noah Kim,Director of Support,linkedin,saas,24,US,lost,,0,no,Analytics dashboard for product teams
+2026-07-12,Quill Quill AI,quillquillai.com,Rohan Kim,CX Manager,linkedin,healthcare,23,IN,lost,,3,yes,Telehealth platform for physiotherapy
+2026-07-13,Pioneer Harbor Health,pioneerharborhealth.com,Rohan Shah,Support Manager,paid_search,saas,64,UK,won,2026-08-20,1,yes,Analytics dashboard for product teams
+2026-07-14,Birch Meridian Pay,birchmeridianpay.com,Gabe Garcia,Analyst,referral,fintech,400,US,lost,,1,yes,Payments and lending platform for small businesses
+2026-07-15,Zephyr Lumen Pay,zephyrlumenpay.com,Hana Iyer,Director of Operations,organic,ecommerce,104,US,won,2026-08-17,2,yes,Marketplace for refurbished electronics
+2026-07-16,Ridge Ridge Studio,ridgeridgestudio.com,Zara Iyer,Support Manager,paid_search,saas,70,US,won,2026-08-10,2,yes,HR software for hourly workers
+2026-07-16,Vela Umbra Cloud,velaumbracloud.com,Aarav Shah,CX Manager,organic,saas,79,UK,lost,,0,no,HR software for hourly workers
+2026-07-16,Fable Onyx Cloud,fableonyxcloud.com,Ethan Chen,Director of Support,content,saas,46,IN,lost,,2,no,Analytics dashboard for product teams
+2026-07-18,Meridian Signal Learning,meridiansignallearning.com,Ethan Shah,Analyst,linkedin,saas,56,US,lost,,5,no,Analytics dashboard for product teams
+2026-07-18,Willow Pine Studio,willowpinestudio.com,Ethan Iyer,Support Manager,content,saas,168,DE,lost,,1,no,Analytics dashboard for product teams
+2026-07-19,Tidal Vela Commerce,tidalvelacommerce.com,Bo Rao,Support Agent,paid_search,healthcare,1869,DE,lost,,0,no,Clinic scheduling and patient reminders
+2026-07-20,Delta Ledger Works,deltaledgerworks.com,Kabir Khan,Support Agent,paid_search,saas,24,IN,lost,,0,no,Analytics dashboard for product teams
+2026-07-21,Ember Delta AI,emberdeltaai.com,Priya Rao,CX Manager,paid_search,ecommerce,266,UK,lost,,0,no,Direct-to-consumer skincare brand
+2026-07-21,Onyx Sable AI,onyxsableai.com,Elena Khan,VP Operations,linkedin,healthcare,52,IN,lost,,3,yes,Pharmacy inventory software
+2026-07-21,Delta Delta Learning,deltadeltalearning.com,Zara Ng,CX Manager,content,saas,50,IN,lost,,0,no,Developer API for sending transactional email
+2026-07-22,Sable Signal Systems,sablesignalsystems.com,Aarav Kim,Support Agent,paid_search,fintech,31,DE,won,2026-08-01,2,yes,Card issuing API for neobanks
+2026-07-22,Ember Vertex Cloud,embervertexcloud.com,Rohan Smith,Support Manager,linkedin,saas,103,IN,lost,,1,no,Project management tool for remote teams
+2026-07-22,Umbra Kestrel Learning,umbrakestrellearning.com,Ethan Patel,Support Agent,referral,healthcare,49,UK,lost,,0,no,Pharmacy inventory software
+2026-07-23,Zephyr Vela AI,zephyrvelaai.com,Ethan Smith,CX Manager,referral,fintech,160,IN,lost,,0,no,Invoice factoring marketplace
+2026-07-24,Vertex Kestrel Labs,vertexkestrellabs.com,Aarav Kim,Analyst,paid_search,healthcare,25,IN,lost,,0,no,Telehealth platform for physiotherapy
+2026-07-27,Northwind Northwind Works,northwindnorthwindworks.com,Liam Chen,COO,content,saas,19,UK,lost,,2,yes,Developer API for sending transactional email
+2026-07-28,Vela Pioneer Learning,velapioneerlearning.com,Ishaan Smith,Support Agent,organic,saas,106,US,lost,,2,yes,Project management tool for remote teams
+2026-07-29,Atlas Ridge Pay,atlasridgepay.com,Maya Khan,CX Manager,linkedin,ecommerce,27,DE,lost,,0,yes,Online store selling sustainable homeware
+2026-07-30,Ember Vela Learning,embervelalearning.com,Ethan Shah,Director of Support,referral,saas,81,US,won,2026-08-25,3,no,Project management tool for remote teams
+2026-07-31,Kestrel Orbit Pay,kestrelorbitpay.com,Farah Iyer,CX Manager,paid_search,ecommerce,69,UK,lost,,0,no,Direct-to-consumer skincare brand
+2026-07-31,Ledger Meridian Pay,ledgermeridianpay.com,Ana Lopez,Director of Support,referral,saas,204,UK,lost,,0,no,HR software for hourly workers
+2026-08-02,Quill Quanta Studio,quillquantastudio.com,Zara Shah,Head of Support,paid_search,fintech,77,US,won,2026-09-03,1,no,Expense management software for finance teams
+2026-08-02,Sable Quill Health,sablequillhealth.com,Emma Iyer,CX Manager,organic,ecommerce,37,IN,lost,,1,yes,Online store selling sustainable homeware
+2026-08-03,Pine Juniper Pay,pinejuniperpay.com,Elena Smith,Support Agent,organic,healthcare,81,US,lost,,0,no,Pharmacy inventory software
+2026-08-04,Ember Vela Commerce,embervelacommerce.com,Gabe Lopez,Director of Support,paid_search,saas,95,US,lost,,1,no,HR software for hourly workers
+2026-08-04,Ridge Juniper Learning,ridgejuniperlearning.com,Ishaan Garcia,Support Agent,content,fintech,115,UK,lost,,0,no,Invoice factoring marketplace
+2026-08-06,Pine Cobalt Commerce,pinecobaltcommerce.com,Hana Brown,Support Manager,linkedin,fintech,90,US,won,2026-08-24,2,yes,Payments and lending platform for small businesses
+2026-08-06,Ledger Lumen AI,ledgerlumenai.com,Ana Rao,Director of Operations,content,fintech,65,US,lost,,0,no,Payments and lending platform for small businesses
+2026-08-07,Lumen Vertex Systems,lumenvertexsystems.com,Bo Patel,Support Agent,linkedin,ecommerce,123,US,lost,,3,yes,Marketplace for refurbished electronics
+2026-08-08,Orbit Harbor AI,orbitharborai.com,Priya Smith,COO,content,ecommerce,69,US,lost,,1,no,Online store selling sustainable homeware
+2026-08-11,Vertex Pine Learning,vertexpinelearning.com,Maya Nair,Support Manager,linkedin,ecommerce,68,US,lost,,0,no,Subscription box for specialty coffee
+2026-08-12,Ember Orbit Health,emberorbithealth.com,Sofia Iyer,Director of Operations,linkedin,saas,16,IN,won,2026-09-16,0,no,HR software for hourly workers
+2026-08-12,Meridian Nimbus Works,meridiannimbusworks.com,Ethan Shah,Analyst,linkedin,education,117,DE,lost,,3,yes,Learning management system for corporate training
+2026-08-12,Sable Ledger Studio,sableledgerstudio.com,Hana Chen,Analyst,organic,saas,28,SG,won,2026-09-02,4,yes,HR software for hourly workers
+2026-08-13,Zephyr Atlas Pay,zephyratlaspay.com,Elena Brown,Support Agent,linkedin,healthcare,41,UK,lost,,1,yes,Clinic scheduling and patient reminders
+2026-08-14,Orbit Quill Learning,orbitquilllearning.com,Ishaan Khan,Support Agent,paid_search,ecommerce,105,IN,won,2026-09-06,0,yes,Marketplace for refurbished electronics
+2026-08-14,Onyx Vertex Cloud,onyxvertexcloud.com,Ana Smith,Analyst,linkedin,saas,70,IN,lost,,2,yes,Project management tool for remote teams
+2026-08-14,Meridian Quill Systems,meridianquillsystems.com,Liam Khan,Founder,content,healthcare,49,US,won,2026-09-19,2,no,Pharmacy inventory software
+2026-08-15,Birch Pioneer Works,birchpioneerworks.com,Farah Nair,Founder,paid_search,saas,44,DE,lost,,0,no,Project management tool for remote teams
+2026-08-17,Vela Orbit Health,velaorbithealth.com,Priya Smith,CX Manager,organic,fintech,46,UK,lost,,0,no,Expense management software for finance teams
+2026-08-18,Sable Zephyr Systems,sablezephyrsystems.com,Ethan Rao,Director of Operations,paid_search,saas,14,US,lost,,0,no,Project management tool for remote teams
+2026-08-19,Juniper Quill Commerce,juniperquillcommerce.com,Chloe Lopez,Support Manager,paid_search,ecommerce,103,US,won,2026-09-14,3,yes,Subscription box for specialty coffee
+2026-08-21,Atlas Zephyr Cloud,atlaszephyrcloud.com,Dev Rao,Director of Support,paid_search,fintech,92,IN,lost,,2,yes,Invoice factoring marketplace
+2026-08-21,Fable Vela Labs,fablevelalabs.com,Zara Kim,Support Agent,paid_search,saas,46,US,lost,,3,yes,Analytics dashboard for product teams
+2026-08-21,Quanta Ledger Works,quantaledgerworks.com,Bo Nair,Support Agent,linkedin,ecommerce,207,IN,won,2026-09-27,0,yes,Online store selling sustainable homeware
+2026-08-22,Willow Harbor Health,willowharborhealth.com,Chloe Rao,Director of Operations,paid_search,saas,122,US,lost,,0,no,Developer API for sending transactional email
+2026-08-22,Kestrel Northwind Health,kestrelnorthwindhealth.com,Farah Nair,Support Agent,linkedin,fintech,70,UK,won,2026-09-30,1,no,Card issuing API for neobanks
+2026-08-23,Vela Umbra AI,velaumbraai.com,Ishaan Kim,Director of Operations,paid_search,saas,36,US,lost,,0,no,Project management tool for remote teams
+2026-08-23,Tidal Kestrel AI,tidalkestrelai.com,Bo Iyer,Support Manager,paid_search,saas,37,US,won,2026-09-15,2,yes,Project management tool for remote teams
+2026-08-23,Cedar Ember Systems,cedarembersystems.com,Emma Patel,Head of Support,paid_search,healthcare,41,US,won,2026-09-15,2,no,Clinic scheduling and patient reminders
+2026-08-24,Juniper Harbor AI,juniperharborai.com,Priya Ng,Head of Support,linkedin,healthcare,11,US,lost,,4,yes,Telehealth platform for physiotherapy
+2026-08-25,Juniper Kestrel Pay,juniperkestrelpay.com,Zara Rao,Analyst,paid_search,fintech,44,UK,lost,,0,no,Expense management software for finance teams
+2026-08-29,Ember Sable Cloud,embersablecloud.com,Gabe Khan,Head of Support,content,fintech,33,US,won,2026-10-04,2,yes,Invoice factoring marketplace
+2026-08-30,Lumen Tidal AI,lumentidalai.com,Ethan Smith,Support Agent,linkedin,ecommerce,70,SG,lost,,0,yes,Online store selling sustainable homeware
+2026-09-01,Kestrel Fable AI,kestrelfableai.com,Liam Brown,Support Manager,linkedin,healthcare,37,SG,lost,,0,no,Clinic scheduling and patient reminders
+2026-09-02,Fable Northwind Pay,fablenorthwindpay.com,Bo Chen,COO,content,ecommerce,58,US,lost,,0,no,Online store selling sustainable homeware
+2026-09-05,Meridian Sable Pay,meridiansablepay.com,Noah Rao,Director of Operations,organic,ecommerce,13,US,lost,,0,no,Online store selling sustainable homeware
+2026-09-06,Tidal Signal Pay,tidalsignalpay.com,Noah Nair,Director of Support,paid_search,saas,18,US,won,2026-10-13,1,yes,Project management tool for remote teams
+2026-09-07,Cobalt Orbit Systems,cobaltorbitsystems.com,Farah Shah,Analyst,linkedin,healthcare,61,DE,lost,,0,yes,Clinic scheduling and patient reminders
+2026-09-07,Zephyr Meridian Cloud,zephyrmeridiancloud.com,Farah Shah,Director of Support,organic,ecommerce,17,IN,won,2026-09-24,0,no,Direct-to-consumer skincare brand
+2026-09-08,Zephyr Pioneer Learning,zephyrpioneerlearning.com,Ana Kim,VP Operations,content,education,44,US,lost,,0,no,Tutoring marketplace for high-school students
+2026-09-10,Vela Ember Systems,velaembersystems.com,Ana Brown,Director of Support,linkedin,saas,39,IN,lost,,1,no,Project management tool for remote teams
+2026-09-11,Birch Vertex Labs,birchvertexlabs.com,Liam Rao,Analyst,organic,saas,79,DE,lost,,0,no,HR software for hourly workers
+2026-09-11,Birch Atlas Studio,birchatlasstudio.com,Elena Shah,Analyst,organic,ecommerce,135,US,lost,,1,no,Direct-to-consumer skincare brand
+2026-09-12,Ledger Onyx Systems,ledgeronyxsystems.com,Hana Iyer,Support Manager,paid_search,fintech,142,IN,won,2026-10-01,3,no,Card issuing API for neobanks
+2026-09-12,Tidal Northwind Learning,tidalnorthwindlearning.com,Noah Shah,Support Manager,content,education,96,IN,lost,,0,no,Tutoring marketplace for high-school students
+2026-09-13,Pine Ember Works,pineemberworks.com,Noah Garcia,Founder,paid_search,fintech,25,US,won,2026-10-13,1,yes,Card issuing API for neobanks
+2026-09-13,Signal Lumen Systems,signallumensystems.com,Ana Brown,Support Manager,organic,ecommerce,20,SG,won,2026-10-14,2,no,Marketplace for refurbished electronics
+2026-09-13,Tidal Cedar Labs,tidalcedarlabs.com,Rohan Patel,Founder,organic,saas,48,US,lost,,0,no,Developer API for sending transactional email
+2026-09-14,Delta Lumen Commerce,deltalumencommerce.com,Hana Garcia,COO,content,saas,139,IN,lost,,0,no,Developer API for sending transactional email
+2026-09-14,Zephyr Pine Cloud,zephyrpinecloud.com,Chloe Nair,Support Agent,content,education,36,IN,lost,,3,yes,Learning management system for corporate training
+2026-09-16,Nimbus Birch Labs,nimbusbirchlabs.com,Elena Iyer,Support Manager,linkedin,fintech,47,SG,open,,2,no,Card issuing API for neobanks
+2026-09-17,Fable Pine Systems,fablepinesystems.com,Aarav Kim,Support Agent,organic,saas,148,US,open,,0,yes,HR software for hourly workers
+2026-09-18,Sable Sable Pay,sablesablepay.com,Elena Khan,Director of Support,paid_search,fintech,55,US,won,2026-10-17,3,yes,Payments and lending platform for small businesses
+2026-09-18,Lumen Ledger Pay,lumenledgerpay.com,Elena Rao,Director of Operations,organic,ecommerce,52,IN,open,,1,no,Subscription box for specialty coffee
+2026-09-19,Willow Willow AI,willowwillowai.com,Kabir Patel,CX Manager,paid_search,saas,49,IN,won,2026-09-30,1,yes,Analytics dashboard for product teams
+2026-09-19,Ledger Sable Systems,ledgersablesystems.com,Zara Smith,Director of Support,organic,saas,156,US,open,,2,no,Project management tool for remote teams
+2026-09-19,Fable Vela Pay,fablevelapay.com,Elena Iyer,Support Agent,referral,fintech,24,IN,won,2026-10-23,2,no,Invoice factoring marketplace
+2026-09-21,Vertex Tidal Learning,vertextidallearning.com,Ethan Ng,CX Manager,linkedin,ecommerce,101,US,open,,3,yes,Online store selling sustainable homeware
+2026-09-22,Fable Cedar Works,fablecedarworks.com,Emma Iyer,Support Manager,paid_search,fintech,10,IN,won,2026-10-14,1,yes,Payments and lending platform for small businesses
+2026-09-23,Ember Ledger Studio,emberledgerstudio.com,Farah Ng,Analyst,organic,ecommerce,11,IN,open,,2,no,Online store selling sustainable homeware
+2026-09-24,Onyx Sable Works,onyxsableworks.com,Sofia Kim,COO,linkedin,fintech,210,UK,open,,0,no,Payments and lending platform for small businesses
+2026-09-25,Ridge Meridian Studio,ridgemeridianstudio.com,Noah Kim,Support Agent,referral,healthcare,94,US,open,,1,yes,Clinic scheduling and patient reminders
+2026-09-26,Meridian Sable Learning,meridiansablelearning.com,Ana Smith,Support Manager,content,ecommerce,281,IN,open,,0,no,Online store selling sustainable homeware
+2026-09-27,Ledger Birch Health,ledgerbirchhealth.com,Ana Smith,Support Agent,content,ecommerce,65,IN,open,,1,yes,Marketplace for refurbished electronics
+2026-09-27,Juniper Sable Commerce,junipersablecommerce.com,Ishaan Khan,Support Agent,content,fintech,176,US,open,,3,no,Payments and lending platform for small businesses
+2026-09-28,Lumen Ridge Works,lumenridgeworks.com,Farah Shah,Founder,paid_search,healthcare,148,US,open,,2,yes,Clinic scheduling and patient reminders
+2026-10-01,Cedar Vela Learning,cedarvelalearning.com,Farah Shah,Analyst,linkedin,saas,15,US,open,,0,no,Project management tool for remote teams
+2026-10-04,Northwind Atlas AI,northwindatlasai.com,Farah Lopez,Analyst,linkedin,education,41,US,open,,3,yes,Learning management system for corporate training
+2026-10-05,Birch Northwind Systems,birchnorthwindsystems.com,Zara Ng,Director of Operations,paid_search,fintech,39,UK,open,,0,no,Payments and lending platform for small businesses
+2026-10-06,Harbor Willow Works,harborwillowworks.com,Ishaan Ng,Support Agent,paid_search,ecommerce,38,SG,open,,1,no,Marketplace for refurbished electronics
+2026-10-07,Delta Quanta Health,deltaquantahealth.com,Dev Kim,Director of Support,paid_search,saas,37,IN,open,,0,no,Project management tool for remote teams
+2026-10-07,Birch Lumen Health,birchlumenhealth.com,Maya Lopez,CX Manager,paid_search,education,21,US,open,,0,no,Learning management system for corporate training
+2026-10-08,Delta Pine Cloud,deltapinecloud.com,Maya Patel,COO,paid_search,saas,60,US,open,,1,no,Developer API for sending transactional email
+2026-10-08,Pioneer Umbra Health,pioneerumbrahealth.com,Bo Nair,VP Operations,paid_search,fintech,301,US,open,,1,no,Payments and lending platform for small businesses
+2026-10-08,Atlas Lumen Labs,atlaslumenlabs.com,Farah Brown,Director of Support,organic,ecommerce,133,SG,open,,2,no,Subscription box for specialty coffee
+2026-10-09,Pine Meridian Labs,pinemeridianlabs.com,Liam Ng,VP Operations,paid_search,saas,269,US,open,,4,yes,HR software for hourly workers
+2026-10-09,Northwind Ledger Works,northwindledgerworks.com,Chloe Lopez,Director of Support,paid_search,saas,152,IN,open,,0,no,Developer API for sending transactional email
+2026-10-10,Lumen Pine Works,lumenpineworks.com,Kabir Khan,Support Agent,paid_search,ecommerce,19,UK,open,,0,no,Marketplace for refurbished electronics
+2026-10-11,Orbit Tidal Health,orbittidalhealth.com,Maya Rao,CX Manager,linkedin,saas,74,US,open,,0,no,HR software for hourly workers
+2026-10-13,Meridian Juniper Systems,meridianjunipersystems.com,Zara Lopez,Director of Operations,organic,fintech,15,IN,open,,1,no,Card issuing API for neobanks
+2026-10-14,Ridge Cedar AI,ridgecedarai.com,Sofia Brown,Support Agent,linkedin,fintech,394,US,open,,1,no,Card issuing API for neobanks
+2026-10-14,Pioneer Willow Pay,pioneerwillowpay.com,Dev Iyer,Support Manager,linkedin,ecommerce,72,DE,open,,0,no,Marketplace for refurbished electronics
+2026-10-15,Pine Willow Labs,pinewillowlabs.com,Aarav Ng,CX Manager,linkedin,ecommerce,82,UK,open,,0,no,Online store selling sustainable homeware
+2026-10-17,Atlas Zephyr Systems,atlaszephyrsystems.com,Hana Iyer,Analyst,content,fintech,37,SG,open,,3,yes,Payments and lending platform for small businesses
+2026-10-19,Tidal Fable Learning,tidalfablelearning.com,Zara Brown,CX Manager,linkedin,fintech,25,US,won,2026-10-31,1,no,Expense management software for finance teams
+2026-10-19,Signal Lumen Works,signallumenworks.com,Kabir Khan,Head of Support,organic,healthcare,160,IN,open,,2,no,Clinic scheduling and patient reminders
+2026-10-20,Birch Sable Labs,birchsablelabs.com,Gabe Rao,Director of Operations,linkedin,saas,39,IN,open,,0,no,Analytics dashboard for product teams
+2026-10-20,Sable Kestrel Learning,sablekestrellearning.com,Bo Chen,Analyst,organic,fintech,53,US,open,,0,no,Payments and lending platform for small businesses
+2026-10-22,Delta Harbor AI,deltaharborai.com,Liam Chen,Support Agent,organic,saas,136,SG,open,,1,no,Developer API for sending transactional email
+2026-10-23,Sable Pine Labs,sablepinelabs.com,Elena Smith,Support Agent,organic,fintech,58,US,open,,0,yes,Invoice factoring marketplace
+2026-10-29,Onyx Quill Studio,onyxquillstudio.com,Emma Kim,Support Manager,paid_search,healthcare,75,US,open,,3,yes,Clinic scheduling and patient reminders
+2026-10-30,Umbra Atlas Labs,umbraatlaslabs.com,Gabe Lopez,Support Agent,linkedin,saas,56,DE,open,,1,no,HR software for hourly workers
+2026-10-31,Ledger Pioneer Learning,ledgerpioneerlearning.com,Kabir Chen,Director of Operations,organic,saas,40,SG,open,,4,yes,HR software for hourly workers

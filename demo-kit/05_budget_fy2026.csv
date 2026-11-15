@@ -1,0 +1,169 @@
+account,month,amount
+4000 Subscription revenue,2026-01,186499.32
+5000 Hosting (AWS),2026-01,26109.90
+5100 Payment processing fees,2026-01,5408.48
+6400 Advertising: Google Ads,2026-01,9300.00
+6410 Advertising: LinkedIn,2026-01,6200.00
+6500 Software subscriptions,2026-01,7500.00
+6600 Rent & office,2026-01,9000.00
+6700 Legal & accounting,2026-01,1500.00
+6000 Salaries: Sales,2026-01,43500.00
+6010 Salaries: Marketing,2026-01,14500.00
+6020 Salaries: Customer Success,2026-01,16200.00
+6030 Salaries: Engineering,2026-01,66900.00
+6040 Salaries: Product,2026-01,19000.00
+6050 Salaries: G&A,2026-01,22200.00
+4000 Subscription revenue,2026-02,195693.82
+5000 Hosting (AWS),2026-02,27397.14
+5100 Payment processing fees,2026-02,5675.12
+6400 Advertising: Google Ads,2026-02,9300.00
+6410 Advertising: LinkedIn,2026-02,6200.00
+6500 Software subscriptions,2026-02,7500.00
+6600 Rent & office,2026-02,9000.00
+6700 Legal & accounting,2026-02,1500.00
+6000 Salaries: Sales,2026-02,43500.00
+6010 Salaries: Marketing,2026-02,14500.00
+6020 Salaries: Customer Success,2026-02,16200.00
+6030 Salaries: Engineering,2026-02,83900.00
+6040 Salaries: Product,2026-02,19000.00
+6050 Salaries: G&A,2026-02,22200.00
+4000 Subscription revenue,2026-03,204823.97
+5000 Hosting (AWS),2026-03,28675.36
+5100 Payment processing fees,2026-03,5939.90
+6400 Advertising: Google Ads,2026-03,9300.00
+6410 Advertising: LinkedIn,2026-03,6200.00
+6500 Software subscriptions,2026-03,7500.00
+6600 Rent & office,2026-03,9000.00
+6700 Legal & accounting,2026-03,1500.00
+6000 Salaries: Sales,2026-03,55500.00
+6010 Salaries: Marketing,2026-03,14500.00
+6020 Salaries: Customer Success,2026-03,16200.00
+6030 Salaries: Engineering,2026-03,83900.00
+6040 Salaries: Product,2026-03,19000.00
+6050 Salaries: G&A,2026-03,22200.00
+4000 Subscription revenue,2026-04,213890.20
+5000 Hosting (AWS),2026-04,29944.63
+5100 Payment processing fees,2026-04,6202.82
+6400 Advertising: Google Ads,2026-04,9300.00
+6410 Advertising: LinkedIn,2026-04,6200.00
+6500 Software subscriptions,2026-04,7500.00
+6600 Rent & office,2026-04,9000.00
+6700 Legal & accounting,2026-04,1500.00
+6000 Salaries: Sales,2026-04,55500.00
+6010 Salaries: Marketing,2026-04,14500.00
+6020 Salaries: Customer Success,2026-04,19600.00
+6030 Salaries: Engineering,2026-04,83900.00
+6040 Salaries: Product,2026-04,19000.00
+6050 Salaries: G&A,2026-04,22200.00
+4000 Subscription revenue,2026-05,222892.97
+5000 Hosting (AWS),2026-05,31205.02
+5100 Payment processing fees,2026-05,6463.90
+6400 Advertising: Google Ads,2026-05,9300.00
+6410 Advertising: LinkedIn,2026-05,6200.00
+6500 Software subscriptions,2026-05,7500.00
+6600 Rent & office,2026-05,9000.00
+6700 Legal & accounting,2026-05,1500.00
+6000 Salaries: Sales,2026-05,55500.00
+6010 Salaries: Marketing,2026-05,27500.00
+6020 Salaries: Customer Success,2026-05,19600.00
+6030 Salaries: Engineering,2026-05,83900.00
+6040 Salaries: Product,2026-05,19000.00
+6050 Salaries: G&A,2026-05,22200.00
+4000 Subscription revenue,2026-06,231832.72
+5000 Hosting (AWS),2026-06,32456.58
+5100 Payment processing fees,2026-06,6723.15
+6400 Advertising: Google Ads,2026-06,9300.00
+6410 Advertising: LinkedIn,2026-06,6200.00
+6500 Software subscriptions,2026-06,7500.00
+6600 Rent & office,2026-06,9000.00
+6700 Legal & accounting,2026-06,1500.00
+6000 Salaries: Sales,2026-06,55500.00
+6010 Salaries: Marketing,2026-06,27500.00
+6020 Salaries: Customer Success,2026-06,19600.00
+6030 Salaries: Engineering,2026-06,83900.00
+6040 Salaries: Product,2026-06,19000.00
+6050 Salaries: G&A,2026-06,22200.00
+4000 Subscription revenue,2026-07,240709.89
+5000 Hosting (AWS),2026-07,33699.38
+5100 Payment processing fees,2026-07,6980.59
+6400 Advertising: Google Ads,2026-07,9300.00
+6410 Advertising: LinkedIn,2026-07,6200.00
+6500 Software subscriptions,2026-07,7500.00
+6600 Rent & office,2026-07,9000.00
+6700 Legal & accounting,2026-07,1500.00
+6000 Salaries: Sales,2026-07,55500.00
+6010 Salaries: Marketing,2026-07,27500.00
+6020 Salaries: Customer Success,2026-07,19600.00
+6030 Salaries: Engineering,2026-07,83900.00
+6040 Salaries: Product,2026-07,19000.00
+6050 Salaries: G&A,2026-07,22200.00
+4000 Subscription revenue,2026-08,249524.92
+5000 Hosting (AWS),2026-08,34933.49
+5100 Payment processing fees,2026-08,7236.22
+6400 Advertising: Google Ads,2026-08,9300.00
+6410 Advertising: LinkedIn,2026-08,6200.00
+6500 Software subscriptions,2026-08,7500.00
+6600 Rent & office,2026-08,9000.00
+6700 Legal & accounting,2026-08,1500.00
+6000 Salaries: Sales,2026-08,55500.00
+6010 Salaries: Marketing,2026-08,27500.00
+6020 Salaries: Customer Success,2026-08,19600.00
+6030 Salaries: Engineering,2026-08,83900.00
+6040 Salaries: Product,2026-08,19000.00
+6050 Salaries: G&A,2026-08,22200.00
+4000 Subscription revenue,2026-09,258278.25
+5000 Hosting (AWS),2026-09,36158.95
+5100 Payment processing fees,2026-09,7490.07
+6400 Advertising: Google Ads,2026-09,9300.00
+6410 Advertising: LinkedIn,2026-09,6200.00
+6500 Software subscriptions,2026-09,7500.00
+6600 Rent & office,2026-09,9000.00
+6700 Legal & accounting,2026-09,1500.00
+6000 Salaries: Sales,2026-09,55500.00
+6010 Salaries: Marketing,2026-09,27500.00
+6020 Salaries: Customer Success,2026-09,19600.00
+6030 Salaries: Engineering,2026-09,83900.00
+6040 Salaries: Product,2026-09,19000.00
+6050 Salaries: G&A,2026-09,22200.00
+4000 Subscription revenue,2026-10,266970.30
+5000 Hosting (AWS),2026-10,37375.84
+5100 Payment processing fees,2026-10,7742.14
+6400 Advertising: Google Ads,2026-10,9300.00
+6410 Advertising: LinkedIn,2026-10,6200.00
+6500 Software subscriptions,2026-10,7500.00
+6600 Rent & office,2026-10,9000.00
+6700 Legal & accounting,2026-10,1500.00
+6000 Salaries: Sales,2026-10,55500.00
+6010 Salaries: Marketing,2026-10,27500.00
+6020 Salaries: Customer Success,2026-10,19600.00
+6030 Salaries: Engineering,2026-10,83900.00
+6040 Salaries: Product,2026-10,19000.00
+6050 Salaries: G&A,2026-10,22200.00
+4000 Subscription revenue,2026-11,275601.51
+5000 Hosting (AWS),2026-11,38584.21
+5100 Payment processing fees,2026-11,7992.44
+6400 Advertising: Google Ads,2026-11,9300.00
+6410 Advertising: LinkedIn,2026-11,6200.00
+6500 Software subscriptions,2026-11,7500.00
+6600 Rent & office,2026-11,9000.00
+6700 Legal & accounting,2026-11,1500.00
+6000 Salaries: Sales,2026-11,55500.00
+6010 Salaries: Marketing,2026-11,27500.00
+6020 Salaries: Customer Success,2026-11,19600.00
+6030 Salaries: Engineering,2026-11,83900.00
+6040 Salaries: Product,2026-11,19000.00
+6050 Salaries: G&A,2026-11,22200.00
+4000 Subscription revenue,2026-12,284172.30
+5000 Hosting (AWS),2026-12,39784.12
+5100 Payment processing fees,2026-12,8241.00
+6400 Advertising: Google Ads,2026-12,9300.00
+6410 Advertising: LinkedIn,2026-12,6200.00
+6500 Software subscriptions,2026-12,7500.00
+6600 Rent & office,2026-12,9000.00
+6700 Legal & accounting,2026-12,1500.00
+6000 Salaries: Sales,2026-12,55500.00
+6010 Salaries: Marketing,2026-12,27500.00
+6020 Salaries: Customer Success,2026-12,19600.00
+6030 Salaries: Engineering,2026-12,83900.00
+6040 Salaries: Product,2026-12,19000.00
+6050 Salaries: G&A,2026-12,22200.00

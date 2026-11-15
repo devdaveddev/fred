@@ -77,7 +77,14 @@ def _use_process() -> bool:
 
 def _submit(fn, *args):
     if not _use_process():
-        return fn(*args)  # tests, scripts, and small servers: run inline
+        try:
+            return fn(*args)  # tests, scripts, and small servers: run inline
+        finally:
+            limit = memory_limit_mb()
+            if limit is not None and limit < 1100:  # small server: give the model's memory back straight away
+                from .ml.embeddings import unload
+
+                unload()
     try:
         return _executor().submit(fn, *args).result()
     except BrokenProcessPool:
