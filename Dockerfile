@@ -25,7 +25,7 @@ COPY backend/ ./
 # ---------- runtime
 FROM python:3.13-slim
 COPY --from=node:22-bookworm-slim /usr/local/bin/node /usr/local/bin/node
-RUN useradd --create-home --uid 10001 fred
+RUN useradd --create-home --uid 1000 fred  # uid 1000: what Hugging Face Spaces run as
 COPY --from=api --chown=fred:fred /app /app
 COPY --from=api --chown=fred:fred /models /models
 COPY --from=web --chown=fred:fred /web/.next/standalone /web
